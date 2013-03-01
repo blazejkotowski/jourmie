@@ -1,0 +1,16 @@
+$navbarHeight: 40px;
+
+@import "twitter/bootstrap";
+
+.navbar-inverse .navbar-inner {
+  background: #424242;
+}
+
+.navbar {
+  .dropdown-menu {
+    background: #424242;
+  }
+  .dropdown-menu::after {
+    border-bottom-color: #424242 !important;
+  }
+}
