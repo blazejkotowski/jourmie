@@ -35,8 +35,8 @@
           .navbar-notification{ :class => "notification-#{type}"}
             = message
   #main-container
+    = yield
     .container
-      = yield
       - if Rails.env.development?
         = debug(params)
           
