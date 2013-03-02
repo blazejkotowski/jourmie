@@ -12,4 +12,6 @@
  *= requite twitter/bootstrap
  *= require bootstrap_and_overrides
  *= require layout
+ *= require users
+ *= require static_sites
  */

@@ -1,9 +1,20 @@
 @import "bootstrap_and_overrides";
 @import "variables";
 
+legend {
+  margin-bottom: 0;
+}
+
+h2 { 
+  font-size: 22px; 
+  line-height: 20px;
+}
+h3 { 
+  font-size: 20px; 
+  line-height: 18px;
+}
+
 #navigation-top {
-  position: relative;
-  z-index: 1000;
   .navbar-inner {
     color: #fff !important; 
   }
@@ -40,7 +51,7 @@
 }
 
 #main-container {
-  padding-top: $navbarHeight + 20px;
+  padding-top: $navbarHeight + 40px;
 }
 
 footer {

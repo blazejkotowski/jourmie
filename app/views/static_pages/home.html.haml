@@ -1,1 +1,28 @@
-= render "devise/registrations/signup_form"
+.row
+  #home-teaser.span10.offset1
+    %p.first-line
+      Travel diary made by buddies
+    %p.second-line
+      for buddies!
+    .clearfix
+    
+    
+.row
+  .span8
+  .span4
+    = render "devise/registrations/signup_form"
+#home-thumbnails.row
+  .home-thumbnail
+    .description
+      Save your feelings, joy and passion like never before!
+    .image
+  .home-thumbnail
+    .description
+      Invite your buddies and easilly create awesome travel albums!
+    .image
+  .home-thumbnail
+    .description
+      Make your memories even more real! Check out how at
+      = link_to "Jourmie Shop", "#"
+    .image
+  

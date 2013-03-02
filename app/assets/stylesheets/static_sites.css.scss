@@ -1,0 +1,37 @@
+@import "variables";
+
+#home-teaser {
+  p {
+    letter-spacing: 4px;
+    font-size: 40px;
+    text-align: right;
+    line-height: 35px;
+    &.first-line {
+      color: $jourmieRed;      
+    }
+    text-shadow: 1.5px 1.5px 5px rgba(0,0,0,0.25);
+  }
+  margin-bottom: 10px;
+}
+
+#home-thumbnails {
+  position: relative;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.home-thumbnail {
+  text-align: left;
+  display: inline-block;
+  margin: 10px 45px;
+  width: 240px;
+  &:last-child {
+    margin-right: 0;
+  }
+  &:first-child {
+    margin-left: 0;
+  }
+  .description { 
+    height: 80px;
+  }
+}
