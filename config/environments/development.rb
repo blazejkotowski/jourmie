@@ -36,4 +36,6 @@ Jourmie::Application.configure do
   config.assets.debug = true
   
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  ENV["FACEBOOK_APP_ID"] = "359410504174002"
+  ENV["FACEBOOK_APP_SECRET"] =" 8d42da16144564dd57e39e1dc5c37f49"
 end
