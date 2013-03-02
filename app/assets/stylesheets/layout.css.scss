@@ -100,8 +100,16 @@ footer {
 
 .btn-twitter, .btn-facebook {
   display: inline-block;
-  width: 157px;
-  height: 42px;
+  &.btn-mini {
+    width: 145px;
+    height: 25px;
+    background-size: 145px 25px;
+  }
+  &.btn-medium {
+    width: 202px;
+    height: 36px;
+    background-size: 202px 36px;
+  }
   padding: 0;
   background: transparent no-repeat center;
 }
@@ -117,6 +125,10 @@ footer {
   &:active {
     background-image: url('facebook_button_pushed.png');
   }
+}
+
+.margin-left-tiny {
+  margin-left: 5px;
 }
 
 .margin-left-huge {
