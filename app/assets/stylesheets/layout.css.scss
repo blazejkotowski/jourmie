@@ -1,10 +1,6 @@
 @import "bootstrap_and_overrides";
 @import "variables";
 
-legend {
-  margin-bottom: 0;
-}
-
 @font-face {
   font-family: "Young";
   font-weight: normal;
@@ -13,12 +9,15 @@ legend {
 }
 
 body {
+  color: #fff;
   font-family: "Young", "Arial", sans-serif;
-}
-
-input[type=text], input[type=password], input[type=email], select {
-  border: 0 !important;
-  &:focus { color: #fff; }
+  background: transparent url("home_background.png") no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  &.home {
+    background-image: none;
+    color: #333;
+  }
 }
 
 h1,h2,h3,h4 {
@@ -35,10 +34,19 @@ h3 {
   line-height: 18px;
 }
 
-.btn-facebook, .btn-twitter {
-  font-size: 11px;
-  padding: 2px;
-  margin-left: 3px;
+.transparent-wrapper {
+  padding: 15px 0;
+  background: rgba(0,0,0,.35);
+  width: 100%;
+  h1,h2,h3,h4,h5 {
+    color: #fff;
+    font-weight: normal;
+    line-height: 12px;
+    margin-bottom: 0;
+  }
+  p {
+    color: #fff;
+  }
 }
 
 #navigation-top {
@@ -88,4 +96,29 @@ footer {
       background: $jourmieRed !important;
     }
   }
+}
+
+.btn-twitter, .btn-facebook {
+  display: inline-block;
+  width: 157px;
+  height: 42px;
+  padding: 0;
+  background: transparent no-repeat center;
+}
+
+.btn-twitter {
+  background-image: url('twitter_button.png');
+  &:active {
+    background-image: url('twitter_button_pushed.png');
+  }
+}
+.btn-facebook {
+  background-image: url('facebook_button.png');
+  &:active {
+    background-image: url('facebook_button_pushed.png');
+  }
+}
+
+.margin-left-huge {
+  margin-left: 50px;
 }

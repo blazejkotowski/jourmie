@@ -9,6 +9,11 @@ $navbarHeight: 40px;
   background: #424242;
 }
 
+legend {
+  border: 0;
+  margin-bottom: 10px;
+}
+
 .navbar {
   .dropdown-menu {
     background: #424242;
@@ -16,4 +21,24 @@ $navbarHeight: 40px;
   .dropdown-menu::after {
     border-bottom-color: #424242 !important;
   }
+}
+
+input[type=text], input[type=password], input[type=email], select {
+  border: 0 !important;
+  color: #fff;
+  height: 35px;
+  background: $jourmieMiddleGray;
+  opacity: 0.8;
+  box-shadow: inset 3px 3px 2px rgba(0,0,0,.5) !important;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.form-actions {
+  background: transparent;
+  border: 0;
+  border-radius: 5px;
 }

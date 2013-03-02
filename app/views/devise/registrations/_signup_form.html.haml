@@ -1,9 +1,11 @@
+- noautofocus ||= false
+
 = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class => 'signup-form'}) do |f|
   %fieldset 
     %legend
       %h2 New to Jourmie?
       %h3 Sign up here
-    = f.input :email, :placeholder => 'E-mail', :required => true, :autofocus => true, :label => false
+    = f.input :email, :placeholder => 'E-mail', :required => true, :autofocus => !noautofocus, :label => false
     = f.input :password, :placeholder => "Password", :required => true, :label => false
     = f.input :password_confirmation, :placeholder => "Repeat password", :required => true, :label => false
     %p
@@ -16,6 +18,3 @@
       = f.submit :class => 'btn btn-primary', :value => "Sign up"
     .clearfix
 
-.pull-right
-  = render "devise/shared/connect_links"
-        

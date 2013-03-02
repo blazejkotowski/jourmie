@@ -12,10 +12,6 @@
     line-height: 12px;
     margin-bottom: 0;
   }
-  legend {
-    border: 0;
-    margin-bottom: 10px;
-  }
   position: relative;
 }
 
@@ -38,7 +34,7 @@
   width: 588px;
   height: 332px;
   position: absolute;
-  bottom: -2px;
+  bottom: -10px;
 }
 
 #home-thumbnails {
@@ -76,5 +72,14 @@
     &.shop {
       background-image: url('shop_mini.png');
     }
+  }
+}
+
+#signin-connect-buttons { 
+  margin-top: 40px;
+  text-align: center;
+  a {
+    width: 100%;
+    margin-top: 20px;
   }
 }
