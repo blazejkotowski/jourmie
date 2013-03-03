@@ -38,7 +38,7 @@
     = yield
     .container
       - if Rails.env.development?
-        = debug(params)
+        = debug(params.merge(session))
           
   %footer
     .navbar.navbar-inverse.navbar-static-top

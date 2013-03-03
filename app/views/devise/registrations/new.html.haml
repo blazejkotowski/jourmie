@@ -1,4 +1,8 @@
 .transparent-wrapper
-  .container
-    .span6.offset3
+  .container 
+    .span4
+      = render "devise/sessions/signin_form"
+    .span4.margin-left-huge
       = render "devise/registrations/signup_form"
+    #signin-connect-buttons.span3.margin-left-huge
+      = render "devise/shared/connect_links", :classname => "btn-medium"

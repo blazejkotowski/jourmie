@@ -17,4 +17,12 @@ module DeviseHelper
     devise_mapping.to
   end
   
+  def resource_for(controller)
+    if controller_name == controller.to_s
+      resource
+    else
+      User.new
+    end
+  end
+  
 end

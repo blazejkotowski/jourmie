@@ -1,9 +1,7 @@
-- noautofocus ||= false
-
-= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+= simple_form_for(resource_for(:sessions), :as => resource_name, :url => session_path(resource_name)) do |f|
   %legend 
     %h2 Sign in
-  = f.input :email, :required => false, :autofocus => !noautofocus, :placeholder => "E-mail", :label => false
+  = f.input :email, :required => false, :autofocus => (true if controller_name == "sessions"), :placeholder => "E-mail", :label => false
   = f.input :password, :required => false, :placeholder => "Password", :label => false
   = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
   .pull-right
