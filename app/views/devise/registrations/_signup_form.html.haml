@@ -4,8 +4,9 @@
       %h2 New to Jourmie?
       %h3 Sign up here
     = f.input :email, :placeholder => 'E-mail', :autofocus => (true if controller_name == "registrations"), :required => true, :label => false
-    = f.input :password, :placeholder => "Password", :required => true, :label => false
-    = f.input :password_confirmation, :placeholder => "Repeat password", :required => true, :label => false
+    - if f.object.provider.blank?
+      = f.input :password, :placeholder => "Password", :required => true, :label => false
+      = f.input :password_confirmation, :placeholder => "Repeat password", :required => true, :label => false
     %p
       By creating account I accept Jourmie's
       = link_to "Terms of service", "#"
