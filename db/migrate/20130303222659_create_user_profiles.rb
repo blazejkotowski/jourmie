@@ -6,7 +6,6 @@ class CreateUserProfiles < ActiveRecord::Migration
       t.string :surname
       t.string :sex
       t.string :phone
-      t.string :avatar
       t.date :birthday
 
       t.timestamps
