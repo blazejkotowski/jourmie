@@ -6,7 +6,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect user
     else
       flash[:info] = "You must provide your e-mail address" if user.email.blank?
-      session["devise.user_attributes"] = user.attributes
+      session["devise.user_attributes"] = user.attributes.merge({ "profile" => user.profile })
       redirect_to new_user_registration_url
     end
   end

@@ -43,6 +43,8 @@ gem 'omniauth-twitter'
 gem 'rails_config'
 gem 'valid_email'
 gem 'cancan'
+gem 'carrierwave'
+gem 'rmagick'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
