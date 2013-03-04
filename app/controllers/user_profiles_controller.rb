@@ -7,7 +7,7 @@ class UserProfilesController < ApplicationController
   end
 
   def update
-    @profile.update_attributes(params[:profile])
+    @profile.update_attributes(params[:user_profile])
     render "edit"
   end
   

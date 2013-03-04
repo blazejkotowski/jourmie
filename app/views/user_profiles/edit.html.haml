@@ -1,11 +1,14 @@
+- content_for :page_title do
+  %h2 Profile
+
 .transparent-wrapper
   #edit-profile.container
-    = simple_form_for @profile, :resource_name => "profile", :url => profile_path, :html => { :multipart => true } do |f|
+    = simple_form_for @profile, :url => profile_path, :html => { :multipart => true } do |f|
       = f.error_notification
       .row
         .span6
           %h4 Avatar
-          = image_tag @profile.avatar_url, :class => "thumbnail"
+          = image_tag @profile.avatar_url(:big), :class => "thumbnail"
           = f.file_field :avatar
         #inputs.span6
           .inputs-group
@@ -14,7 +17,8 @@
             = f.input :last_name
           .inputs-group
             %h4 Info
-            = f.input :sex
+            = f.input :sex do
+              = f.select :sex, options_for_select(["male", "female"])
             = f.input :birthday
           .inputs-group
             %h4 Contact
@@ -22,8 +26,7 @@
           .inputs-group
             %h4 Jourmie URL
             = f.input :permalink, :label => "Jourmie.com/"
-            
-      .form-actions
-        = f.submit "Update"
+          .inputs-group
+            = f.submit "Update", :class => "btn btn-primary"
         
   
