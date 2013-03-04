@@ -8,3 +8,36 @@
     margin: 5px 0;
   }
 }
+
+#edit-profile {
+  form {
+    label {
+      float: left;
+      width: 80px;
+      padding-top: 6px;  
+    }
+    input[type=text], input[type=tel] {
+      width: 360px;
+    }
+    .inputs-group {
+      margin-bottom: 20px;
+    }
+    .control-group, h4 {
+      clear:both;
+    }
+    h4 {
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,.3);
+      margin-bottom: 10px !important;
+    }
+    select {
+      width: 80px;
+    }
+    select[id$="2i"] {
+      width: 193px;
+    }
+    #inputs {
+      text-align: right;
+    }
+  }
+}

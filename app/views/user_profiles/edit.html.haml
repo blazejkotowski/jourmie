@@ -1,0 +1,29 @@
+.transparent-wrapper
+  #edit-profile.container
+    = simple_form_for @profile, :resource_name => "profile", :url => profile_path, :html => { :multipart => true } do |f|
+      = f.error_notification
+      .row
+        .span6
+          %h4 Avatar
+          = image_tag @profile.avatar_url, :class => "thumbnail"
+          = f.file_field :avatar
+        #inputs.span6
+          .inputs-group
+            %h4 Name
+            = f.input :first_name
+            = f.input :last_name
+          .inputs-group
+            %h4 Info
+            = f.input :sex
+            = f.input :birthday
+          .inputs-group
+            %h4 Contact
+            = f.input :phone
+          .inputs-group
+            %h4 Jourmie URL
+            = f.input :permalink, :label => "Jourmie.com/"
+            
+      .form-actions
+        = f.submit "Update"
+        
+  

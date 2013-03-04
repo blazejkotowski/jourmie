@@ -24,9 +24,8 @@ legend {
   }
 }
 
-input[type=text], input[type=password], input[type=email], select {
+input[type=text], input[type=tel], input[type=password], input[type=email], select option {
   border: 0 !important;
-  color: #fff;
   height: 35px;
   background: $jourmieMiddleGray;
   opacity: 0.8;
@@ -35,6 +34,15 @@ input[type=text], input[type=password], input[type=email], select {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  color: #fff;
+}
+
+select option {
+  background: $jourmieMiddleGray;
+}
+
+input[type=text], input[type=password], input[type=email] {
+  color: #fff;
   width: 100%;
 }
 
