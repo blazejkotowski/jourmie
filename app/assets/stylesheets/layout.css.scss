@@ -5,7 +5,14 @@
   font-family: "Young";
   font-weight: normal;
   font-style: normal;
-  src: asset-url("Young.ttf", font) format('truetype');
+  src: asset-url("young.ttf", font) format('truetype');
+}
+
+@font-face {
+  font-family: "Pumped";
+  font-weight: normal;
+  font-style: normal;
+  src: asset-url("pumped_up_kicks.ttf", font) format('truetype');
 }
 
 body {
@@ -68,6 +75,17 @@ h3 {
 #navigation-top {
   .navbar-inner {
     color: #fff !important; 
+  }
+  .brand {
+    font-family: "Pumped";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 25px;
+    position: relative;
+    top: 3px;
+    a {
+      text-decoration: none !important;
+    }
   }
 }
 
