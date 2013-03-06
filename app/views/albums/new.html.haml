@@ -2,29 +2,43 @@
   %h2 New album
   
 .transparent-wrapper
-  = direct_upload_form_for @cover_uploader do |f| 
-    .container
-      .row
-        .span12
-          %h4 Choose album cover
-    #cover-chooser
-      = image_tag @album.cover_image.direct_fog_url(:with_path => true)
-    .container
-      .row
-        .span12
-          or 
-          = f.file_field :cover_image
-          = f.submit "upload new", :class => "btn btn-primary"
   .container
     = simple_form_for @album do |f|
-      = f.hidden_field :key
-      = f.input :name, :label => false, :placeholder => "Type album name here", :input_html => { :class=>"dotted" }
       .row
-        .align-center.positive-top-big
-          .datepicker-wrapper
-          .datepicker-wrapper
+        .span12
+          = f.input :name, :label => false, :placeholder => "Type album name here", :input_html => { :class=>"dotted high" }
       .row
-        .span12.centered.positive-top-big= f.submit "Continue", :class => "text"
+        .span12
+          .align-center.positive-top-big
+            %h4.positive-bottom-big.with-border Date
+      .row
+        .span5.offset1.align-center From
+        .span5.align-center To
+      .row
+        .span12
+          .align-center.positive-top-big
+            = f.hidden_field :start_date
+            #start-date-picker.datepicker-wrapper{ :data => {:target => "#album_start_date", "date-format" => "dd-mm-yyyy", "date" => @album.start_date.strftime("%d-%m-%Y") } }
+            = f.hidden_field :end_date
+            #end-date-picker.datepicker-wrapper{ :data => {:target => "#album_end_date", "date-format" => "dd-mm-yyyy", "date" => @album.end_date.strftime("%d-%m-%Y") } }
+            
+      .row
+        .span12
+          .align-center.positive-top-big
+            %h4.positive-bottom-big Invite Buddies
+      .row
+        .span12
+          #invite-box
+            = link_to "Mail", "#", :class => "social-icon mail"
+            = link_to "Facebook", "#", :class => "social-icon facebook"
+            = link_to "Google Plus", "#", :class => "social-icon gplus"
+            = link_to "Linked In", "#", :class => "social-icon linkedin"
+            = link_to "Twitter", "#", :class => "social-icon twitter"
+            = link_to "iPhone", "#", :class => "social-icon iphone"
+            
+      .row
+        .span12
+          .centered.positive-top-huge= f.submit "Continue", :class => "text big"
 
 
         

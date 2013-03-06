@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   helper DeviseHelper
   
+  def current_user
+    @current_user ||= super && User.includes(:profile).find(@current_user.id)
+  end
+  
 end

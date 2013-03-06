@@ -13,4 +13,18 @@ class UserProfile < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   belongs_to :user
   
+  def full_name
+    unless first_name.blank? && last_name.blank?
+      "#{first_name} #{last_name}"
+    end
+  end
+  
+  def display_name
+    if full_name.nil?
+      user.email
+    else
+      full_name
+    end
+  end
+  
 end

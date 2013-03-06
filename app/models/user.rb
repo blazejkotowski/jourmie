@@ -13,8 +13,11 @@ class User < ActiveRecord::Base
   has_one :profile, :class_name => "UserProfile", :dependent => :destroy
   accepts_nested_attributes_for :profile
   
+  has_many :albums, :dependent => :destroy
+  
   before_create :add_profile
   
+  scope :with_profile, includes(:profile)
   
   def self.from_omniauth(auth)
     if auth.provider == "facebook"

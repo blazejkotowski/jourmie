@@ -8,9 +8,123 @@ input.dotted {
   border-width: 2px 0 !important;
   box-shadow: none !important;
   text-align: center;
-  color: #fff !important;
+  color: $jourmieRed !important;
   @include border-radius(0);
   @include placeholder(#fff);
   letter-spacing: 3px;
   font-weight: bold;
+}
+
+input.high {
+  font-size: 20px;
+  padding: 20px 0;
+}
+
+.input-append.dotted {
+  width: 100%;
+  position: relative;
+  input {
+    padding-right: 30px;
+  }
+  .add-on {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    background: 0;
+    @include border-radius(0);
+    a {
+      color: $jourmieRed;
+      text-decoration: none !important;
+      font-size: 25px;
+      text-shadow: none;
+    }
+    border: 0;
+  }
+}
+
+#invite-box, #places-box {
+  padding: 20px 0;
+  border: solid rgba(255,255,255,.3);
+  border-width: 1px 0;
+  text-align: center;
+  .social-icon {
+    margin: 0 20px;
+  }
+}
+
+.social-icon {
+  text-indent: -9999px;
+  font-size: 0;
+  display: inline-block;
+  width: 60px;
+  height: 56px;
+  background: transparent bottom no-repeat;
+  background-size: auto 50px;
+  &.facebook {
+    background-image: url('icons/facebook.png');
+    &:active {
+      background-image: url('icons/facebook_pushed.png');
+    }
+  }
+  &.twitter {
+    background-image: url('icons/twitter.png');
+    &:active {
+      background-image: url('icons/twitter_pushed.png');
+    }
+  }
+  &.gplus {
+    background-image: url('icons/gplus.png');
+    &:active {
+      background-image: url('icons/gplus_pushed.png');
+    }
+  }
+  &.linkedin {
+    background-image: url('icons/linkedin.png');
+    &:active {
+      background-image: url('icons/linkedin_pushed.png');
+    }
+  }
+  &.mail {
+    background-image: url('icons/mail.png');
+    &:active {
+      background-image: url('icons/mail_pushed.png');
+    }
+  }
+  &.iphone {
+    background-image: url('icons/iphone.png');
+    &:active {
+      background-image: url('icons/iphone_pushed.png');
+    }
+  }
+}
+
+.album-item {
+  width: 100%;
+  padding-top: 100px;
+  height: 110px;
+  margin-bottom: 20px;
+  .album-title, .album-title a {
+    font-size: 40px;
+    text-shadow: 2px 2px 0 rgba(100,100,100,0.2);
+    letter-spacing: 6px;
+    color: rgba(255,255,255,.5);
+    font-weight: bold;
+  }
+  background: $jourmieTurquoise;
+}
+
+.ui-autocomplete {
+  padding: 10px;
+  width: 750px !important;
+  left: auto !important;
+  margin: 0 auto;
+  background: rgba(0,0,0,0.6);
+  list-style:none;
+  font-size: 20px;
+  text-align:center;
+  a:hover {
+    text-decoration: none;
+    color: $jourmieRed;
+    cursor: pointer
+  }
 }

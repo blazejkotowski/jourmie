@@ -1,0 +1,12 @@
+= content_for :page_title do
+  %h2 Edit album
+
+.transparent-wrapper
+  .container
+    .row
+      .span12
+        #places-box
+          .input-append.dotted
+            = text_field_tag :place_name, "", :id => "place_address", :class => "dotted high", :placeholder => "Type city or place you visited"
+            %span.add-on
+              = link_to "+", "#", :class => "add-place"

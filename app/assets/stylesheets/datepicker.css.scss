@@ -15,11 +15,14 @@
     border: dotted $jourmieRed;
     @include border-radius(0);
     border-width: 2px 0;
-    padding: 10px 0 !important;
+    th {
+      padding: 8px 0;
+    }
     th:hover {
       background: $jourmieRed !important;
     }
     th.next, th.prev {
+      font-size: 20px;
       font-family: "Courier New";
       color: $jourmieTurquoise !important;
     }
@@ -34,14 +37,14 @@
     @include border-radius(0);
     padding: 5px 13px;
     border: 1px solid transparentize($jourmieTurquoise, 0.7);
-    &.active, &:hover {
-      background: $jourmieRed !important;
-    }
     &.new, &.old {
       color: #ccc;
     }
   }
-  margin: 0 20px;
+  .active, .month:hover, td:hover {
+      background: $jourmieRed !important;
+  }
+  margin: 0 25px;
 }
 
 .datepicker-inline {
