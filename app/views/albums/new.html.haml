@@ -1,0 +1,30 @@
+= content_for :page_title do
+  %h2 New album
+  
+.transparent-wrapper
+  = direct_upload_form_for @cover_uploader do |f| 
+    .container
+      .row
+        .span12
+          %h4 Choose album cover
+    #cover-chooser
+      = image_tag @album.cover_image.direct_fog_url(:with_path => true)
+    .container
+      .row
+        .span12
+          or 
+          = f.file_field :cover_image
+          = f.submit "upload new", :class => "btn btn-primary"
+  .container
+    = simple_form_for @album do |f|
+      = f.hidden_field :key
+      = f.input :name, :label => false, :placeholder => "Type album name here", :input_html => { :class=>"dotted" }
+      .row
+        .align-center.positive-top-big
+          .datepicker-wrapper
+          .datepicker-wrapper
+      .row
+        .span12.centered.positive-top-big= f.submit "Continue", :class => "text"
+
+
+        

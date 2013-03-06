@@ -1,0 +1,50 @@
+@import 'twitter/bootstrap/mixins';
+@import 'variables';
+
+.datepicker-wrapper {
+  width: auto;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.datepicker {
+  thead {
+    letter-spacing: 3px;
+  }
+  thead > tr:first-child {
+    border: dotted $jourmieRed;
+    @include border-radius(0);
+    border-width: 2px 0;
+    padding: 10px 0 !important;
+    th:hover {
+      background: $jourmieRed !important;
+    }
+    th.next, th.prev {
+      font-family: "Courier New";
+      color: $jourmieTurquoise !important;
+    }
+  }
+  thead > tr:last-child {
+    color: $jourmieRed;
+  }
+  tbody > tr > td {
+    &:nth-child(odd) {
+      background: rgba(255,255,255,0.3);
+    }
+    @include border-radius(0);
+    padding: 5px 13px;
+    border: 1px solid transparentize($jourmieTurquoise, 0.7);
+    &.active, &:hover {
+      background: $jourmieRed !important;
+    }
+    &.new, &.old {
+      color: #ccc;
+    }
+  }
+  margin: 0 20px;
+}
+
+.datepicker-inline {
+  display: inline-block !important;
+  width: auto !important;
+}

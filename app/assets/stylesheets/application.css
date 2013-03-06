@@ -10,8 +10,11 @@
  *
  *= require_self
  *= requite twitter/bootstrap
+ *= require bootstrap-datepicker
  *= require bootstrap_and_overrides
  *= require layout
  *= require users
  *= require static_sites
+ *= require albums
+ *= require datepicker
  */

@@ -1,0 +1,16 @@
+@import "layout";
+@import "variables";
+
+
+input.dotted {
+  background: transparent;
+  border: dotted $jourmieTurquoise !important;
+  border-width: 2px 0 !important;
+  box-shadow: none !important;
+  text-align: center;
+  color: #fff !important;
+  @include border-radius(0);
+  @include placeholder(#fff);
+  letter-spacing: 3px;
+  font-weight: bold;
+}

@@ -33,6 +33,7 @@ end
 #gem 'twitter-bootstrap-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-rails'
+gem 'bootstrap-datepicker-rails'
 gem 'backbone-on-rails'
 gem 'simple_form'
 
@@ -47,6 +48,8 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'fog'
 gem 'sidekiq'
+gem 'friendly_id'
+gem 'carrierwave_direct'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

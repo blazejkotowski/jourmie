@@ -49,6 +49,28 @@ h3 {
   text-align: right;
 }
 
+div.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-center {
+  text-align: center;
+}
+
+button.text, input[type=submit].text {
+  background: transparent;
+  border:0;
+  font-size: 20px;
+  border-bottom: 1px solid $jourmieRed;
+  color: #fff;
+  letter-spacing: 3px;  
+}
+
+.centered {
+  text-align: center;
+}
+
 .navbar .avatar {
   float: left;
   margin: 0;
@@ -59,7 +81,7 @@ h3 {
 
 .transparent-wrapper {
   padding: 15px 0;
-  background: rgba(0,0,0,.35);
+  background: rgba(0,0,0,.55);
   width: 100%;
   h1,h2,h3,h4,h5 {
     color: #fff;
@@ -169,4 +191,8 @@ footer {
 
 .margin-left-huge {
   margin-left: 50px;
+}
+
+.positive-top-big {
+  margin-top: 20px;
 }
