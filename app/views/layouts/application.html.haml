@@ -31,14 +31,13 @@
                     %li= link_to "Sign out", destroy_user_session_path, :method => :delete
                 
               
-      - if !flash.present? && !content_for?(:page_title)
-        .navbar-notification
-          .container
-      - elsif flash.present?
+      .navbar-notification
+        .container
+      - if flash.present?
         - flash.each do |type, message|
           .navbar-notification{ :class => "notification-#{type}"}
             = message
-      - else
+      - elsif content_for?(:page_title)
         .navbar-notification
           = yield(:page_title)
   #main-container

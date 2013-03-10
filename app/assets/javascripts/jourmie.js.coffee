@@ -1,5 +1,4 @@
 jQuery ->
-  
   @setFooterAndWrapper= ->
     notificationBottom = $(".navbar-notification").last().offset().top + $(".navbar-notification").outerHeight()
     footerTop = $("footer").offset().top
@@ -41,6 +40,12 @@ jQuery ->
     $parent = $ia.parent()
     $ia.remove()
     $parent.html('&lt;')
+  
+  notificationsHidden = false
+  @toggleNotifications= ->
+    if ($(window).scrollTop() > 10 && !notificationsHidden) || ($(window).scrollTop() <= 0 && notificationsHidden)
+      notificationsHidden = !notificationsHidden
+      $(".navbar-notification").slideToggle(100)
     
   @initGmaps= ->
     GmapsAutoComplete.init
@@ -54,3 +59,6 @@ jQuery ->
   @replaceDatepickerArrows()
   
   @initGmaps()
+  
+  $(window).scroll @toggleNotifications
+    
