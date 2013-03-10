@@ -21,5 +21,6 @@ config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
 config/local_env.yml
+config/database.yml
 
 public
