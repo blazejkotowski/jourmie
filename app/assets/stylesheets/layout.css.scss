@@ -18,7 +18,7 @@
 body {
   color: #fff;
   font-family: "Young", "Arial", sans-serif;
-  background: transparent url("home_background.png") no-repeat;
+  background: transparent url("background.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
   &.home {
@@ -91,8 +91,10 @@ button.text, input[type=submit].text {
 
 .transparent-wrapper {
   padding: 15px 0;
-  background: rgba(0,0,0,.55);
-  width: 100%;
+  background: rgba(0,0,0,.2);
+  width: 970px;
+  margin: 0 auto;
+  position: relative;
   h1,h2,h3,h4,h5 {
     color: #fff;
     font-weight: normal;

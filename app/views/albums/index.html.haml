@@ -1,8 +1,8 @@
 = content_for :page_title do
   %h2= link_to "+ New album", new_album_path
   
-- @albums.each do |album|
-  .row
-    .album-item.span12.align-center
-      .container
-        .album-title= link_to album.name, edit_album_path(album)
+.transparent-wrapper
+  - @albums.each do |album|
+    .album-item.align-center
+      .album-title= link_to album.name, edit_album_path(album)
+  .clearfix

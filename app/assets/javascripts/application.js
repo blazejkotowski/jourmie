@@ -16,4 +16,12 @@
 //= require gmaps-autocomplete
 //= require twitter/bootstrap
 //= require bootstrap-datepicker
+//= require underscore
+//= require backbone
+//= require jourmie
+//= require_tree ../templates
+//= require_tree ./models
+//= require_tree ./collections
+//= require_tree ./views
+//= require_tree ./routers
 //= require_tree .
