@@ -133,7 +133,7 @@ button.text, input[type=submit].text {
   z-index: 500;
   background: $jourmieTurquoise;
   min-height: 10px;
-  padding: 5px;
+  padding: 3px;
   text-align: center;
   border-bottom: 1px solid;
   box-shadow: inset 0 3px 5px rgba(0,0,0,.6), 0 3px 5px rgba(0,0,0,.4);;
@@ -143,6 +143,12 @@ button.text, input[type=submit].text {
   h1, h2, h3, h4 {
     padding-top: 5px;
     margin: 0;
+  }
+  &.placeholder {
+    position: absolute;
+    right: 0;
+    left: 0;
+    padding: 0;
   }
 }
 

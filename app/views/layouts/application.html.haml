@@ -31,7 +31,7 @@
                     %li= link_to "Sign out", destroy_user_session_path, :method => :delete
                 
               
-      .navbar-notification
+      .navbar-notification.placeholder
         .container
       - if flash.present?
         - flash.each do |type, message|

@@ -45,7 +45,7 @@ jQuery ->
   @toggleNotifications= ->
     if ($(window).scrollTop() > 10 && !notificationsHidden) || ($(window).scrollTop() <= 0 && notificationsHidden)
       notificationsHidden = !notificationsHidden
-      $(".navbar-notification").slideToggle(100)
+      $(".navbar-notification:not(.placeholder)").slideToggle(100)
     
   @initGmaps= ->
     GmapsAutoComplete.init
