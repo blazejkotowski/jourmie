@@ -10,3 +10,6 @@
             = text_field_tag :place_name, "", :id => "place_address", :class => "dotted high", :placeholder => "Type city or place you visited"
             %span.add-on
               = link_to "+", "#", :class => "add-place"
+              
+:javascript
+  Album = new Jourmie.Models.Album({ id: "#{@album.id}" });

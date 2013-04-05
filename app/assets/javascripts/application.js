@@ -18,6 +18,7 @@
 //= require bootstrap-datepicker
 //= require underscore
 //= require backbone
+//= require backbone-relational
 //= require jourmie
 //= require_tree ../templates
 //= require_tree ./models

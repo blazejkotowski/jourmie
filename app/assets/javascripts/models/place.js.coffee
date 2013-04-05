@@ -1,14 +1,6 @@
 class Jourmie.Models.Place extends Backbone.RelationalModel
   relations: [
     {
-      key: 'album'
-      type: Backbone.HasOne
-      relatedModel: 'Jourmie.Models.Album'
-      reverseRelation:  
-        key: 'places'
-        type: Backbone.HasMany
-    },
-    {
       key: 'road_to'
       type: Backbone.HasOne
       relatedModel: 'Jourmie.Models.Road'
@@ -25,3 +17,11 @@ class Jourmie.Models.Place extends Backbone.RelationalModel
         type: Backbone.HasOne
     }
   ]
+  
+
+  initialize: ( args={} ) ->
+    @set args
+    
+  
+  
+Jourmie.Models.Place.setup()

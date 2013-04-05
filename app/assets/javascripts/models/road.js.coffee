@@ -17,3 +17,5 @@ class Jourmie.Models.Road extends Backbone.RelationalModel
         type: Backbone.HasOne
     },
   ]
+  
+Jourmie.Models.Road.setup()

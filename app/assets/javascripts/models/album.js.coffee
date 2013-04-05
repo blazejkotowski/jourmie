@@ -1,4 +1,7 @@
 class Jourmie.Models.Album extends Backbone.RelationalModel
+  
+  url: -> "/albums/#{@get('id')}.json"
+  
   relations: [
     {
       key: 'places'
@@ -9,3 +12,9 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
         type: Backbone.HasOne
     }
   ]
+  
+  initialize: ->
+    console.log "New backbone album"
+  
+  
+Jourmie.Models.Album.setup()
