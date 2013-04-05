@@ -96,6 +96,24 @@ input.high {
       background-image: url('icons/iphone_pushed.png');
     }
   }
+  &.twitter-small {
+    width: 25px;
+    height: 25px;
+    background-size: 25px 25px;
+    background-image: url('icons/twitt.png');
+    &:active {
+      background-image: url('icons/twitt_pushed.png');
+    }
+  }
+  &.facebook-small {
+    width: 25px;
+    height: 25px;
+    background-size: 25px 25px;
+    background-image: url('icons/fb.png');
+    &:active {
+      background-image: url('icons/fb_pushed.png');
+    }
+  }
 }
 
 .album-item {
