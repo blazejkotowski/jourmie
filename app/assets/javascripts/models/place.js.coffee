@@ -18,10 +18,4 @@ class Jourmie.Models.Place extends Backbone.RelationalModel
     }
   ]
   
-
-  initialize: ( args={} ) ->
-    @set args
-    
-  
-  
 Jourmie.Models.Place.setup()

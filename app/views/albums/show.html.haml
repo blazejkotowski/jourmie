@@ -1,0 +1,7 @@
+.transparent-wrapper
+  .row
+    #album-container.span12
+      = @album.inspect
+
+:javascript
+  Jourmie.albumInitialize("#{@album.id}");
