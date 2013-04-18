@@ -7,6 +7,7 @@ class Jourmie.Routers.Album extends Backbone.Router
     @album_id = album_id
     
   edit: ->
+    Jourmie.setTitle 'Edit album'
     Window.album = new Jourmie.Models.Album({ id: @album_id })
     Window.album.fetch
       complete: @editRender

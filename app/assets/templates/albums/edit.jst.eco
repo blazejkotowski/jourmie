@@ -1,1 +1,9 @@
-<%- @name %>
+<div id="places-box">
+  <div class="input-append dotted">
+    <input class="dotted high" type="text" id="place_address" name="place_name" placeholder="Type city or place you visited" />
+    <span class="add-on">
+      <a href="#" class="add-place">+</a>
+    </span>
+  </div>
+</div>
+
