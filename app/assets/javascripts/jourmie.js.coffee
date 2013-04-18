@@ -12,7 +12,7 @@ window.Jourmie =
     Backbone.history.start()
     
   setTitle: (title = '') ->
-    $('.navbar-notification').last().html("<h2>#{title}</h2>")
+    $('.navbar-notification.navbar-title').html("<h2>#{title}</h2>")
     if title == ''
       document.title = 'Jourmie'
     else

@@ -38,7 +38,7 @@
           .navbar-notification{ :class => "notification-#{type}"}
             = message
       - elsif content_for?(:page_title)
-        .navbar-notification
+        .navbar-notification.navbar-title
           = yield(:page_title)
   #main-container
     = yield
