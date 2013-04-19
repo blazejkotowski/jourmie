@@ -50,7 +50,6 @@ gem 'fog'
 gem 'sidekiq'
 gem 'friendly_id'
 gem 'carrierwave_direct'
-gem 'gmaps-autocomplete-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -46,19 +46,11 @@ jQuery ->
     if ($(window).scrollTop() > 10 && !notificationsHidden) || ($(window).scrollTop() <= 0 && notificationsHidden)
       notificationsHidden = !notificationsHidden
       $(".navbar-notification:not(.placeholder)").slideToggle(100)
-    
-  @initGmaps= ->
-    GmapsAutoComplete.init
-      inputField: '#place_address'
-    GmapsAutoComplete.autoCompleteInit
-      region: null
 
   $(".datepicker-wrapper").datepicker().on "changeDate", (e) ->
     $($(@).data("target")).val($(@).data("date"))
   $(".datepicker-wrapper").trigger("changeDate")
   @replaceDatepickerArrows()
-  
-  @initGmaps()
   
   $(window).scroll @toggleNotifications
     

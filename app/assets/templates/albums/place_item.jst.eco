@@ -1,0 +1,56 @@
+<div class="place">
+  <div class="place-header">
+    <div class="pull-left place-name">
+      <%= @name %>
+    </div>
+    <div class="pull-right place-date">
+      <%= "#{@date_from} - #{@date_to}" %>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="place-map">
+  </div>
+  Upload Content
+  <ul class="place-buttons">
+    <li>
+      <a href="#" class="photo">
+        <span class="content-icon photo"></span>
+        <div>
+          Photo
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="video">
+        <span class="content-icon video"></span>
+        <div>
+          Video
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="music">
+        <span class="content-icon music"></span>
+        <div>
+          Music
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="story">
+        <span class="content-icon story"></span>
+        <div>
+          Story
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="others">
+        <span class="content-icon others"></span>
+        <div>
+          Other stuff
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

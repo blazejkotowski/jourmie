@@ -20,6 +20,7 @@
 //= require backbone
 //= require backbone-relational
 //= require jourmie
+//= require jquery.geocomplete
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
