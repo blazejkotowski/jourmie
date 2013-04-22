@@ -3,7 +3,7 @@ class Jourmie.Models.Road extends Backbone.RelationalModel
     {
       key: 'place_from'
       type: Backbone.HasOne
-      model: 'Jourmie.Models.Place'
+      relatedModel: 'Jourmie.Models.Place'
       reverseRelation:  
         key: 'road_to'
         type: Backbone.HasOne
@@ -11,7 +11,7 @@ class Jourmie.Models.Road extends Backbone.RelationalModel
     {
       key: 'place_to'
       type: Backbone.HasOne
-      model: 'Jourmie.Models.Place'
+      relatedModel: 'Jourmie.Models.Place'
       reverseRelation:  
         key: 'road_from'
         type: Backbone.HasOne

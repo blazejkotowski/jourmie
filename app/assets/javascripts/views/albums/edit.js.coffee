@@ -24,16 +24,25 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
       date_from: new Date($("#date_from").val())
       date_to: new Date($("#date_to").val())
     
-    console.log $("#date_from")
+    new_road = @model.addPlace new_place
+    if new_road
+      $road_view = $(JST['albums/road_item'](new_road.toJSON()))
+      @$el.find("#new-place").before($road_view)
+    
     $place_view = $(JST['albums/place_item'](new_place.toJSON()))
+    
+    # Rendering map
     map = L.map $place_view.find(".place-map").get(0), { dragging: false, scrollWheelZoom: false }
     map.setView(@current_place_location, 12)
     layer = L.tileLayer 'http://{s}.tile.cloudmade.com/dc1a3c801e2d4ab3a281fff2dd1d61e2/997/256/{z}/{x}/{y}.png', { attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>', maxZoom: 18 }
     layer.addTo(map)
+    
     @$el.find("#new-place").before($place_view)
+    
     $('#place_address').val('')
     $('#date_from').val('')
     $('#date_to').val('')
+    
     e.preventDefault()
     
   changeDate: (event) ->

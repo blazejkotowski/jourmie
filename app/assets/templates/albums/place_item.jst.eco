@@ -4,13 +4,15 @@
       <%= @name %>
     </div>
     <div class="pull-right place-date">
-      <%= "#{Helpers.dateString(@date_from)} - #{Helpers.dateString(@date_to)}" %>
+      <%= "#{Helpers.dateString(@date_from)} to #{Helpers.dateString(@date_to)}" %>
     </div>
     <div class="clearfix"></div>
   </div>
   <div class="place-map">
   </div>
-  Upload Content
+  <div class="section-header">
+    Upload Content
+  </div>
   <ul class="place-buttons">
     <li>
       <a href="#" class="photo">

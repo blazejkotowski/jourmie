@@ -1,6 +1,7 @@
 window.Helpers =
   dateString: (date) ->
+    months = Array('January','February','March','April','May', 'June','July','August','September','October','November','December')
     day = ('0' + date.getDate()).slice(-2)
-    month = ('0' + (date.getMonth()+1)).slice(-2)
+    month = months[date.getMonth()]
     year = date.getFullYear()
-    "#{month}/#{day}/#{year}"
+    "#{day}/#{month}/#{year}"

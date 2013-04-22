@@ -1,0 +1,105 @@
+<div class="road">
+  <div class="place-header">
+    <div class="place-name">
+      <%= "On the road, #{@place_from.name} to #{@place_to.name}" %>
+    </div>
+  </div>
+  <div class="section-header">
+    Means of transport
+  </div>
+  <ul class="place-buttons transport">
+    <li>
+      <a href="#" class="train">
+        <span class="content-icon train"></span>
+        <div>
+          By train
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="car">
+        <span class="content-icon car"></span>
+        <div>
+          By car
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="plane">
+        <span class="content-icon plane"></span>
+        <div>
+          By plane
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="hitchhike">
+        <span class="content-icon hitchhike"></span>
+        <div>
+          Hitchhiking
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="foot">
+        <span class="content-icon shoe"></span>
+        <div>
+          By foot
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="bike">
+        <span class="content-icon bike"></span>
+        <div>
+          By bike
+        </div>
+      </a>
+    </li>
+  </ul>
+  <div class="section-header">
+    Upload Content
+  </div>
+  <ul class="place-buttons">
+    <li>
+      <a href="#" class="photo">
+        <span class="content-icon photo"></span>
+        <div>
+          Photo
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="video">
+        <span class="content-icon video"></span>
+        <div>
+          Video
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="music">
+        <span class="content-icon music"></span>
+        <div>
+          Music
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="story">
+        <span class="content-icon story"></span>
+        <div>
+          Story
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="others">
+        <span class="content-icon others"></span>
+        <div>
+          Other stuff
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
