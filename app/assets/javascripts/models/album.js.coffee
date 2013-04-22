@@ -25,10 +25,6 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
   ]
   
   initialize: ->
-    console.log @get('cover_file')
-    if @get('cover_file') is undefined
-      @set('cover_file', '/assets/covers/cover1.jpg')
-    
     @set('available_covers', [])
     i=1
     while(i <= 20)
