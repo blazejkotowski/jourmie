@@ -8,6 +8,8 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
     'geocode:result .gmaps': 'keepCurrentLocation'
     'changeDate .datepicker': 'changeDate'
     'slid .carousel': 'changeCoverPhoto'
+    'click #finish-button': 'saveChanges'
+    'blur #album-title': 'changeName'
   
   initialize: ->
     _.bindAll(this,'render')
@@ -55,3 +57,14 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
   keepCurrentLocation: (e, result) ->
     @current_place_name = result.name
     @current_place_location = [result.geometry.location.jb, result.geometry.location.kb]
+    
+  changeName: (event) ->
+    @model.set('name', $(event.target).val())
+    
+  saveChanges: (event) -> 
+    event.preventDefault()
+    @model.save {}, 
+      success: (model,response) ->
+        if response.saved
+          Helpers.prettyAlert(response.message)
+    

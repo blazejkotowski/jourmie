@@ -28,4 +28,10 @@
   <div class="centered positive-top-big">
     <button class="text add-place">Add place</button>
   </div>
+  <div class="control-buttons positive-top-big"> 
+    <div class="pull-right">
+      <button class="text big" id="finish-button">Finish</button>
+    </div>
+  </div>
+  <div class="clearfix">&nbsp;</div>
 </div>

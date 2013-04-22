@@ -5,3 +5,6 @@ window.Helpers =
     month = months[date.getMonth()]
     year = date.getFullYear()
     "#{day}/#{month}/#{year}"
+    
+  prettyAlert: (message) ->
+    alert(message)

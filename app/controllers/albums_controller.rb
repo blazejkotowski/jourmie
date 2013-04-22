@@ -17,6 +17,11 @@ class AlbumsController < ApplicationController
   end
   
   def update
+    @saved = false
+    if @album.update_attributes params[:album]
+      @saved = true
+    end
+    respond_to :json
   end
   
   def new
