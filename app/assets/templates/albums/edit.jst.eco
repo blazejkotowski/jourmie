@@ -3,13 +3,13 @@
     <input id="album-title" type="text" class="high" placeholder="Type album name here..." value="<%= @name %>" />
   </div>
   <div class="carousel-inner">
-    <% for cover_file in @available_covers: %>
-      <% if @cover_file == cover_file: %>
+    <% for cover_image in @available_covers: %>
+      <% if @cover_image == cover_image: %>
         <div class="item active">
       <% else: %>
         <div class="item">
       <% end %>
-        <img src="<%= cover_file %>">
+        <img src="<%= cover_image %>">
       </div>
     <% end %>
   </div>

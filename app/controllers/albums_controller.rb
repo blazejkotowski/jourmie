@@ -9,7 +9,7 @@ class AlbumsController < ApplicationController
   def show
     respond_to do |format|
       format.html
-      format.json { render :json => @album }
+      format.json
     end
   end
   

@@ -3,7 +3,7 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
   url: -> "/albums/#{@get('id')}.json"
   
   defaults:
-    cover_file: '/assets/covers/cover1.jpg'
+    cover_image: '/assets/covers/cover1.jpg'
 
   relations: [
     {
@@ -25,6 +25,10 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
   ]
   
   initialize: ->
+    console.log @get('cover_file')
+    if @get('cover_file') is undefined
+      @set('cover_file', '/assets/covers/cover1.jpg')
+    
     @set('available_covers', [])
     i=1
     while(i <= 20)
@@ -43,6 +47,5 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
         place_to: to
       @get('roads').add new_road
     new_road
-  
   
 Jourmie.Models.Album.setup()
