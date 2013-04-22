@@ -1,3 +1,6 @@
-
-mapPreview= (center, width=900, height=300) ->
-  "http://maps.googleapis.com/maps/api/staticmap?center=#{center}&zoom=12&size=#{width}x#{height}&sensor=false"
+window.Helpers =
+  dateString: (date) ->
+    day = ('0' + date.getDate()).slice(-2)
+    month = ('0' + (date.getMonth()+1)).slice(-2)
+    year = date.getFullYear()
+    "#{month}/#{day}/#{year}"

@@ -7,6 +7,15 @@
   margin: 0 auto;
 }
 
+.datepicker-dropdown:after {
+  border-bottom-color: rgba(0,0,0,.5);
+}
+
+.datepicker.dropdown-menu {
+  border: 0;
+  background: rgba(0,0,0,.5);
+}
+
 .datepicker {
   thead {
     letter-spacing: 3px;

@@ -1,52 +1,71 @@
 @import "layout";
 @import "variables";
 
-
-input.dotted {
+input.dotted, button.dotted {
   background: transparent;
   border: dotted $jourmieTurquoise !important;
   border-width: 2px 0 !important;
   box-shadow: none !important;
-  text-align: center;
-  color: $jourmieRed !important;
+  color: #fff !important;
   @include border-radius(0);
   @include placeholder(#fff);
   letter-spacing: 3px;
   font-weight: bold;
 }
 
-input.high {
-  font-size: 20px;
+input.high, button.high {
   padding: 20px 0;
 }
 
-.input-append.dotted {
-  width: 100%;
-  position: relative;
-  input {
-    padding-right: 30px;
-  }
-  .add-on {
-    position: absolute;
-    right: 0;
-    top: 5px;
-    background: 0;
-    @include border-radius(0);
-    a {
-      color: $jourmieRed;
-      text-decoration: none !important;
-      font-size: 25px;
-      text-shadow: none;
-    }
-    border: 0;
-  }
+input.centered {
+  text-align: center;
 }
 
-.add-place {
-  z-index: 200;
+div.dotted {
+  background: transparent;
+  border: dotted $jourmieTurquoise !important;
+  border-width: 2px 0 !important;
+  color: #fff !important;
+  @include border-radius(0);
+}
+
+#new-place {
+  font-size: 16px;
+  position: relative;
+  input, button {
+    background: transparent;
+    border: 0;
+    box-shadow: none !important;
+    @include border-radius(0);
+    @include placeholder(#fff);
+    color: #fff !important;
+    font-weight: bold;
+  }
+  input.gmaps {
+    width: 60%;
+    margin-right: 10px;
+  }
+  span {
+    color: #fff;
+    font-weight: bold;
+  }
+  span.desc {
+    width: 120px;
+    text-align: left;
+    opacity: 0.8;
+  }
+  input.datepicker {
+    width: 10%;
+    text-align: center;
+  }
+  .connector {
+    width: 10px;
+    margin: 0 3px;
+  }
 }
 
 #invite-box, #places-box {
+  text-align: center;
   padding: 20px 0;
   border: solid rgba(255,255,255,.3);
   border-width: 1px 0;

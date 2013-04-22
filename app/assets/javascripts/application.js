@@ -13,12 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
-//= require gmaps-autocomplete
 //= require twitter/bootstrap
 //= require bootstrap-datepicker
 //= require underscore
 //= require backbone
 //= require backbone-relational
+//= require helpers
 //= require jourmie
 //= require jquery.geocomplete
 //= require_tree ../templates

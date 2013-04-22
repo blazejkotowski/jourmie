@@ -4,5 +4,5 @@
 .transparent-wrapper
   - @albums.each do |album|
     .album-item.align-center
-      .album-title= link_to album.name, edit_album_path(album)
+      .album-title= link_to album.name, album_path(album, :anchor => "/edit")
   .clearfix
