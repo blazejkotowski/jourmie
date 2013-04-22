@@ -7,6 +7,7 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
     'click .add-place': 'addPlace'
     'geocode:result .gmaps': 'keepCurrentLocation'
     'changeDate .datepicker': 'changeDate'
+    'slid .carousel': 'changeCoverPhoto'
   
   initialize: ->
     _.bindAll(this,'render')
@@ -15,6 +16,7 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
     @$el.html(@template(@model.toJSON()))
     @$el.find('.datepicker').datepicker()
     @$el.find('.gmaps').geocomplete()
+    @$el.find('.carousel').carousel('pause')
     @
     
   addPlace: (e) ->
@@ -46,6 +48,9 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
     
   changeDate: (event) ->
     $(event.target).datepicker("hide")
+    
+  changeCoverPhoto: (event) ->
+    @model.set('cover_file', $('.carousel-inner > .item.active > img').attr('src'))
     
   keepCurrentLocation: (e, result) ->
     @current_place_name = result.name

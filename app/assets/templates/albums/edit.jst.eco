@@ -1,3 +1,22 @@
+<div id="album-cover-carousel" class="carousel slide">
+  <div class="album-title">
+    <input id="album-title" type="text" class="high" placeholder="Type album name here..." value="<%= @name %>" />
+  </div>
+  <div class="carousel-inner">
+    <% for cover_file in @available_covers: %>
+      <% if @cover_file == cover_file: %>
+        <div class="item active">
+      <% else: %>
+        <div class="item">
+      <% end %>
+        <img src="<%= cover_file %>">
+      </div>
+    <% end %>
+  </div>
+  <a class="carousel-control left" href="#album-cover-carousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#album-cover-carousel" data-slide="next">&rsaquo;</a>
+</div>
+
 <div id="places-box" class="positive-left-big">
   <div id="new-place" class="dotted">
     <input class="high gmaps" type="text" id="place_address" name="place_name" placeholder="Type city or place you visited..." />

@@ -2,6 +2,9 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
   
   url: -> "/albums/#{@get('id')}.json"
   
+  defaults:
+    cover_file: '/assets/covers/cover1.jpg'
+
   relations: [
     {
       key: 'places'
@@ -22,6 +25,11 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
   ]
   
   initialize: ->
+    @set('available_covers', [])
+    i=1
+    while(i <= 20)
+      @get('available_covers').push "/assets/covers/cover#{i++}.jpg"
+      
     console.log "New backbone album"
     
   addPlace: (place) ->

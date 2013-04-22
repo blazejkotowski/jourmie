@@ -286,6 +286,30 @@ div.dotted {
   margin-top: 20px;
 }
 
+#album-cover-carousel {
+  width: 970px;
+  .album-title {
+    position: absolute;
+    top: 80px;
+    left: 100px;
+    right: 100px;
+    z-index: 100;
+  }
+  #album-title {
+    text-align: center;
+    border: 0 !important;
+    background: transparent;
+    font-weight: bold;
+    box-shadow: none !important;
+    font-size: 40px;
+    text-shadow: 2px 2px 0 rgba(100,100,100,0.2);
+    letter-spacing: 6px;
+    color: #fff !important;
+    height: auto;
+    line-height: 50px;
+  }
+}
+
 .ui-autocomplete {
   padding: 10px;
   width: 750px !important;
