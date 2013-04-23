@@ -11,17 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130305180645) do
+ActiveRecord::Schema.define(:version => 20130423083832) do
 
   create_table "albums", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
     t.date     "start_date"
     t.date     "end_date"
-    t.string   "cover_image"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "custom_cover_image"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "slug"
+    t.integer  "jourmie_cover_image", :default => 1
   end
 
   add_index "albums", ["slug"], :name => "index_albums_on_slug"

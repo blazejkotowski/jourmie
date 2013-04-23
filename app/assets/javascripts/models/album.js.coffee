@@ -28,7 +28,7 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
     @set('available_covers', [])
     i=1
     while(i <= 20)
-      @get('available_covers').push "/assets/covers/cover#{i++}.jpg"
+      @get('available_covers')[i] = "/assets/covers/cover#{i++}.jpg"
       
     console.log "New backbone album"
     

@@ -53,6 +53,7 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
     
   changeCoverPhoto: (event) ->
     @model.set('cover_image', $('.carousel-inner > .item.active > img').attr('src'))
+    @model.set('cover_image_id', $('.carousel-inner > .item.active > img').data('id'))
     
   keepCurrentLocation: (e, result) ->
     @current_place_name = result.name
