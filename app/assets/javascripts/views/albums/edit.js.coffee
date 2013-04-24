@@ -23,7 +23,8 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
     
   addPlace: (e) ->
     new_place = new Jourmie.Models.Place
-      latlang: @current_place_location, 
+      latitude: @current_place_location[0],
+      longitude: @current_place_location[1]
       name: @current_place_name, 
       date_from: new Date($("#date_from").val())
       date_to: new Date($("#date_to").val())

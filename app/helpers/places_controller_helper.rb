@@ -1,0 +1,2 @@
+module PlacesControllerHelper
+end

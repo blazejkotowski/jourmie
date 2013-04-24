@@ -4,14 +4,17 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
   
   defaults:
     cover_image: '/assets/covers/cover1.jpg'
-
+  
   relations: [
     {
       key: 'places'
       type: Backbone.HasMany
       relatedModel: 'Jourmie.Models.Place'
+      collectionType: 'Jourmie.Collections.Places'
       reverseRelation:
         key: 'album'
+        keySource: 'album_id'
+        includeInJSON: 'id'
         type: Backbone.HasOne
     },
     { 
@@ -20,6 +23,8 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
       relatedModel: 'Jourmie.Models.Road'
       reverseRelation:
         key: 'album'
+        keySoruce: 'album_id'
+        includeInJSON: 'id'
         type: Backbone.HasOne
     }
   ]

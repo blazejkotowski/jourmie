@@ -5,6 +5,8 @@ Jourmie::Application.routes.draw do
   resources :user_profiles, :as => "profiles", :path => "profiles", :only => [:show]
   
   resources :albums
+  resources :places
+  resources :roads
   
   root :to => "static_pages#home"
 end

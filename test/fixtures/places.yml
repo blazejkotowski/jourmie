@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date_from: 2013-04-23
+  date_to: 2013-04-23
+  album_id: 1
+  name: MyString
+  road_from_id: 1
+  road_to_id: 1
+  latitude: 1.5
+  longitude: 1.5
+
+two:
+  date_from: 2013-04-23
+  date_to: 2013-04-23
+  album_id: 1
+  name: MyString
+  road_from_id: 1
+  road_to_id: 1
+  latitude: 1.5
+  longitude: 1.5
