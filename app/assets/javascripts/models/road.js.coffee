@@ -22,4 +22,11 @@ class Jourmie.Models.Road extends Backbone.RelationalModel
     },
   ]
   
+  parse: (response, options) ->
+    if response.status.code == 200 && response.road
+      response.road
+    else
+      {}
+    
+  
 Jourmie.Models.Road.setup()
