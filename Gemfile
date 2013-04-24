@@ -28,6 +28,7 @@ end
 group :development do
   gem 'bullet'
   gem 'sqlite3'
+  gem 'pry'
 end
 
 #gem 'twitter-bootstrap-rails'

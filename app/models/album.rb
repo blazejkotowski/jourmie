@@ -12,6 +12,8 @@ class Album < ActiveRecord::Base
   
   belongs_to :user
   has_many :participants, :class_name => "User"
+  has_many :places
+  has_many :roads
   
   validates_presence_of :start_date
   validates_presence_of :end_date
