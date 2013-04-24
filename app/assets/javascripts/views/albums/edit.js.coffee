@@ -19,6 +19,7 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
     @$el.find('.datepicker').datepicker()
     @$el.find('.gmaps').geocomplete()
     @$el.find('.carousel').carousel('pause')
+    @renderRelated()
     @
     
   addPlace: (e) ->
@@ -62,6 +63,13 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
     
   changeName: (event) ->
     @model.set('name', $(event.target).val())
+    
+  renderRelated: ->
+    places = @model.get('places').models
+    for place in places
+      $place_view = $(JST['albums/place_item'](place.toJSON()))
+      console.log place.toJSON()
+      @$el.find('#new-place').before($place_view)
     
   saveChanges: (event) -> 
     event.preventDefault()
