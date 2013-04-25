@@ -1,5 +1,11 @@
 class Jourmie.Models.Place extends Backbone.RelationalModel
 
+  url: ->
+    if @get('id') isnt undefined
+      "/places/#{@get('id')}"
+    else
+      "/places"
+  
   initialize: ->
     null
       

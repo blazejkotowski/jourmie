@@ -16,16 +16,6 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
         keySource: 'album_id'
         includeInJSON: 'id'
         type: Backbone.HasOne
-    },
-    { 
-      key: 'roads'
-      type: Backbone.HasMany
-      relatedModel: 'Jourmie.Models.Road'
-      reverseRelation:
-        key: 'album'
-        keySoruce: 'album_id'
-        includeInJSON: 'id'
-        type: Backbone.HasOne
     }
   ]
   

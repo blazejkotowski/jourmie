@@ -1,6 +1,8 @@
 class PlacesController < ApplicationController
   load_and_authorize_resource :place
   
+  respond_to :json, :html
+  
   def show
   end
   
@@ -11,10 +13,14 @@ class PlacesController < ApplicationController
     else
       @created = false
     end
-    respond_to :json
   end
   
   def update
+    if @place.update_attributes(params[:place])
+      @updated = true
+    else
+      @updated = false
+    end
   end
   
   def destroy

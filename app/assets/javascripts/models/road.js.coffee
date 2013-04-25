@@ -1,5 +1,24 @@
 class Jourmie.Models.Road extends Backbone.RelationalModel
+  
+  url: ->
+    if @get('id') isnt undefined
+      "/roads/#{@get('id')}"
+    else
+      "/roads"
+      
   relations: [
+    {
+      key: 'album'
+      relatedModel: 'Jourmie.Models.Album'
+      includeInJSON: 'id'
+      keySource: 'album_id'
+      type: Backbone.HasOne
+      reverseRelation:
+        key: 'roads'
+        includeInJSON: 'id'
+        keySource: 'road_id'
+        type: Backbone.HasMany
+    },
     {
       key: 'place_from'
       includeInJSON: 'id'

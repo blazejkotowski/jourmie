@@ -31,13 +31,9 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
     
     new_road = @model.addPlace new_place
     if new_road
-      Window.road = new_road
-      road_view = new Jourmie.Views.Albums.RoadItem({ model: new_road })
-      @$el.find("#new-place").before(road_view.render().$el)
+      @appendRoad(new_road)
     
-    place_view = new Jourmie.Views.Albums.PlaceItem({ model: new_place })
-    @$el.find("#new-place").before(place_view.render().$el)
-    place_view.renderMap()
+    @appendPlace(new_place)
     
     $('#place_address').val('')
     $('#date_from').val($("#date_to").val()).focus().blur()
@@ -60,12 +56,30 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
     @model.set('name', $(event.target).val())
     
   renderRelated: ->
+    places_ids = []
     places = @model.get('places').models
     for place in places
-      console.log "place_view"
-      place_view = new Jourmie.Views.Albums.PlaceItem({ model: place })
-      @$el.find('#new-place').before(place_view.render().$el)
-      place_view.renderMap()
+      while place isnt null
+        if !(place.get('id') in places_ids)
+          places_ids.push place.get('id')
+          console.log place
+          @appendPlace(place)
+          if place.get('road_to') isnt null
+            @appendRoad(place.get('road_to'))
+            place = place.get('road_to').get('place_to')
+          else
+            place = null
+        else
+          place = null
+  
+  appendRoad: (road) ->
+    road_view = new Jourmie.Views.Albums.RoadItem({ model: road })
+    @$el.find('#new-place').before(road_view.render().$el)
+    
+  appendPlace: (place) ->
+    place_view = new Jourmie.Views.Albums.PlaceItem({ model: place })
+    @$el.find('#new-place').before(place_view.render().$el)
+    place_view.renderMap()    
     
   saveChanges: (event) -> 
     event.preventDefault()
