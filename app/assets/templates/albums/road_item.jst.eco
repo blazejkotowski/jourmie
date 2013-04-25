@@ -1,7 +1,7 @@
 <div class="road">
   <div class="place-header">
     <div class="place-name">
-      <%= "On the road, #{@place_from.name} to #{@place_to.name}" %>
+      <%= "On the road, #{@place_from.get('name')} to #{@place_to.get('name')}" %>
     </div>
   </div>
   <div class="section-header">

@@ -5,8 +5,8 @@ class CreatePlaces < ActiveRecord::Migration
       t.date :date_to
       t.integer :album_id
       t.string :name
-      t.integer :road_from_id
-      t.integer :road_to_id
+      t.belongs_to :road_from
+      t.belongs_to :road_to
       t.float :latitude
       t.float :longitude
 

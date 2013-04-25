@@ -15,3 +15,4 @@ class Jourmie.Routers.Album extends Backbone.Router
   editRender: ->
     editView = new Jourmie.Views.Albums.Edit({ model: Window.album })
     $('#album-container').html(editView.render().$el)
+    editView.renderRelated()

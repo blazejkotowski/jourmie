@@ -11,5 +11,7 @@ class Jourmie.Models.Place extends Backbone.RelationalModel
     response.date_to = new Date(response.date_to)
     response
     
+  toTemplate: ->
+    attrs = _.clone(@attributes)
     
 Jourmie.Models.Place.setup()

@@ -53,4 +53,3 @@ jQuery ->
   @replaceDatepickerArrows()
   
   $(window).scroll @toggleNotifications
-    

@@ -12,6 +12,9 @@ class Ability
     can [:update, :destroy], Album, :user_id => user.id
     
     # Place and road abilities
+    can :manage, Place, :album => { :user_id => user.id }
+    can :manage, Road, :album => { :user_id => user.id }
+    
     can :create, Place, :album => { :user_id => user.id }
     can :create, Road, :album => { :user_id => user.id }
     

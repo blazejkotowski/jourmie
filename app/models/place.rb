@@ -3,7 +3,7 @@ class Place < ActiveRecord::Base
                   :name, :road_from_id, :road_to_id
                   
   belongs_to :album
-  has_one :road_to
-  has_one :road_from
+  has_one :road_to, :class_name => "Road", :foreign_key => "place_from_id"
+  has_one :road_from, :class_name => "Road", :foreign_key => "place_to_id"
   
 end

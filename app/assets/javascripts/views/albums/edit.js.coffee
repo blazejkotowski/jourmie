@@ -19,7 +19,6 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
     @$el.find('.datepicker').datepicker()
     @$el.find('.gmaps').geocomplete()
     @$el.find('.carousel').carousel('pause')
-    @renderRelated()
     @
     
   addPlace: (e) ->
@@ -32,17 +31,13 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
     
     new_road = @model.addPlace new_place
     if new_road
-      $road_view = $(JST['albums/road_item'](new_road.toJSON()))
-      @$el.find("#new-place").before($road_view)
+      Window.road = new_road
+      road_view = new Jourmie.Views.Albums.RoadItem({ model: new_road })
+      @$el.find("#new-place").before(road_view.render().$el)
     
-    $place_view = $(JST['albums/place_item'](new_place.toJSON()))
-    @$el.find("#new-place").before($place_view)
-
-    # Rendering map
-    map = L.map $place_view.find(".place-map").get(0), { dragging: false, scrollWheelZoom: false }
-    map.setView(@current_place_location, 12)
-    layer = L.tileLayer 'http://{s}.tile.cloudmade.com/dc1a3c801e2d4ab3a281fff2dd1d61e2/997/256/{z}/{x}/{y}.png', { attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>', maxZoom: 18 }
-    layer.addTo(map)
+    place_view = new Jourmie.Views.Albums.PlaceItem({ model: new_place })
+    @$el.find("#new-place").before(place_view.render().$el)
+    place_view.renderMap()
     
     $('#place_address').val('')
     $('#date_from').val($("#date_to").val()).focus().blur()
@@ -67,9 +62,10 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
   renderRelated: ->
     places = @model.get('places').models
     for place in places
-      $place_view = $(JST['albums/place_item'](place.toJSON()))
-      console.log place.toJSON()
-      @$el.find('#new-place').before($place_view)
+      console.log "place_view"
+      place_view = new Jourmie.Views.Albums.PlaceItem({ model: place })
+      @$el.find('#new-place').before(place_view.render().$el)
+      place_view.renderMap()
     
   saveChanges: (event) -> 
     event.preventDefault()
