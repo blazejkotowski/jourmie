@@ -28,18 +28,26 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
     console.log "New backbone album"
     
   addPlace: (place) ->
-    new_road = null
+    new_road = from = to = null
     @get('places').add place
+    to = @get('places').at(@get('places').length-1)
     if @get('places').length > 1
       from = @get('places').at(@get('places').length-2)
-      to = @get('places').at(@get('places').length-1)
       new_road = new Jourmie.Models.Road
         place_from: from
         place_to: to
       @get('roads').add new_road
-    to.save()
-    new_road.save()
-    from.save()
+      console.log "road", new_road
+
+    to.save {},
+      success: -> 
+        if new_road isnt null
+          new_road.save {},
+            success: ->
+              if from isnt null
+                from.save
+          
+      
     new_road
   
 Jourmie.Models.Album.setup()
