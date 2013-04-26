@@ -37,6 +37,9 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
         place_from: from
         place_to: to
       @get('roads').add new_road
+    to.save()
+    new_road.save()
+    from.save()
     new_road
   
 Jourmie.Models.Album.setup()
