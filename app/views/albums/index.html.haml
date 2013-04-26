@@ -3,6 +3,6 @@
   
 .transparent-wrapper
   - @albums.each do |album|
-    .album-item.align-center
+    .album-item.align-center{ :style => "background-image: url('#{album.cover_image}');"}
       .album-title= link_to album.name, album_path(album, :anchor => "/edit")
   .clearfix
