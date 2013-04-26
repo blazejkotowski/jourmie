@@ -1,1 +1,8 @@
-<div class="">
+<div id="add-photos">
+  <div class="inner">
+    <a class="folder-area" href="#">
+    </a>
+    <div class="drop-area">
+    </div>
+  </div>
+</div>

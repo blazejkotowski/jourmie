@@ -20,5 +20,7 @@ class Jourmie.Views.Albums.PlaceItem extends Backbone.View
   openPhotosManager: (e) ->
     Helpers.showShutter()
     Helpers.setShutterTitle "Adding photos to #{@model.get('name')}"
+    photos_manager = new Jourmie.Views.Albums.PhotosManager()
+    Helpers.setShutterBody(photos_manager.render().$el)
     e.preventDefault()
     

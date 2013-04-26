@@ -325,3 +325,31 @@ div.dotted {
     cursor: pointer
   }
 }
+
+#add-photos {
+  background: transparent url('add_photos_background.png') center no-repeat;
+  padding: 20px;
+  width: 920px;
+  margin: 20px auto;
+  height: 200px;
+  .inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: rgba(255,255,255,.4);
+  }
+  .folder-area, .drop-area {
+    position: relative;
+    display: block;
+    width: 50%;
+    height: 100%;
+    float: left;
+  }
+  .folder-area {
+    background: transparent url('clouds/add_images.png') no-repeat center;
+  }  
+  .drop-area {
+    background: transparent url('clouds/drag_and_drop.png') no-repeat center;
+  }
+}

@@ -17,3 +17,7 @@ window.Helpers =
     
   setShutterTitle: (title) ->
     $("#shutter #shutter-header").text(title)
+    
+  setShutterBody: (body) -> 
+    $("#shutter #shutter-body").html(body)
+    
