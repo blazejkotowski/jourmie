@@ -254,3 +254,40 @@ footer {
 .pac-item {
   color: #333;
 }
+
+#shutter {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $jourmieBlue;
+  display: none; 
+  #shutter-header {
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    background: #fff;
+    color: #333;
+    font-size: 1.1em;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.4)
+  }
+  .jr-close {
+    z-index: 2001;
+  }
+}
+
+button.jr-close {
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  background: transparent url('icons/close_button.png') no-repeat center;
+  width: 26px;
+  height: 25px;
+  background-size: 26px 25px;
+  text-indent: -9999px;
+  font-size: 0;
+  border: 0;
+}

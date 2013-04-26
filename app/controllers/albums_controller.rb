@@ -28,8 +28,8 @@ class AlbumsController < ApplicationController
     @album = Album.new(:key => params[:key], 
                       :start_date => Date.today, 
                       :end_date => (Date.today + 7.days) )
-    @cover_uploader = @album.cover_image
-    @cover_uploader.success_action_redirect = new_album_url
+#    @cover_uploader = @album.cover_image
+#    @cover_uploader.success_action_redirect = new_album_url
   end
   
   def create

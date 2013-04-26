@@ -8,3 +8,12 @@ window.Helpers =
     
   prettyAlert: (message) ->
     alert(message)
+    
+  showShutter: ->
+    $("#shutter").fadeIn(100)
+    
+  hideShutter: ->
+    $("#shutter").fadeOut(100)
+    
+  setShutterTitle: (title) ->
+    $("#shutter #shutter-header").text(title)

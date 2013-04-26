@@ -53,3 +53,7 @@ jQuery ->
   @replaceDatepickerArrows()
   
   $(window).scroll @toggleNotifications
+  
+  $("#shutter button.jr-close").on "click", (e) ->
+    Helpers.hideShutter()
+    e.preventDefault()
