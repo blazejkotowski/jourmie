@@ -7,6 +7,7 @@ Jourmie::Application.routes.draw do
   resources :albums
   resources :places
   resources :roads
+  resources :photos
   
   root :to => "static_pages#home"
 end

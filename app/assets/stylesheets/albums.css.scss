@@ -345,9 +345,18 @@ div.dotted {
     width: 50%;
     height: 100%;
     float: left;
+    border: 0;
   }
   .folder-area {
     background: transparent url('clouds/add_images.png') no-repeat center;
+    input[type=file] {
+      position: absolute;
+      left: 0;
+      top:0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;      
+    }
   }  
   .drop-area {
     background: transparent url('clouds/drag_and_drop.png') no-repeat center;

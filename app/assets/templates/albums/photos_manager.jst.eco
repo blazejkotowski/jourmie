@@ -1,7 +1,10 @@
 <div id="add-photos">
   <div class="inner">
-    <a class="folder-area" href="#">
-    </a>
+    <button class="folder-area">
+      <form id="photoupload" action="/photos" type="mulipart/form-data" method="post">
+        <input type="file" name="file" multiple>
+      </form>
+    </button>
     <div class="drop-area">
     </div>
   </div>

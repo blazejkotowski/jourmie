@@ -18,6 +18,7 @@
 //= require underscore
 //= require backbone
 //= require backbone-relational
+//= require jquery-fileupload/basic
 //= require helpers
 //= require jourmie
 //= require jquery.geocomplete

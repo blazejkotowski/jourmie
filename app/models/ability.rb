@@ -18,5 +18,8 @@ class Ability
     can :create, Place, :album => { :user_id => user.id }
     can :create, Road, :album => { :user_id => user.id }
     
+    # Content abilities
+    can [:manage, :create], ContentPiece, :user_id => user.id 
+    
   end
 end
