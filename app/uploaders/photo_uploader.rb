@@ -3,7 +3,7 @@
 class PhotoUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
+  include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
   # Include the Sprockets helpers for Rails 3.1+ asset pipeline compatibility:
@@ -38,6 +38,12 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
+  
+  version :big_thumb do
+    process :resize_to_fill => [310, 200]
+  end
+  
+  process :resize_to_fit => [800, 800]
 
   # Create different versions of your uploaded files:
   # version :thumb do

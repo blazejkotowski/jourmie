@@ -362,3 +362,37 @@ div.dotted {
     background: transparent url('clouds/drag_and_drop.png') no-repeat center;
   }
 }
+
+#photos {
+  width: 970px;
+  position: relative;
+  margin: 10px auto;
+}
+
+.photo-item {
+  width: 310px;
+  height: 280px;
+  margin: 6px;
+  text-align: left;
+  display: inline;
+  float: left;
+  color: #333;
+  .photo-item-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: rgba(255,255,255,.5);
+  }
+  .photo-item-description {
+    height: 60px;
+    background: #fff;
+  }
+  .photo-item-buttons {
+    height: 20px;
+  }
+  .progress {
+    position: relative;
+    width: 80%;
+    margin: 75px auto 0 auto;
+  }
+}

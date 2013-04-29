@@ -1,5 +1,16 @@
 class Jourmie.Models.Place extends Backbone.RelationalModel
-
+  
+  relations: [
+    {
+      key: 'photos'
+      relatedModel: 'Jourmie.Models.Photo'
+      type: Backbone.HasMany
+      reverseRelation:
+        key: 'place'
+        type: Backbone.HasOne
+    }
+  ]
+  
   url: ->
     if @get('id') isnt undefined
       "/places/#{@get('id')}"

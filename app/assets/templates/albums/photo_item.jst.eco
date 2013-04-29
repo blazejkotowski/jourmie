@@ -1,0 +1,18 @@
+<div class="photo-item-image">
+  <% if @file: %>
+    <img src="<%= @file %>">
+  <% else: %>
+    <div class="progress progress-striped">
+      <div class="bar" style="width: 0%;">
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="photo-item-description">
+  <%= @description %>
+</div>
+
+<div class="photo-item-buttons">
+</div>
+
