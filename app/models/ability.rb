@@ -9,7 +9,7 @@ class Ability
       album.user_id == user.id || album.participants.include?(user)
     end
     
-    can [:update, :destroy], Album, :user_id => user.id
+    can :manage, Album, :user_id => user.id
     
     # Place and road abilities
     can :manage, Place, :album => { :user_id => user.id }

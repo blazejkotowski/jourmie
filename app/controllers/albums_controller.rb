@@ -41,6 +41,10 @@ class AlbumsController < ApplicationController
     end
   end
   
+  def s3_upload_form
+    render "s3_upload_form", :layout => false
+  end
+  
   def create_content
     
   end

@@ -1,2 +1,2 @@
 object @photo
-extends 'photos/show'
+attributes :id, :description

@@ -52,6 +52,7 @@ gem 'fog'
 gem 'sidekiq'
 gem 'friendly_id'
 gem 'carrierwave_direct'
+gem 's3_direct_upload'
 gem 'rabl'
 
 # To use ActiveModel has_secure_password
