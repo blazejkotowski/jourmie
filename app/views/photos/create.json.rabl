@@ -1,4 +1,3 @@
 object @photo
-attributes :description
+attributes :id, :description
 node(:file) { |photo| photo.file.url(:big_thumb) }
-node(:params) { params }

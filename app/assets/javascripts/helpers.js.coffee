@@ -11,8 +11,10 @@ window.Helpers =
     
   showShutter: ->
     $("#shutter").fadeIn(100)
+    $("#main-container").hide()
     
   hideShutter: ->
+    $("#main-container").show()
     $("#shutter").fadeOut(100)
     
   setShutterTitle: (title) ->

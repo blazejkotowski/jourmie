@@ -10,9 +10,15 @@
 </div>
 
 <div class="photo-item-description">
-  <%= @description %>
+  <textarea name="description" class="description" placeholder="Type description here..."><% @description %></textarea>
 </div>
 
 <div class="photo-item-buttons">
+  <div class="pull-left">
+    <a href="#">Add buddytag</a>
+  </div>
+  <div class="pull-right">
+    <a href="#">Pin to map</a>
+  </div>
 </div>
 

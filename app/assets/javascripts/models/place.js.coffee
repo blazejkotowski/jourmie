@@ -5,7 +5,10 @@ class Jourmie.Models.Place extends Backbone.RelationalModel
       key: 'photos'
       relatedModel: 'Jourmie.Models.Photo'
       type: Backbone.HasMany
+      collectionType: 'Jourmie.Collections.Photos'
       reverseRelation:
+        keySource: 'place_id'
+        includeInJSON: 'id'
         key: 'place'
         type: Backbone.HasOne
     }

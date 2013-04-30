@@ -386,9 +386,23 @@ div.dotted {
   .photo-item-description {
     height: 60px;
     background: #fff;
+    input[type=text], textarea {
+      background: transparent;
+      border: 0 !important;
+      color: inherit !important;
+      box-shadow: none !important;
+      width: 95%;
+    }
   }
   .photo-item-buttons {
     height: 20px;
+    background: #fff;
+    padding: 0 5px;
+    a {
+      color: $jourmieTurquoise;
+      font-weight: bold;
+      text-decoration: none;
+    }
   }
   .progress {
     position: relative;
