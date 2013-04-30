@@ -5,5 +5,6 @@ class Place < ActiveRecord::Base
   belongs_to :album
   has_one :road_to, :class_name => "Road", :foreign_key => "place_from_id"
   has_one :road_from, :class_name => "Road", :foreign_key => "place_to_id"
+  has_many :photos
   
 end

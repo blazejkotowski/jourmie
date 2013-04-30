@@ -7,8 +7,11 @@ class Jourmie.Views.Albums.PhotosManager extends Backbone.View
     'click .folder-area': 'addPhotos'
   
   render: ->
+    @$el.html(@template(@model.toTemplate()))
+    for photo in @model.get('photos').models
+      photo_view = new Jourmie.Views.Albums.PhotoItem({ model: photo })
+      @$el.find("#photos").append(photo_view.render().$el)
     place_model = @model
-    @$el.html(@template())
     @$el.find('input[type=file]').fileupload
       dataType: 'json'
       add: (e, data) ->
@@ -24,8 +27,6 @@ class Jourmie.Views.Albums.PhotosManager extends Backbone.View
           console.log "Add photo to place", place_model
           data.context.model.set data.result
           place_model.get('photos').add data.context.model
-#          data.context.model.set('file', data.result.file)
-#          data.context.view.find(".photo-item-image").html($("<img src=\"#{data.result.file}\" />"))
       progress: (e, data) ->
         if data.context
           progress = parseInt(data.loaded/data.total * 100, 10)

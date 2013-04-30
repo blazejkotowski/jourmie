@@ -1,2 +1,2 @@
-object @photo
+collection @photos
 extends 'photos/show'
