@@ -1,3 +1,7 @@
+<% if @id: %>
+  <button class="jr-delete">delete</button>
+<% end %>
+
 <div class="photo-item-image">
   <% if @file: %>
     <img src="<%= @file %>">

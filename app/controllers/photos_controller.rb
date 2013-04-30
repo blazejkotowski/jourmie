@@ -11,5 +11,6 @@ class PhotosController < ApplicationController
   end
   
   def destroy
+    @success = @photo.delete
   end
 end

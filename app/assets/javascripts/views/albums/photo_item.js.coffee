@@ -6,6 +6,7 @@ class Jourmie.Views.Albums.PhotoItem extends Backbone.View
   template: JST['albums/photo_item']
   
   events:
+    'click .jr-delete': 'deletePhoto'
     'click .photo-item-buttons a': (e) -> e.preventDefault()
     
   initialize: ->
@@ -15,3 +16,12 @@ class Jourmie.Views.Albums.PhotoItem extends Backbone.View
   render: ->
     @$el.html(@template(@model.toTemplate()))
     @
+    
+  deletePhoto: ->
+    console.log "deleting", @model
+    el = @$el
+    @model.destroy
+      success: (model, response) ->
+        unless response.error
+          el.remove()
+          
