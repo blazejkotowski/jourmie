@@ -256,6 +256,15 @@ div.dotted {
     list-style: none;
     text-align: center; 
     margin-bottom: 20px;
+    &.transport li a {
+      opacity: 0.4;
+      &:active, &:hover, &.active {
+        opacity: 1;
+      }
+      div {
+        opacity: inherit;
+      }
+    }
   }
   .place-buttons li {
     display: inline-block;
