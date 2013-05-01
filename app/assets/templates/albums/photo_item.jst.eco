@@ -4,7 +4,7 @@
 
 <div class="photo-item-image">
   <% if @file: %>
-    <img src="<%= @file %>">
+    <div class="image" style="background-image: url('<%= @file %>')"></div>
   <% else: %>
     <div class="progress progress-striped">
       <div class="bar" style="width: 0%;">
