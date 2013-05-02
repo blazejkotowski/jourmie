@@ -7,25 +7,33 @@
     .info
       = image_tag @profile.avatar.url(:medium), :alt => @profile.display_name, :class => "avatar"
       = @profile.full_name
-    .buttons
-      = link_to "#" do
-        %span.profile-icon.countries.pull-left
-        .number.pull-left
-          0
-        .text.pull-left
-          Countries
-      = link_to "#" do
-        %span.profile-icon.distance.pull-left
-        .number.pull-left
-          0
-        .text.pull-left
-          KM
-      = link_to "#" do
-        %span.profile-icon.buddies.pull-left
-        .number.pull-left
-          0
-        .text.pull-left
-          Buddies
+    .bar
+      %ul.buttons
+        %li
+          = link_to "#" do
+            %span.profile-icon.countries.pull-left
+            .number.pull-left
+              0
+            .text.pull-left
+              Countries
+        %li
+          = link_to "#" do
+            %span.profile-icon.distance.pull-left
+            .number.pull-left
+              0
+            .text.pull-left
+              KM
+        %li
+          = link_to "#" do
+            %span.profile-icon.buddies.pull-left
+            .number.pull-left
+              0
+            .text.pull-left
+              Buddies
+      %ul.actions
+        %li= link_to "Info", "#", :class => "btn btn-mini btn-primary"
+        %li= link_to "Message", "#", :class => "btn btn-mini btn-primary"
+        %li= link_to "+ Add", "#", :class => "btn btn-mini btn-primary"
   .profile-albums
     - @profile.user.albums.each do |album|
       .album-item.align-center{ :style => "background-image: url('#{album.cover_image}');"}
