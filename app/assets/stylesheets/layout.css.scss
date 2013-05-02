@@ -312,4 +312,9 @@ button.jr-delete {
   text-indent: -9999px;
   font-size: 0;
   border: 0;
+  &:hover {
+    width: 34px;
+    height: 33px;
+    background-size: 34px 33px;
+  }
 }

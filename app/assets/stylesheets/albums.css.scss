@@ -394,6 +394,10 @@ div.dotted {
     right: -7px;
     top: -7px;
     z-index: 100;
+    &:hover {
+      right: -9px;
+      top: -9px;
+    }
   }
   .photo-item-image {
     width: 100%;
