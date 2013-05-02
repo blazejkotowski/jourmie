@@ -1,0 +1,35 @@
+- provide :title, "#{@profile.display_name} profile"
+= content_for :page_title do
+  %h2= "#{@profile.display_name}'s profile"
+
+.transparent-wrapper
+  .profile-header
+    .info
+      = image_tag @profile.avatar.url(:medium), :alt => @profile.display_name, :class => "avatar"
+      = @profile.full_name
+    .buttons
+      = link_to "#" do
+        %span.profile-icon.countries.pull-left
+        .number.pull-left
+          0
+        .text.pull-left
+          Countries
+      = link_to "#" do
+        %span.profile-icon.distance.pull-left
+        .number.pull-left
+          0
+        .text.pull-left
+          KM
+      = link_to "#" do
+        %span.profile-icon.buddies.pull-left
+        .number.pull-left
+          0
+        .text.pull-left
+          Buddies
+  .profile-albums
+    - @profile.user.albums.each do |album|
+      .album-item.align-center{ :style => "background-image: url('#{album.cover_image}');"}
+        .album-title= link_to album.name, album_path(album, :anchor => "/edit")
+  .clearfix
+      
+  
