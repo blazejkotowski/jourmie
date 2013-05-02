@@ -1,14 +1,19 @@
 class UserProfilesController < ApplicationController
   before_filter :authenticate_user!, :load_current_user_profile, :only => [:edit, :update]
   before_filter :load_user_profile, :only => [:show]
+
+  include ApplicationHelper
   
   def edit
     
   end
 
   def update
-    @profile.update_attributes(params[:user_profile])
-    render "edit"
+    if @profile.update_attributes(params[:user_profile])
+      redirect_to show_profile_path(@profile.user)
+    else
+      render "edit"
+    end
   end
   
   def show

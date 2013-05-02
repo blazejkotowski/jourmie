@@ -34,6 +34,8 @@
         %li= link_to "Info", "#", :class => "btn btn-mini btn-primary"
         %li= link_to "Message", "#", :class => "btn btn-mini btn-primary"
         %li= link_to "+ Add", "#", :class => "btn btn-mini btn-primary"
+      - if @profile.user == current_user
+        = link_to "Edit your profile", edit_profile_path, :class => "edit-button btn btn-medium btn-warning"
   .profile-albums
     - @profile.user.albums.each do |album|
       .album-item.align-center{ :style => "background-image: url('#{album.cover_image}');"}
