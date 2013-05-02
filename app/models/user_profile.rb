@@ -13,6 +13,8 @@ class UserProfile < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   belongs_to :user
   
+  before_save :set_permalink
+  
   def full_name
     unless first_name.blank? && last_name.blank?
       "#{first_name} #{last_name}"
@@ -24,6 +26,20 @@ class UserProfile < ActiveRecord::Base
       user.email
     else
       full_name
+    end
+  end
+  
+  private
+  def set_permalink
+    if permalink.empty?
+      i = 1
+      link = full_name.parameterize
+      if UserProfile.find_by_permalink(link).present?
+        while UserProfile.find_by_permalink("#{link}-#{i}").present? do
+          i += 1
+        end
+      end
+      write_attribute :permalink, "#{link}-#{i}"
     end
   end
   

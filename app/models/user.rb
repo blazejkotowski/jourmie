@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   before_create :add_profile
   
   scope :with_profile, includes(:profile)
+  default_scope includes(:profile)
   
   def self.from_omniauth(auth)
     if auth.provider == "facebook"
