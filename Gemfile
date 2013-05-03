@@ -54,6 +54,7 @@ gem 'friendly_id'
 gem 'carrierwave_direct'
 gem 's3_direct_upload'
 gem 'rabl'
+gem 'state_machine'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

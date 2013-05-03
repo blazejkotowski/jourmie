@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
   
   has_many :albums, :dependent => :destroy
   
+  has_many :friendships
+  has_many :friends, :through => :friendships, :conditions => 'state = \'accepted\''
+  
   before_create :add_profile
   
   scope :with_profile, includes(:profile)

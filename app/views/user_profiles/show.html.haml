@@ -33,7 +33,7 @@
       %ul.actions
         %li= link_to "Info", "#", :class => "btn btn-mini btn-primary"
         %li= link_to "Message", "#", :class => "btn btn-mini btn-primary"
-        %li= link_to "+ Add", "#", :class => "btn btn-mini btn-primary"
+        %li= link_to "+ Add", friendships_path(:friend_id => @profile.user.id), :class => "btn btn-mini btn-primary add-friend"
       - if @profile.user == current_user
         = link_to "Edit your profile", edit_profile_path, :class => "edit-button btn btn-medium btn-warning"
   .profile-albums
@@ -42,4 +42,7 @@
         .album-title= link_to album.name, album_path(album, :anchor => "/edit")
   .clearfix
       
+  :javascript
+    up = new Jourmie.UserProfiles()
+    up.initialize()
   
