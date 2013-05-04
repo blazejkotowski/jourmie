@@ -1,0 +1,6 @@
+.transparent-wrapper
+  %ul
+    - @friendships.each do |friendship|
+      %li
+        = link_to friendship.friend.profile.full_name, show_profile_path(friendship.friend)
+        = "(#{friendship.state})"

@@ -2,7 +2,9 @@ Jourmie::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   
   resource :user_profiles, :as => "profile", :path => "profile", :only => [:edit, :update]
-  resources :user_profiles, :as => "profiles", :path => "profiles", :only => [:show]
+  resources :user_profiles, :as => "profiles", :path => "profiles", :only => [:show] do
+    resources :friendships, :only => [:index]
+  end
   
   resources :friendships, :only => [:create, :destroy]
   
