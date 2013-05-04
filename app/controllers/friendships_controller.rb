@@ -6,10 +6,21 @@ class FriendshipsController < ApplicationController
   end
   
   def accept
-    Friendship.accept(current_user.id, params[:friend_id].to_i)
+    friend = UserProfile.find_by_permalink(params[:profile_id]).user
+    Friendship.accept(friend.id, current_user.id)
+    respond_to do |format| 
+      format.html { redirect_to profile_friendships_url(current_user.profile.permalink) }
+      format.json
+    end
   end
   
   def reject
+    friend = UserProfile.find_by_permalink(params[:profile_id]).user
+    Friendship.reject(friend.id, current_user.id)
+    respond_to do |format| 
+      format.html { redirect_to profile_friendships_url(current_user.profile.permalink) }
+      format.json
+    end
   end
   
   def destroy
@@ -19,8 +30,10 @@ class FriendshipsController < ApplicationController
   
   def index
     if params[:profile_id] == current_user.profile.permalink
-      @friendships = current_user.friendships
+      @owner = true
+      @friendships = current_user.friendships.order(:state)
     else
+      @owner = false
       @friendships = UserProfile.find_by_permalink(params[:profile_id]).user.friendships.accepted
     end
   end

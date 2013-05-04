@@ -1,6 +1,19 @@
 .transparent-wrapper
-  %ul
-    - @friendships.each do |friendship|
-      %li
-        = link_to friendship.friend.profile.full_name, show_profile_path(friendship.friend)
-        = "(#{friendship.state})"
+  .container
+    %table.table
+      %tbody
+        - @friendships.each do |friendship|
+          %tr
+            %td
+              = link_to image_tag(friendship.friend.profile.avatar.url(:small)), show_profile_path(friendship.friend)
+            %td
+              = link_to friendship.friend.profile.display_name, show_profile_path(friendship.friend)
+              - unless friendship.accepted?
+                = "(#{friendship.state})"
+            %td
+              - if @owner
+                - unless friendship.requested?
+                  = link_to "Delete", "#", :class => "btn btn-mini btn-primary"
+                - if friendship.requested?
+                  = link_to "Accept", accept_profile_friendships_path(friendship.friend.profile.permalink), :method => :put, :class => "btn btn-mini btn-primary"
+                  = link_to "Reject", reject_profile_friendships_path(friendship.friend.profile.permalink), :method => :put, :class => "btn btn-mini btn-primary"
