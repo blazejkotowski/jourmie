@@ -1,7 +1,7 @@
 = content_for :page_title do
   %h2= link_to "+ New album", new_album_path
-  
-.transparent-wrapper
+
+%div{ :class => ("transparent-wrapper" unless request.xhr? )}
   - @albums.each do |album|
     .album-item.align-center{ :style => "background-image: url('#{album.cover_image}');"}
       .album-title= link_to album.name, album_path(album, :anchor => "/edit")
