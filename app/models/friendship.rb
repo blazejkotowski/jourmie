@@ -9,6 +9,7 @@ class Friendship < ActiveRecord::Base
   scope :pending, -> { with_state(:pending) }
   scope :requested, -> { with_state(:requested) }
   scope :accepted, -> { with_state(:accepted) }
+  scope :displayable, -> { without_state(:rejected) }
   
   state_machine do
     event :accept do
@@ -45,6 +46,17 @@ class Friendship < ActiveRecord::Base
       find_by_user_id_and_friend_id_and_state(user_id, friend_id, "pending").reject
       find_by_user_id_and_friend_id_and_state(friend_id, user_id, "requested").reject
     end
+  end
+  
+  def self.delete(friendship)
+    transaction do
+      inverse(friendship).destroy
+      friendship.destroy
+    end
+  end
+  
+  def self.inverse(friendship)
+    Friendship.find_by_user_id_and_friend_id(friendship.friend_id, friendship.user_id)
   end
   
   private

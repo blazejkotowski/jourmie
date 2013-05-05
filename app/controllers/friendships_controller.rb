@@ -24,14 +24,15 @@ class FriendshipsController < ApplicationController
   end
   
   def destroy
-    @friendship = current_user.friendships.find(params[:friendship_id])
-    @freindship.destroy
+    @friendship = current_user.friendships.find(params[:id])
+    Friendship.delete(@friendship)
+    redirect_to profile_friendships_url(current_user.profile.permalink)
   end
   
   def index
     if params[:profile_id] == current_user.profile.permalink
       @owner = true
-      @friendships = current_user.friendships.order(:state)
+      @friendships = current_user.friendships.displayable.order(:state)
     else
       @owner = false
       @friendships = UserProfile.find_by_permalink(params[:profile_id]).user.friendships.accepted
