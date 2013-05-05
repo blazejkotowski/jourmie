@@ -1,6 +1,6 @@
 class FriendshipsController < ApplicationController
   respond_to :json, :html
-  
+  include ApplicationHelper
   def create
     @created = Friendship.request(current_user.id, params[:friend_id].to_i)
   end
@@ -9,7 +9,7 @@ class FriendshipsController < ApplicationController
     friend = UserProfile.find_by_permalink(params[:profile_id]).user
     Friendship.accept(friend.id, current_user.id)
     respond_to do |format| 
-      format.html { redirect_to profile_friendships_url(current_user.profile.permalink) }
+      format.html { redirect_to show_profile_url(current_user, :anchor => "buddies") }
       format.json
     end
   end
@@ -18,7 +18,7 @@ class FriendshipsController < ApplicationController
     friend = UserProfile.find_by_permalink(params[:profile_id]).user
     Friendship.reject(friend.id, current_user.id)
     respond_to do |format| 
-      format.html { redirect_to profile_friendships_url(current_user.profile.permalink) }
+      format.html { redirect_to show_profile_url(current_user, :anchor => "buddies") }
       format.json
     end
   end
@@ -26,7 +26,7 @@ class FriendshipsController < ApplicationController
   def destroy
     @friendship = current_user.friendships.find(params[:id])
     Friendship.delete(@friendship)
-    redirect_to profile_friendships_url(current_user.profile.permalink)
+    redirect_to show_profile_url(current_user, :anchor => "buddies")
   end
   
   def index

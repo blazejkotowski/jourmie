@@ -7,11 +7,11 @@ module ApplicationHelper
     end
   end
   
-  def show_profile_path(user)
-    url_for :controller => "/user_profiles", :action => "show", :id => user.profile.permalink
+  def show_profile_path(user, attrs = {})
+    url_for attrs.merge({:controller => "/user_profiles", :action => "show", :id => user.profile.permalink})
   end
   
-  def show_profile_url(user)
-    show_profile_path(user)
+  def show_profile_url(user, attrs = {})
+    show_profile_path(user, attrs)
   end
 end

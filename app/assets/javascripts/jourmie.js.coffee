@@ -3,12 +3,22 @@ window.Jourmie =
   Collections: {}
   Views: 
     Albums: {}
+    Profiles: {}
   Routers: {}
   initialize: -> 
     console.log 'Hello from Backbone!'
   
   albumInitialize: (album_id) ->
     router = new Jourmie.Routers.Album(album_id)
+    Backbone.history.start()
+    
+  profileInitialize: (profile_id) ->
+    Window.profile = new Jourmie.Models.Profile({ id: profile_id })
+    Window.profile.fetch
+      complete: @profileRouterInitialize
+  
+  profileRouterInitialize: -> 
+    router = new Jourmie.Routers.Profile()
     Backbone.history.start()
     
   setTitle: (title = '') ->

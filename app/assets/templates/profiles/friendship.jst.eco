@@ -1,0 +1,37 @@
+<div class="friendship-item">
+  <div class="pull-left">
+    <a href="<%= @friend.profile_path %>">
+      <img src="<%= @friend.profile.avatar.small %>" class="avatar">
+    </a>
+  </div>
+  <div class="pull-right">
+    <div>
+      <a href="<%= @friend.profile_path %>" class="name">
+        <%= @friend.profile.display_name %>
+      </a>
+    </div>
+    <div class="actions">
+      <a href="#" class="btn btn-small btn-primary">
+        Message
+      </a>
+      <div class="dropdown">
+        <a href="#" class="btn btn-small btn-primary dropdown-toggle" role="button" data-toggle="dropdown" data-target="#">
+          <span class="settings-icon"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <% if @owner: %>
+            <% unless @state == "requested": %>
+              <li><a href="<%= @delete_friendship_path %>" data-method="delete">Delete</a></li>
+            <% end %>
+            <% if @state == "requested": %>
+              <li><a href="<%= @accept_friendship_path %>" data-method="put">Accept</a></li>
+              <li><a href="<%= @delete_friendship_path %>" data-method="delete">Reject</a></li>
+            <% end %>
+          <% else: %> 
+            <li><a href="<%= @add_friend_path %>" data-method="post" class="add-friend">Add</a></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

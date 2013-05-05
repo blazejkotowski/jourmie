@@ -1,0 +1,7 @@
+<% for album in @albums: %>
+  <div class="album-item align-center" style="background-image: url('<%= album.cover_image %>');">
+    <div class="album-title">
+      <a href="<%= album.url %>"><%= album.name %></a>
+    </div>
+  </div>
+<% end %>

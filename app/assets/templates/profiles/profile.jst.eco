@@ -1,0 +1,63 @@
+<div class="profile-header">
+  <div class="info">
+    <img src="<%= @avatar.medium %>" alt="<%= @display_name %>" class="avatar">
+    <%= @full_name %>
+  </div>
+  <div class="bar">
+    <ul class="buttons">
+      <li>
+        <a href="#albums">
+          <span class="profile-icon countries pull-left"></span>
+          <div class="number pull-left">
+            <%= @user.get('albums_count') %>
+          </div>
+          <div class="text pull-left">
+            <%= if @user.get('albums_count') == "1" then "Album" else "Albums" %>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="javascript: void(0)">
+          <span class="profile-icon distance pull-left">
+          </span>
+          <div class="number pull-left">
+            0
+          </div>
+          <div class="text pull-left">
+            KM
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="#buddies">
+          <span class="profile-icon buddies pull-left">
+          </span>
+          <div class="number pull-left">
+            <%= @user.get('friends_count') %>
+          </div>
+          <div class="text pull-left">
+            <%= if @user.get('friends_count') == 1 then "Buddy" else "Buddies" %>
+          </div>
+        </a>
+      </li>
+    </ul>
+    <ul class="actions">
+      <li>
+        <a href="javascript:void(0);" class="btn btn-mini btn-primary">Info</a>
+      </li>
+      <li>
+        <a href="javascript:void(0);" class="btn btn-mini btn-primary">Message</a>
+      </li>
+      <li>
+        <a href="<%= @add_friend_path %>" class="btn btn-mini btn-primary add-friend">+ Add</a>
+      </li>
+    </ul>
+    <% if @current_user: %>
+      <a href="<%= @edit_profile_path %>" class="edit-button btn btn-medium btn-warning">
+        Edit your profile
+      <a/>
+    <% end %>
+  </div>
+</div>
+<div class="profile-body">
+</div>

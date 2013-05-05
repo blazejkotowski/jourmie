@@ -17,7 +17,7 @@ class UserProfilesController < ApplicationController
   end
   
   def show
-    
+    respond_to :json, :html
   end
   
   private
