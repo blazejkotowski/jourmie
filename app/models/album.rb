@@ -10,7 +10,7 @@ class Album < ActiveRecord::Base
   attr_accessible :end_date, :name, :start_date, :user_id,
                   :cover_image
   
-  belongs_to :user
+  belongs_to :user, :counter_cache => true
   has_many :participants, :class_name => "User"
   has_many :places
   has_many :roads

@@ -3,7 +3,15 @@ class AlbumsController < ApplicationController
   load_and_authorize_resource :except => [:cover, :new, :create]
 
   def index
-    @albums = current_user.albums
+    profile = UserProfile.find_by_permalink(params[:profile_id])
+    if profile == current_user.profile
+      @albums = current_user.albums
+    else
+      @albums = profile.user.albums
+    end
+    if request.xhr?
+      render :layout => false
+    end
   end
   
   def show

@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :uid, :provider, :name, :friends_count
+                  :uid, :provider, :name, :friends_count, :albums_count
                   
   has_one :profile, :class_name => "UserProfile", :dependent => :destroy
   accepts_nested_attributes_for :profile

@@ -3,6 +3,7 @@ Jourmie::Application.routes.draw do
   
   resource :user_profiles, :as => "profile", :path => "profile", :only => [:edit, :update]
   resources :user_profiles, :as => "profiles", :path => "profiles", :only => [:show] do
+    resources :albums, :only => [:index]
     resources :friendships, :only => [:index] do
       put 'accept', :on => :collection
       put 'reject', :on => :collection

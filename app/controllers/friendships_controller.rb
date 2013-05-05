@@ -37,6 +37,9 @@ class FriendshipsController < ApplicationController
       @owner = false
       @friendships = UserProfile.find_by_permalink(params[:profile_id]).user.friendships.accepted
     end
+    if request.xhr?
+      render :layout => false
+    end
   end
   
 end

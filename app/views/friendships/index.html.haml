@@ -1,27 +1,26 @@
-.transparent-wrapper
-  #friendships.container
-    - @friendships.each do |friendship|
-      .friendship-item
-        .pull-left
-          = link_to image_tag(friendship.friend.profile.avatar.url(:small), :class => 'avatar'), show_profile_path(friendship.friend)
-        .pull-right
-          %div
-            = link_to friendship.friend.profile.display_name, show_profile_path(friendship.friend), :class => 'name'
-          .actions
-            = link_to "Message", "#", :class => "btn btn-small btn-primary"
-            .dropdown
-              = link_to "#", :class => "btn btn-small btn-primary dropdown-toggle", :role => "button", :data => { :toggle => "dropdown", :target => "#" } do
-                %span.settings-icon
-              %ul.dropdown-menu{ :role => "menu" }
-                - if @owner
-                  - unless friendship.requested?
-                    %li= link_to "Delete", friendship_path(friendship), :method => :delete
-                  - if friendship.requested?
-                    %li= link_to "Accept", accept_profile_friendships_path(friendship.friend.profile.permalink), :method => :put
-                    %li= link_to "Reject", friendship_path(friendship), :method => :delete
-                - else
-                  %li= link_to "Add", friendships_path(:friend_id => friendship.friend.id), :class => "add-friend"
-            
+#friendships.container
+  - @friendships.each do |friendship|
+    .friendship-item
+      .pull-left
+        = link_to image_tag(friendship.friend.profile.avatar.url(:small), :class => 'avatar'), show_profile_path(friendship.friend)
+      .pull-right
+        %div
+          = link_to friendship.friend.profile.display_name, show_profile_path(friendship.friend), :class => 'name'
+        .actions
+          = link_to "Message", "#", :class => "btn btn-small btn-primary"
+          .dropdown
+            = link_to "#", :class => "btn btn-small btn-primary dropdown-toggle", :role => "button", :data => { :toggle => "dropdown", :target => "#" } do
+              %span.settings-icon
+            %ul.dropdown-menu{ :role => "menu" }
+              - if @owner
+                - unless friendship.requested?
+                  %li= link_to "Delete", friendship_path(friendship), :method => :delete
+                - if friendship.requested?
+                  %li= link_to "Accept", accept_profile_friendships_path(friendship.friend.profile.permalink), :method => :put
+                  %li= link_to "Reject", friendship_path(friendship), :method => :delete
+              - else
+                %li= link_to "Add", friendships_path(:friend_id => friendship.friend.id), :class => "add-friend"
+          
 //        - unless friendship.accepted?
 //          = "(#{friendship.state})"
 :javascript

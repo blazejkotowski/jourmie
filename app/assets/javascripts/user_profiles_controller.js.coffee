@@ -9,3 +9,9 @@ class Jourmie.UserProfiles
             Helpers.prettyAlert(data.message)
           else if data.error
             Helpers.prettyAlert(data.error)
+            
+      $('.profile-header .buttons a').on "click", (e) ->
+        e.preventDefault()
+        url = $(e.target).closest('a').attr('href')
+        $('.profile-body').load(url)
+        
