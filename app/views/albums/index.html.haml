@@ -5,4 +5,13 @@
   - @albums.each do |album|
     .album-item.align-center{ :style => "background-image: url('#{album.cover_image}');"}
       .album-title= link_to album.name, album_path(album, :anchor => "/edit")
+      .album-info
+        %div
+          = "#{album.start_date.strftime('%d.%m.%Y')} - #{album.end_date.strftime('%d.%m.%Y')}"
+        %div
+          = pluralize(album.participations_count, "Friend")
+          attended
+        %div
+          = pluralize(album.places_count, "Place")
+          visited
   .clearfix

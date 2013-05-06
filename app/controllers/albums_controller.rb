@@ -5,9 +5,9 @@ class AlbumsController < ApplicationController
   def index
     profile = UserProfile.find_by_permalink(params[:profile_id])
     if profile == current_user.profile
-      @albums = current_user.albums
+      @albums = current_user.albums + current_user.albums_participate
     else
-      @albums = profile.user.albums
+      @albums = profile.user.albums + profile.user.albums_participate
     end
     if request.xhr?
       render :layout => false

@@ -48,9 +48,10 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
     start_date = new Date()
     end_date = new Date()
     end_date.setDate(end_date.getDate() + 14)
-    @set
-      start_date_string: "#{('0'+start_date.getDate()).substr(-2)}-#{('0'+(start_date.getMonth()+1)).substr(-2)}-#{start_date.getFullYear()}"
-      end_date_string: "#{('0'+end_date.getDate()).substr(-2)}-#{('0'+(end_date.getMonth()+1)).substr(-2)}-#{end_date.getFullYear()}"
+    if @get('start_date_string') is undefined and @get('end_date_string') is undefined
+      @set
+        start_date_string: "#{('0'+start_date.getDate()).substr(-2)}-#{('0'+(start_date.getMonth()+1)).substr(-2)}-#{start_date.getFullYear()}"
+        end_date_string: "#{('0'+end_date.getDate()).substr(-2)}-#{('0'+(end_date.getMonth()+1)).substr(-2)}-#{end_date.getFullYear()}"
   
   addPlace: (place) ->
     new_road = from = to = null

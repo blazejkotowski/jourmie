@@ -3,5 +3,18 @@
     <div class="album-title">
       <a href="<%= album.url %>"><%= album.name %></a>
     </div>
+    <div class="album-info">
+      <div>
+        <%= album.start_date_string %> - <%= album.end_date_string %>
+      </div>
+        <%= album.participations_count %>
+        <%= if album.participations_count == 1 then "Friend" else "Friends" %>
+        attended
+      <div>
+        <%= album.places_count %>
+        <%= if album.places_count == 1 then "Place" else "Places" %>
+        visited        
+      </div>
+    </div>
   </div>
 <% end %>
