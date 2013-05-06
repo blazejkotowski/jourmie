@@ -21,5 +21,8 @@ class Ability
     # Content abilities
     can [:manage, :create], ContentPiece, :user_id => user.id 
     
+    # Participations abilities
+    can [:manage], Participation, :album => { :user_id => user.id }
+    
   end
 end

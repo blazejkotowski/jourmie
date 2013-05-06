@@ -162,6 +162,13 @@ div.dotted {
       background-image: url('icons/facebook_pushed.png');
     }
   }
+  &.jourmie {
+    background-size: 60px auto;
+    background-image: url('icons/jourmie.png');
+    &:active {
+      background-image: url('icons/jourmie_pushed.png');
+    }
+  }
   &.twitter {
     background-image: url('icons/twitter.png');
     &:active {
@@ -323,14 +330,17 @@ div.dotted {
 
 .ui-autocomplete {
   padding: 10px;
-  width: 750px !important;
   left: auto !important;
   margin: 0 auto;
-  background: rgba(0,0,0,0.6);
   list-style:none;
-  font-size: 20px;
-  text-align:center;
+  font-size: 13px;
+  background: #fff;
+  border: 1px solid #333;
+  width: 500px;
+  color: $jourmieDarkGray;
+  @include border-radius(5px);
   a:hover {
+    cursor: pointer;
     text-decoration: none;
     color: $jourmieRed;
     cursor: pointer
@@ -437,5 +447,39 @@ div.dotted {
     position: relative;
     width: 80%;
     margin: 75px auto 0 auto;
+  }
+}
+
+
+#invite-modal {
+  h2 {
+    color: $jourmieDarkGray !important;
+  }
+  input {
+    background: inherit;
+    color: #333 !important;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+}
+
+.chosen-friendships {
+  .friend {
+    width: 180px;
+    float: left;
+    margin: 10px;
+    .name {
+      float: left;
+      display: inline;
+      color: #333;
+    }
+    .avatar {
+      margin-right: 10px;
+      float: left;
+      display: inline-block;
+      border: 3px solid $jourmieRed;
+      @include border-radius(5px);
+      @include box-shadow(2px 2px 2px rgba(0,0,0,.5));
+    }
   }
 }

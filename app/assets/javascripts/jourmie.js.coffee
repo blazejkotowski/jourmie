@@ -21,6 +21,13 @@ window.Jourmie =
     router = new Jourmie.Routers.Profile()
     Backbone.history.start()
     
+  newAlbumInitialize: ->
+    Window.album = new Jourmie.Models.Album()
+    albumView = new Jourmie.Views.Albums.New({ model: Window.album })
+    $(".transparent-wrapper").html(albumView.render().$el)
+    Window.friendships = new Jourmie.Collections.Friendships()
+    Window.friendships.fetch()
+    
   setTitle: (title = '') ->
     if title == ''
       document.title = 'Jourmie'

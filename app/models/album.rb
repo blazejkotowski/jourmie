@@ -8,10 +8,13 @@ class Album < ActiveRecord::Base
   friendly_id :name, :use => :slugged
   
   attr_accessible :end_date, :name, :start_date, :user_id,
-                  :cover_image
+                  :cover_image, :participations
   
   belongs_to :user, :counter_cache => true
-  has_many :participants, :class_name => "User"
+  
+  has_many :participations
+  has_many :participants, :through => :participations, :source => :user
+  
   has_many :places
   has_many :roads
   

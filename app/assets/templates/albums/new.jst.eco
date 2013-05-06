@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <input type="text" name="album_name" id="album_name" placeholder="Type album name here..." class="dotted high centered">
+    </div>
+  </div>
+  <div class="row"> 
+    <div class="span12">
+      <div class="align-center posivite-top-big">
+        <h4 class="positive-bottom-big">Date</h4>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span5 offset1 align-center">
+      From
+    </div>
+    <div class="span5 align-center">
+      To
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <div class="align-center positive-top-big">
+        <input type="hidden" id="album_start_date" name="start_date">
+        <div id="start-date-picker" class="datepicker-wrapper" data-target="#album_start_date", data-date-format="dd-mm-yyyy" data-date="<%= @start_date_string %>"></div>
+        <input type="hidden" id="album_end_date" name="end_date">
+        <div id="end-date-picker" class="datepicker-wrapper" data-target="#album_start_date", data-date-format="dd-mm-yyyy" data-date="<%= @end_date_string %>"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <div class="align-center positive-top-big">
+        <h4 class="positive-bottom-big">Invite Buddies</h4>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <div id="invite-box">
+        <a href="#" class="social-icon jourmie">Jourmie</a>
+        <a href="#" class="social-icon mail">Mail</a>
+        <a href="#" class="social-icon facebook">Facebook</a>
+        <a href="#" class="social-icon gplus">Google Plus</a>
+        <a href="#" class="social-icon linkedin">Linked In</a>
+        <a href="#" class="social-icon twitter">Twitter</a>
+        <a href="#" class="social-icon iphone">iPhone</a>
+        <div id="invite-modal" class="modal hide fade">
+          <div class="modal-header">
+            <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h2>Invite travel buddies</h2>
+          </div>
+          <div class="modal-body">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <div class="centered positive-top-huge">
+        <input type="submit" id="submit" class="text big" value="Continue">
+      </div>
+    </div>
+  </div>
+</div>
+

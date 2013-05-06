@@ -13,6 +13,7 @@ Jourmie::Application.routes.draw do
   resources :friendships, :only => [:create, :destroy]
   
   resources :albums do
+    resources :participations, :only => [:create, :destroy]
     get :s3_upload_form, :on => :collection
   end
   resources :places

@@ -35,7 +35,8 @@ class FriendshipsController < ApplicationController
       @friendships = current_user.friendships.displayable.order(:state)
     else
       @owner = false
-      @friendships = UserProfile.find_by_permalink(params[:profile_id]).user.friendships.accepted
+      profile = UserProfile.find_by_permalink(params[:profile_id]) || current_user.profile
+      @friendships = profile.user.friendships.accepted
     end
     if request.xhr?
       render :layout => false

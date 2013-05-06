@@ -42,10 +42,16 @@ class AlbumsController < ApplicationController
   
   def create
     @album = current_user.albums.new(params[:album])
-    unless @album.save
-      render "new"
-    else
-      redirect_to edit_album_url(@album)
+    @album.save
+    respond_to do |format|
+      format.html do 
+        if @album.new_record?
+          render "new"
+        else
+          redirect_to edit_album_url(@album)
+        end
+      end
+      format.json
     end
   end
   

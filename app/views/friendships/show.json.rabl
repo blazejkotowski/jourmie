@@ -10,7 +10,7 @@ child :friend => :friend do |friend|
   child :profile => :profile do 
     attribute :display_name
     node(:avatar) do |profile|
-      { :small => profile.avatar.url(:small) }
+      { :small => profile.avatar.url(:small), :tiny => profile.avatar.url(:tiny) }
     end
   end
 end
