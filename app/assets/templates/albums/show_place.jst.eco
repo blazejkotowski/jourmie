@@ -3,5 +3,31 @@
   </div>
 </div>
 <h2 class="place-name"><%= @name %></h2>
+
+<div class="info-bar">
+  <div class="info-date">
+    <%= "#{('0'+@date_from.getDate()).substr(-2)}.#{('0'+(@date_from.getMonth()+1)).substr(-2)}.#{@date_from.getFullYear()}" %>
+  </div>
+  <div class="info-participants">
+    <div class="pull-left number">
+      <span>
+        <%= Window.album.get('participations_count') %>
+      </span>
+    </div>
+    <div class="pull-left text">
+      Buddies
+    </div>
+    <div class="clearer"></div>
+  </div>
+  <div class="section-title">
+    Map
+  </div>
+  <div class="info-map">
+    
+  </div>
+  <a href="javascript:void(0);" class="add-content"><span class="plus">+</span> Add content</a>
+</div>
+
+
 <div class="place-map">
 </div>

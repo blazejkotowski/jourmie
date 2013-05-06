@@ -517,12 +517,14 @@ div.dotted {
   }
   .participants {
     a {
-      margin: 10px;
+      margin: 5px;
       display: inline;
       float: left;
     }
     .avatar {
-      @include border-radius(60px);
+      width: 40px;
+      height: 40px;
+      @include border-radius(40px);
       @include box-shadow(0 2px 2px rgba(0,0,0,.5));
       border: 1px solid $jourmieTurquoise;
     }
@@ -548,7 +550,7 @@ div.dotted {
 }
 
 .show-place {
-  margin: 30px 200px 30px 60px;
+  margin: 30px 180px 30px 60px;
   .place-map {
     width: 100%;
     height: 300px;
@@ -559,5 +561,62 @@ div.dotted {
     display: block;
     font-size: 45px;
     color: $jourmieDarkGray;
+  }
+  .info-bar {
+    position: absolute;
+    right: 20px;
+    width: 140px;
+    color: $jourmieDarkGray;
+    .section-title {
+      font-size: 13px;
+    }
+  }
+  .info-date {
+    font-size: 20px;  
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 2px;
+    border-bottom: 2px dotted $jourmieDarkGray;
+  }
+  .info-participants {
+    margin: 10px auto;
+    .number {
+      margin-right: 10px;
+      padding: 5px;
+      width: 15px;
+      height: 15px;
+      @include border-radius(15px);
+      background: $jourmieRed;
+      color: #fff;
+      font-weight: bold;
+      span {
+        position: relative;
+        left: 3px;
+        bottom: 1px;
+      }
+    }
+    .text {
+      position: relative;
+      top: 4px;
+    }
+  }
+  .info-map {
+    height: 200px;
+    @include box-shadow(2px 2px 1px rgba(0,0,0,.2));
+  }
+  .add-content {
+    display: block;
+    margin: 5px auto;
+    text-shadow: 1px 1px 3px rgba(0,0,0,.2);
+    text-align: center;
+    color: $jourmieDarkGray !important;
+    .plus {
+      color: $jourmieRed;
+      font-size: 20px;
+      margin-right: 3px;
+    }
+    text-decoration: none;
+    
   }
 }

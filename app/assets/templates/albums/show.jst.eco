@@ -7,7 +7,7 @@
     <div class="participants">
       <% for participant in @participants: %>
         <a href="<%= participant.path %>">
-          <img src="<%= participant.avatar.tiny %>" class="avatar">
+          <img src="<%= participant.avatar.small %>" class="avatar">
         </a>
       <% end %>
     </div>
