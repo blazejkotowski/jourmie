@@ -501,7 +501,37 @@ div.dotted {
     font-size: 50px;
   }
   .album-info {
-    margin: 10px auto;
-    width: 920px;
+    font-size: 15px;
+    margin: 20px auto;
+    width: 940px;
+  }
+  .participants {
+    a {
+      margin: 10px;
+      display: inline;
+      float: left;
+    }
+    .avatar {
+      @include border-radius(60px);
+      @include box-shadow(0 2px 2px rgba(0,0,0,.5));
+      border: 1px solid $jourmieTurquoise;
+    }
+  }
+  .dates {
+    font-size: 20px;
+  }
+}
+
+.show-place {
+  margin: 30px 160px 30px 60px;
+  .place-map {
+    width: 100%;
+    height: 300px;
+  }
+  .place-name {
+    line-height: 50px;
+    display: block;
+    font-size: 45px;
+    color: $jourmieDarkGray;
   }
 }

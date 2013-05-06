@@ -8,7 +8,8 @@ class Album < ActiveRecord::Base
   friendly_id :name, :use => :slugged
   
   attr_accessible :end_date, :name, :start_date, :user_id, :places_count,
-                  :cover_image, :participations, :participations_count
+                  :cover_image, :participations, :participations_count,
+                  :user
   
   belongs_to :user, :counter_cache => true
   
@@ -39,6 +40,10 @@ class Album < ActiveRecord::Base
 #      update_attribute :jourmie_cover_image, id
       write_attribute :jourmie_cover_image, id
     end
+  end
+  
+  def participants_profiles
+    (participants + [user]).map { |participant| participant.profile} 
   end
   
 end

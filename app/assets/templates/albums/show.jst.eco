@@ -1,6 +1,16 @@
 <h1 class="album-name"><%= @name %></h1>
 <div class="album-info">
-  <div class="pull-left participants">
+  <div class="pull-left">
+    <div class="dates">
+      <%= @start_date_string %> - <%= @end_date_string %>
+    </div>
+    <div class="participants">
+      <% for participant in @participants: %>
+        <a href="<%= participant.path %>">
+          <img src="<%= participant.avatar.tiny %>" class="avatar">
+        </a>
+      <% end %>
+    </div>
   </div>
   <div class="pull-right places">
     <% console.log _.map(@places, (o) -> o.name).join(' - ') %> 
@@ -10,5 +20,4 @@
   </div>
 </div>
 <div class="transparent-wrapper white">
-  Dupa
 </div>

@@ -41,6 +41,9 @@ window.Jourmie =
         $('.navbar-notification.placeholder').after('<div class="navbar-notification navbar-title"></div>')
       $('.navbar-notification.navbar-title').html("<h2>#{title}</h2>")
       document.title = "#{title} | Jourmie"
+  
+  removeNavbarTitle: ->
+    $('.navbar-notification.navbar-title').remove()
       
 $(document).ready ->
   Jourmie.initialize()

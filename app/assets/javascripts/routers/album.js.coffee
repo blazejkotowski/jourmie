@@ -6,8 +6,10 @@ class Jourmie.Routers.Album extends Backbone.Router
     
   show: ->
     Jourmie.setTitle Window.album.get('name')
+    Jourmie.removeNavbarTitle()
     showView = new Jourmie.Views.Albums.Show({ model: Window.album })
     $("#album-wrapper").html(showView.render().$el)
+    showView.renderPlaces()
     
   edit: ->
     Jourmie.setTitle 'Edit album'
