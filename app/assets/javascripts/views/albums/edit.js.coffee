@@ -2,6 +2,7 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
   
   template: JST['albums/edit']
   model: 'Jourmie.Models.Album'
+  className: 'transparent-wrapper'
   
   events:
     'click .add-place': 'addPlace'

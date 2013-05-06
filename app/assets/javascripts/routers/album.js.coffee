@@ -2,17 +2,15 @@ class Jourmie.Routers.Album extends Backbone.Router
   routes:
     'edit': 'edit'
     '': 'show'
+    'show': 'show'
     
-  initialize: (album_id) ->  
-    @album_id = album_id
+  show: ->
+    Jourmie.setTitle Window.album.get('name')
+    showView = new Jourmie.Views.Albums.Show({ model: Window.album })
+    $("#album-wrapper").html(showView.render().$el)
     
   edit: ->
     Jourmie.setTitle 'Edit album'
-    Window.album = new Jourmie.Models.Album({ id: @album_id })
-    Window.album.fetch
-      complete: @editRender
-    
-  editRender: ->
     editView = new Jourmie.Views.Albums.Edit({ model: Window.album })
-    $('#album-container').html(editView.render().$el)
+    $('#album-wrapper').html(editView.render().$el)
     editView.renderRelated()

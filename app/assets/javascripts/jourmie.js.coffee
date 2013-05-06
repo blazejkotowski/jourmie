@@ -9,7 +9,12 @@ window.Jourmie =
     console.log 'Hello from Backbone!'
   
   albumInitialize: (album_id) ->
-    router = new Jourmie.Routers.Album(album_id)
+    Window.album = new Jourmie.Models.Album({ id: album_id })
+    Window.album.fetch
+      complete: @albumRouterInitialize
+    
+  albumRouterInitialize: ->
+    router = new Jourmie.Routers.Album()
     Backbone.history.start()
     
   profileInitialize: (profile_id) ->

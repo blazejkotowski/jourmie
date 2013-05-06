@@ -1,39 +1,43 @@
-<div id="album-cover-carousel" class="carousel slide">
-  <div class="album-title">
-    <input id="album-title" type="text" class="high" placeholder="Type album name here..." value="<%= @name %>" />
-  </div>
-  <div class="carousel-inner">
-    <% for cover_image, id in @available_covers: %>
-      <% if cover_image: %>
-        <% if @cover_image == cover_image: %>
-          <div class="item active">
-        <% else: %>
-          <div class="item">
+<div class="row">
+  <div id="album-container" class="span12">
+    <div id="album-cover-carousel" class="carousel slide">
+      <div class="album-title">
+        <input id="album-title" type="text" class="high" placeholder="Type album name here..." value="<%= @name %>" />
+      </div>
+      <div class="carousel-inner">
+        <% for cover_image, id in @available_covers: %>
+          <% if cover_image: %>
+            <% if @cover_image == cover_image: %>
+              <div class="item active">
+            <% else: %>
+              <div class="item">
+            <% end %>
+              <img data-id="<%= id %>"src="<%= cover_image %>">
+            </div>
+          <% end %>
         <% end %>
-          <img data-id="<%= id %>"src="<%= cover_image %>">
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-  <a class="carousel-control left" href="#album-cover-carousel" data-slide="prev">&lsaquo;</a>
-  <a class="carousel-control right" href="#album-cover-carousel" data-slide="next">&rsaquo;</a>
-</div>
+      </div>
+      <a class="carousel-control left" href="#album-cover-carousel" data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#album-cover-carousel" data-slide="next">&rsaquo;</a>
+    </div>
 
-<div id="places-box" class="positive-left-big">
-  <div id="new-place" class="dotted">
-    <input class="high gmaps" type="text" id="place_address" name="place_name" placeholder="Type city or place you visited..." />
-    <span class="high desc">...and pick date:</span>
-    <input class="high datepicker" type="text" name="date_from" id="date_from" placeholder="________" />
-    <span class="high connector"> to </span>
-    <input class="high datepicker" type="text" name="date_to" id="date_to" placeholder="________" />
-  </div>
-  <div class="centered positive-top-big">
-    <button class="text add-place">Add place</button>
-  </div>
-  <div class="control-buttons positive-top-big"> 
-    <div class="pull-right">
-      <button class="text big" id="finish-button">Finish</button>
+    <div id="places-box" class="positive-left-big">
+      <div id="new-place" class="dotted">
+        <input class="high gmaps" type="text" id="place_address" name="place_name" placeholder="Type city or place you visited..." />
+        <span class="high desc">...and pick date:</span>
+        <input class="high datepicker" type="text" name="date_from" id="date_from" placeholder="________" />
+        <span class="high connector"> to </span>
+        <input class="high datepicker" type="text" name="date_to" id="date_to" placeholder="________" />
+      </div>
+      <div class="centered positive-top-big">
+        <button class="text add-place">Add place</button>
+      </div>
+      <div class="control-buttons positive-top-big"> 
+        <div class="pull-right">
+          <button class="text big" id="finish-button">Finish</button>
+        </div>
+      </div>
+      <div class="clearfix">&nbsp;</div>
     </div>
   </div>
-  <div class="clearfix">&nbsp;</div>
 </div>
