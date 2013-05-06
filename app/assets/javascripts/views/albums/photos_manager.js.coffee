@@ -33,7 +33,7 @@ class Jourmie.Views.Albums.PhotosManager extends Backbone.View
           if data.context
             Window.place_model = place_model
             console.log "Add photo to place", place_model
-            data.context.model.set 'file', content.url
+            data.context.model.set 'thumb', content.url
             console.log content, content.url, data.context.model
             place_model.get('photos').add data.context.model
             data.context.model.save({ remote_file_url: data.context.model.get('file') })

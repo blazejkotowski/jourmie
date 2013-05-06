@@ -13,5 +13,6 @@ class Jourmie.Views.Albums.Show extends Backbone.View
       placeView = new Jourmie.Views.Albums.ShowPlace({ model: place })
       @$el.find('.transparent-wrapper').append(placeView.render().$el)
       placeView.renderMaps()
+      placeView.renderContent()
     
   

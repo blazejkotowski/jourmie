@@ -19,5 +19,10 @@ class Jourmie.Views.Albums.ShowPlace extends Backbone.View
     
     layer_small.addTo(small_map)
     layer_big.addTo(big_map)
-    
+  
+  renderContent: ->
+    contentView = new Jourmie.Views.Albums.ShowPhotos({ collection: @model.get('photos') })
+    console.log @$el.find('.place-content')
+    @$el.find('.place-content').html(contentView.render().$el)
+    console.log contentView.$el
     

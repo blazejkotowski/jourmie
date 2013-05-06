@@ -3,8 +3,8 @@
 <% end %>
 
 <div class="photo-item-image">
-  <% if @file: %>
-    <div class="image" style="background-image: url('<%= @file %>')"></div>
+  <% if @thumb: %>
+    <div class="image" style="background-image: url('<%= @thumb %>')"></div>
   <% else: %>
     <div class="progress progress-striped">
       <div class="bar" style="width: 0%;">

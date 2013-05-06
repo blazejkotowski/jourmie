@@ -501,6 +501,19 @@ div.dotted {
     width: 57px;
     height: 55px;
     background-size: 57px 55px;
+    .note {
+      position: relative;
+      top: 5px;
+      left: 3px;
+      text-align:center;
+      color: $jourmieDarkGray;
+      .number {
+        font-size: 17px;
+      }
+      .text {
+        font-size: 10px;
+      }
+    }
   }
   .album-name {
     display: block;
@@ -547,6 +560,9 @@ div.dotted {
   &.map {
     background-image: url('icons/map.png');
   }
+  &.photo {
+    background-image: url('icons/photo.png');
+  }
 }
 
 .show-place {
@@ -561,6 +577,7 @@ div.dotted {
     display: block;
     font-size: 45px;
     color: $jourmieDarkGray;
+    margin-bottom: 10px;
   }
   .info-bar {
     position: absolute;
@@ -617,6 +634,13 @@ div.dotted {
       margin-right: 3px;
     }
     text-decoration: none;
-    
+  }
+  .photos-big-carousel {
+    margin: 20px auto;
+    .item {
+      height: 500px;
+      text-align: center;
+      overflow: hidden;
+    }
   }
 }

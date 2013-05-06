@@ -1,0 +1,26 @@
+<div class="icon-tag">
+  <div class="album-icon photo"></div>
+  <div class="note">
+    <div class="number">
+    <%= @photos.length %>
+    </div>
+    <div class="text">Photos</div>
+  </div>
+</div>
+<div class="photos-big-carousel carousel slide">
+  <div class="carousel-inner">
+    <% i = 0 %>
+    <% for photo in @photos: %>
+      <div class="item <%= if i==0 then 'active' %>">
+        <% i +=1 %>
+        <div class="photo image">
+          <img src="<%= photo.file.original %>">
+        </div>
+        <div class="photo-description">
+        </div>
+      </div>
+    <% end %>
+    <a class="carousel-control left" href=".photos-big-carousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href=".photos-big-carousel" data-slide="next">&rsaquo;</a>
+  </div>
+</div>
