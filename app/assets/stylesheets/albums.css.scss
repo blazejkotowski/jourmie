@@ -492,6 +492,16 @@ div.dotted {
 }
 
 .album-show {
+  postiion: relative;
+  .icon-tag {
+    display: block;
+    position: absolute;
+    left: -10px;
+    background: transparent url('icons/icon_tag.png') center no-repeat;
+    width: 57px;
+    height: 55px;
+    background-size: 57px 55px;
+  }
   .album-name {
     display: block;
     margin: 10px auto;
@@ -520,13 +530,29 @@ div.dotted {
   .dates {
     font-size: 20px;
   }
+  .transparent-wrapper {
+    width: 980px;
+  }
+}
+
+.album-icon {
+  display: block;
+  margin: 5px 10px;
+  width: 35px;
+  height: 35px;
+  background: transparent no-repeat center;
+  background-size: 35px 35px;
+  &.map {
+    background-image: url('icons/map.png');
+  }
 }
 
 .show-place {
-  margin: 30px 160px 30px 60px;
+  margin: 30px 200px 30px 60px;
   .place-map {
     width: 100%;
     height: 300px;
+    @include box-shadow(2px 2px 1px rgba(0,0,0,.2));
   }
   .place-name {
     line-height: 50px;
