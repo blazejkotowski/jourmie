@@ -59,8 +59,14 @@ class Jourmie.Views.Albums.New extends Backbone.View
     @$el.find("#invite-modal").modal('show')
     
   saveAlbum: (e) ->
+    participants_to_save = Window.album.get('participations').length
     Window.album.save {},
       success: ->
         console.log "Album saved"
         for participation in Window.album.get('participations').models
-          participation.save()
+          participation.save {},
+            success: -> 
+              if (--participants_to_save) <= 0
+                window.location.href = window.location.origin + "/albums/#{Window.album.get('slug')}#edit"
+              
+              
