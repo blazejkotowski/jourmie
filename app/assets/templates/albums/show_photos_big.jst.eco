@@ -13,10 +13,16 @@
     <% for photo in @photos: %>
       <div class="item <%= if i==0 then 'active' %>">
         <% i +=1 %>
-        <div class="photo image">
+        <div class="photo-wrapper">
           <img src="<%= photo.file.original %>">
         </div>
-        <div class="photo-description">
+        <div class="photo-info">
+          <div class="pull-left avatar"><img src="<%= photo.user.profile.avatar.small %>"></div>
+          <div class="pull-left">
+            <div class="description"><%= photo.description if photo.description %></div>
+            <div class="social-info">2 comments, 3 likes</div>
+          </div>
+          <div class="clearer"></div>
         </div>
       </div>
     <% end %>

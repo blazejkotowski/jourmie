@@ -7,3 +7,4 @@ node(:file) do |photo|
     :original => photo.file.url
   }
 end
+child(:user) { extends 'devise/registrations/basic' }

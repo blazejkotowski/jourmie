@@ -573,10 +573,12 @@ div.dotted {
     @include box-shadow(2px 2px 1px rgba(0,0,0,.2));
   }
   .place-name {
+    font-family: Pumped;
     line-height: 50px;
     display: block;
     font-size: 45px;
-    color: $jourmieDarkGray;
+//    color: $jourmieDarkGray;
+    color: #111;
     margin-bottom: 10px;
   }
   .info-bar {
@@ -638,9 +640,21 @@ div.dotted {
   .photos-big-carousel {
     margin: 20px auto;
     .item {
-      height: 500px;
-      text-align: center;
-      overflow: hidden;
+      .photo-wrapper {
+        max-height: 500px;
+        text-align: center;
+        overflow: hidden;
+      }
+      .photo-info {
+        padding: 5px;
+        background: rgba(255,255,255,.3);
+      }
+      .avatar {
+        margin-right: 10px;
+      }
+      .avatar img {
+        @include box-shadow(2px 2px 2px rgba(0,0,0,.3));
+      }
     }
   }
 }

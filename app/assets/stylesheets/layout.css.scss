@@ -111,6 +111,9 @@ button.text, input[type=submit].text {
   &.white {
     background: rgba(255,255,255,.2);
   }
+  &.strong-white {
+    background: rgba(255,255,255,.5);
+  }
 }
 
 #navigation-top {
