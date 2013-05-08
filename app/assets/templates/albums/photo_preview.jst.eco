@@ -1,0 +1,25 @@
+<button class="jr-close">close</button>
+<div class="pull-left image">
+  <img src="<%= @file.original %>">
+</div>
+<div class="pull-left info">
+  <div class="description">
+    <div class="pull-left description-avatar"><img src="<%= @user.profile.avatar.small %>"></div>
+    <div class="pull-left"><%= @description %></div>
+    <div class="clearer"></div>
+  </div>
+  <div class="comments">
+    <% for comment in @comments: %>
+      <div class="comment">
+        <div class="pull-left comment-avatar">
+          <img src="<%= comment.user.avatar.tiny %>">
+        </div>
+        <div class="pull-left comment-content">
+          <%= comment.content %>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="clearer"></div>

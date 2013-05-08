@@ -4,7 +4,7 @@ class Jourmie.Models.Photo extends Backbone.RelationalModel
     {
       key: 'comments'
       type: Backbone.HasMany
-      relatedModel: 'Jourmie.Model.Comment'
+      relatedModel: 'Jourmie.Models.Comment'
       collectionType: 'Jourmie.Collections.Comments'
       reverseRelation:
         key: 'photo'

@@ -14,7 +14,7 @@
       <div class="item <%= if i==0 then 'active' %>">
         <% i +=1 %>
         <div class="photo-wrapper">
-          <img src="<%= photo.file.original %>">
+          <img src="<%= photo.file.original %>" data-id="<%= photo.index %>">
         </div>
         <div class="photo-info">
           <div class="pull-left avatar"><img src="<%= photo.user.profile.avatar.small %>"></div>
@@ -23,7 +23,12 @@
             <div class="social-info">
               <span class="comment-icon">
               </span>
-              0 comments
+              <%= photo.comments_count %>
+              <% if photo.comments_count == 1: %>
+                comment
+              <% else: %>
+                comments
+              <% end %>
               <span class="heart-icon"></span>
               0 likes
             </div>

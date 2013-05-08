@@ -20,6 +20,15 @@ window.Helpers =
   setShutterTitle: (title) ->
     $("#shutter #shutter-header").text(title)
     
-  setShutterBody: (body) -> 
+  setShutterBody: (body) ->
     $("#shutter #shutter-body").html(body)
+
+  showLightShutter: ->
+    $("#light-shutter").fadeIn(100)
+
+  hideLightShutter: ->
+    $("#light-shutter").fadeOut(100)
+
+  setLightShutterBody: (body) ->
+    $("#light-shutter").html(body)
     

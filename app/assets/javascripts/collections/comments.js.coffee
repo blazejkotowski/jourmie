@@ -1,2 +1,2 @@
 class Jourmie.Collections.Comments extends Backbone.Collection
-  model: Jourmie.Model.Comment
+  model: Jourmie.Models.Comment

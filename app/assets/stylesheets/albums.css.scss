@@ -641,6 +641,7 @@ div.dotted {
     margin: 20px auto;
     @include box-shadow(2px 2px 1px rgba(0,0,0,.2));
     .item {
+      cursor: pointer;
       .photo-wrapper {
         max-height: 500px;
         text-align: center;
@@ -682,4 +683,54 @@ div.dotted {
       }
     }
   }
+}
+
+.photo-preview {
+  button.jr-close {
+    top: -9px;
+    right: -9px;
+    z-index: 2001;
+  }
+  position: relative;
+  background: #fff;
+  width: 980px;
+  max-height: 600px;
+  margin: 40px auto 0 auto;
+  .image {
+    width: 600px;
+    max-height: 600px;
+    position: relative;
+    overflow: hidden;
+    img {
+      max-width: 600px;
+    }
+  }
+  .info {
+    color: $jourmieDarkGray;
+    width: 360px;
+    padding: 10px;
+    position: relative;
+    .description {
+      background: rgba(0,0,0,.1);
+    }
+    .description-avatar {
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+    }
+    .comments {
+      margin-top: 20px;
+      .comment {
+        padding: 5px;
+      }
+      .comment-avatar {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+      }
+      .comment-content {
+
+      }
+    }
+  }  
 }
