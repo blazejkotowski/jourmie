@@ -639,6 +639,7 @@ div.dotted {
   }
   .photos-big-carousel {
     margin: 20px auto;
+    @include box-shadow(2px 2px 1px rgba(0,0,0,.2));
     .item {
       .photo-wrapper {
         max-height: 500px;
@@ -647,7 +648,31 @@ div.dotted {
       }
       .photo-info {
         padding: 5px;
-        background: rgba(255,255,255,.3);
+        background: rgba(255,255,255,.6);
+      }
+      .social-info {
+        position: absolute;
+        bottom: 5px;
+        left: 70px;
+        color: $jourmieDarkGray;
+        span.comment-icon, span.heart-icon {
+          display: inline-block;
+          position: relative;
+          top: 3px;
+        }
+        span.comment-icon {
+          background: transparent url('icons/comment.png') no-repeat center;
+          background-size: 17px 14px;
+          height: 14px;
+          width: 17px;
+        } 
+        span.heart-icon {
+          background: transparent url('icons/heart.png') no-repeat center;
+          background-size: 14px 14px;
+          height: 14px;
+          width: 14px;
+        }
+ 
       }
       .avatar {
         margin-right: 10px;

@@ -20,5 +20,9 @@ Jourmie::Application.routes.draw do
   resources :roads
   resources :photos
   
+  resources :content_pieces do
+    resource :comments, :only => [:show, :destroy, :index]
+  end
+  
   root :to => "static_pages#home"
 end

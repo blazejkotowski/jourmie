@@ -20,7 +20,13 @@
           <div class="pull-left avatar"><img src="<%= photo.user.profile.avatar.small %>"></div>
           <div class="pull-left">
             <div class="description"><%= photo.description if photo.description %></div>
-            <div class="social-info">2 comments, 3 likes</div>
+            <div class="social-info">
+              <span class="comment-icon">
+              </span>
+              0 comments
+              <span class="heart-icon"></span>
+              0 likes
+            </div>
           </div>
           <div class="clearer"></div>
         </div>

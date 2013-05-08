@@ -21,6 +21,10 @@ class Ability
     
     # Content abilities
     can [:manage, :create], ContentPiece, :user_id => user.id 
+
+    # Comments abilities
+    can :manage, Comment, :user_id => user.id
+    can :create, Comment, :commentable => { :user_id => user.id }
     
     # Participations abilities
     can [:manage], Participation, :album => { :user_id => user.id }

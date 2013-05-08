@@ -8,3 +8,6 @@ node(:file) do |photo|
   }
 end
 child(:user) { extends 'devise/registrations/basic' }
+child(:comments) do
+  extends 'comments/index'
+end
