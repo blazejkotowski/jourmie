@@ -640,6 +640,7 @@ div.dotted {
   .photos-big-carousel {
     margin: 20px auto;
     @include box-shadow(2px 2px 1px rgba(0,0,0,.2));
+    color: $jourmieDarkGray;
     .item {
       cursor: pointer;
       .photo-wrapper {
@@ -655,7 +656,6 @@ div.dotted {
         position: absolute;
         bottom: 5px;
         left: 70px;
-        color: $jourmieDarkGray;
         span.comment-icon, span.heart-icon {
           display: inline-block;
           position: relative;
@@ -691,6 +691,7 @@ div.dotted {
     right: -9px;
     z-index: 2001;
   }
+  padding: 5px;
   position: relative;
   background: #fff;
   width: 980px;
@@ -717,6 +718,17 @@ div.dotted {
       width: 60px;
       height: 60px;
       margin-right: 10px;
+      border: 2px solid $jourmieTurquoise;
+      @include box-shadow(1px 1px 2px rgba(0,0,0,.2));
+    }
+    .description-date {
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+    .description-author {
+      font-size: 13px;
+      margin-top: -5px;
+      margin-bottom: 0;
     }
     .comments {
       margin-top: 20px;
@@ -724,9 +736,21 @@ div.dotted {
         padding: 5px;
       }
       .comment-avatar {
+        border: 1px solid $jourmieRed;
+        @include box-shadow(1px 1px 1px rgba(0,0,0,.2));
         width: 30px;
         height: 30px;
         margin-right: 10px;
+      }
+      .comment-date {
+        font-size: 12px;
+        margin-bottom: 0;
+        margin-top: -3px;
+      }
+      .comment-author {
+        font-size: 13px;
+        margin-bottom:0;
+        margin-top: -5px;
       }
       .comment-content {
 

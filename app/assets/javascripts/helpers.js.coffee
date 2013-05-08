@@ -5,7 +5,13 @@ window.Helpers =
     month = months[date.getMonth()]
     year = date.getFullYear()
     "#{day}/#{month}/#{year}"
-    
+
+  datetimeString: (date) ->
+    hour = ('0' + date.getHours()).slice(-2)
+    minutes = ('0' + date.getMinutes()).slice(-2)
+    seconds = ('0' + date.getSeconds()).slice(-2)
+    @dateString(date) + " #{hour}:#{minutes}:#{seconds}"
+
   prettyAlert: (message) ->
     alert(message)
     

@@ -19,7 +19,10 @@
         <div class="photo-info">
           <div class="pull-left avatar"><img src="<%= photo.user.profile.avatar.small %>"></div>
           <div class="pull-left">
-            <div class="description"><%= photo.description if photo.description %></div>
+            <div class="description">
+              <div><%= Helpers.dateString(new Date(photo.created_at)) %></div>
+              <%= photo.description if photo.description %>
+            </div>
             <div class="social-info">
               <span class="comment-icon">
               </span>

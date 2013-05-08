@@ -1,5 +1,5 @@
 object @photo
-attributes :id, :description, :comments_count
+attributes :id, :description, :comments_count, :created_at
 node(:thumb) { |photo| photo.file.url(:big_thumb) }
 node(:file) do |photo|
   {

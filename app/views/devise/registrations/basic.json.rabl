@@ -1,5 +1,7 @@
 object @user
-child :profile => :profile do
+child :profile => :profile do |profile|
+  attribute :display_name
+  node(:url) { show_profile_url(profile.user) }
   node :avatar do |profile|
     { 
       :big => profile.avatar.url(:big),
