@@ -736,11 +736,14 @@ div.dotted {
       .comment {
         padding: 5px;
         margin: 5px auto;
+        border: 1px dotted;
+        border-width: 1px 0 0 0;
+        padding-top: 10px;
         &:nth-child(odd) {
-          background: transparentize($jourmieRed, 0.8);
+          border-color: $jourmieRed;
         }
         &:nth-child(even) {
-          background: transparentize($jourmieTurquoise, 0.8);
+          border-color: $jourmieTurquoise;
         }
       }
       .comment-avatar {
