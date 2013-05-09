@@ -23,7 +23,7 @@
       </a>
     </li>
     <li>
-      <a href="#" class="video">
+      <a href="#" class="video disabled">
         <span class="content-icon video"></span>
         <div>
           Video
@@ -31,7 +31,7 @@
       </a>
     </li>
     <li>
-      <a href="#" class="music">
+      <a href="#" class="music disabled">
         <span class="content-icon music"></span>
         <div>
           Music
@@ -39,7 +39,7 @@
       </a>
     </li>
     <li>
-      <a href="#" class="story">
+      <a href="#" class="story disabled">
         <span class="content-icon story"></span>
         <div>
           Story
@@ -47,7 +47,7 @@
       </a>
     </li>
     <li>
-      <a href="#" class="others">
+      <a href="#" class="others disabled">
         <span class="content-icon others"></span>
         <div>
           Other stuff

@@ -266,8 +266,11 @@ footer {
   margin-bottom: -10px;
 }
 
-a.disabled {
+span.disabled, a.disabled {
   opacity: 0.4; 
+  * {
+    opacity: inherit;
+  }
 }
 
 // Google Maps

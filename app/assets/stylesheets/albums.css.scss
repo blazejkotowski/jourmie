@@ -17,6 +17,7 @@ div.dotted {
   font-size: 16px;
   position: relative;
   input, button {
+    opacity: 1;
     background: transparent;
     border: 0;
     box-shadow: none !important;
@@ -26,6 +27,7 @@ div.dotted {
     font-weight: bold;
   }
   input.gmaps {
+    font-size: 16px;
     width: 60%;
     margin-right: 10px;
   }
@@ -36,7 +38,7 @@ div.dotted {
   span.desc {
     width: 120px;
     text-align: left;
-    opacity: 0.8;
+    opacity: 1;
   }
   input.datepicker {
     width: 10%;
@@ -73,6 +75,9 @@ div.dotted {
 }
 
 .content-icon {
+  div {
+    text-shadow: 2px 2px 2px rgba(0,0,0,.3);
+  }
   width: 105px;
   height: 70px;
   text-indent: -9999px;
