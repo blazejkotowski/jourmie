@@ -54,7 +54,7 @@
     </ul>
     <% if @current_user: %>
       <a href="<%= @edit_profile_path %>" class="edit-button btn btn-medium btn-warning">
-        Edit your profile
+        Edit profile
       <a/>
     <% end %>
   </div>

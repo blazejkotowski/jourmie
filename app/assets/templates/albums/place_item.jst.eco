@@ -4,7 +4,7 @@
       <%= @name %>
     </div>
     <div class="pull-right place-date">
-      <%= "#{Helpers.dateString(@date_from)} to #{Helpers.dateString(@date_to)}" %>
+      <%= "#{Helpers.dateString(@date_from)}  to  #{Helpers.dateString(@date_to)}" %>
     </div>
     <div class="clearfix"></div>
   </div>
