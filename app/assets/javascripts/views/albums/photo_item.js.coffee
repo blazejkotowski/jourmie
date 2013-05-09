@@ -8,6 +8,7 @@ class Jourmie.Views.Albums.PhotoItem extends Backbone.View
   events:
     'click .jr-delete': 'deletePhoto'
     'click .photo-item-buttons a': (e) -> e.preventDefault()
+    'blur .description': 'changeDescription'
     
   initialize: ->
     _.bindAll(this, "render")
@@ -25,3 +26,7 @@ class Jourmie.Views.Albums.PhotoItem extends Backbone.View
         unless response.error
           el.remove()
           
+  changeDescription: (event) ->
+    current_description = $(event.target).val()
+    if @model.get('description') != current_description
+      @model.save { 'description': current_description }, { patch: true }

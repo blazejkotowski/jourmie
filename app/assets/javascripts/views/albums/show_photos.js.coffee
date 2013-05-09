@@ -16,7 +16,7 @@ class Jourmie.Views.Albums.ShowPhotos extends Backbone.View
       # Add indexes to single elements to identify them
       _.each content, (el, index) -> el.index = i + index
       template = if big then @template_big else @template_thumbs
-      big = !big
+      # big = !big
       @$el.append(template({ photos: content }))
       i += 10
     @

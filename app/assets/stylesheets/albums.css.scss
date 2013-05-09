@@ -644,6 +644,7 @@ div.dotted {
     .item {
       cursor: pointer;
       .photo-wrapper {
+        background: $jourmieMiddleGray;
         max-height: 500px;
         text-align: center;
         overflow: hidden;

@@ -1,3 +1,9 @@
+originalSync = Backbone.sync
+Backbone.sync = (method, model, options) ->
+	if method is "patch"
+    options.type = 'PUT'
+	originalSync method, model, options
+
 window.Jourmie =
   Models: {}
   Collections: {}
