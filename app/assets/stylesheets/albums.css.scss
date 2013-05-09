@@ -691,6 +691,7 @@ div.dotted {
     right: -9px;
     z-index: 2001;
   }
+  border: 2px solid $jourmieMiddleGray;
   padding: 5px;
   position: relative;
   background: #fff;
@@ -734,6 +735,13 @@ div.dotted {
       margin-top: 20px;
       .comment {
         padding: 5px;
+        margin: 5px auto;
+        &:nth-child(odd) {
+          background: transparentize($jourmieRed, 0.8);
+        }
+        &:nth-child(even) {
+          background: transparentize($jourmieTurquoise, 0.8);
+        }
       }
       .comment-avatar {
         border: 1px solid $jourmieRed;
@@ -758,6 +766,9 @@ div.dotted {
         font-size: 12px;
       }
       .new-comment {
+        form {
+          margin: 15px auto -20px auto;
+        }
         input {
           background: transparent !important;
           @include box-shadow(none !important);
