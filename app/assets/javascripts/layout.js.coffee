@@ -54,6 +54,6 @@ jQuery ->
   
   $(window).scroll @toggleNotifications
   
-  $("#shutter button.jr-close").on "click", (e) ->
+  $("#shutter button.jr-close, #shutter button.shutter-close").on "click", (e) ->
     Helpers.hideShutter()
     e.preventDefault()

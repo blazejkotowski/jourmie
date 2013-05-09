@@ -19,10 +19,10 @@
 
 <div class="photo-item-buttons">
   <div class="pull-left">
-    <a href="#">Add buddytag</a>
+    <a class="disabled" href="#">Add buddytag</a>
   </div>
   <div class="pull-right">
-    <a href="#">Pin to map</a>
+    <a class="disabled" href="#">Pin to map</a>
   </div>
 </div>
 

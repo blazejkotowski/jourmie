@@ -300,6 +300,9 @@ span.disabled, a.disabled {
   .jr-close {
     z-index: 2001;
   }
+  .shutter-close {
+    z-index: 2001;
+  }
 }
 
 .clearer {
@@ -317,6 +320,13 @@ button.jr-close {
   text-indent: -9999px;
   font-size: 0;
   border: 0;
+}
+
+button.shutter-close {
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  // color: $jourmieDarkGray;
 }
 
 button.jr-delete {
