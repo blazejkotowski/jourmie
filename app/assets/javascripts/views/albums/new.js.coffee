@@ -66,10 +66,14 @@ class Jourmie.Views.Albums.New extends Backbone.View
     Window.album.save {},
       success: ->
         console.log "Album saved"
-        for participation in Window.album.get('participations').models
-          participation.save {},
-            success: -> 
-              if (--participants_to_save) <= 0
-                window.location.href = window.location.origin + "/albums/#{Window.album.get('slug')}#edit"
+        if Window.album.get('participations').length > 0
+          for participation in Window.album.get('participations').models
+            participation.save {},
+              success: ->
+                if (--participants_to_save) <= 0
+                  window.location.href = window.location.origin + "/albums/#{Window.album.get('slug')}#edit"
+        else
+            window.location.href = window.location.origin + "/albums/#{Window.album.get('slug')}#edit"
+
               
               
