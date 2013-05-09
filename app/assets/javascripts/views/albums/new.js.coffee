@@ -20,10 +20,12 @@ class Jourmie.Views.Albums.New extends Backbone.View
     @
     
   changeStartDate: (e) ->
-    @model.set 'start_date', e.date
+    if e.date
+      @model.set 'start_date', e.date
     
   changeEndDate: (e) ->
-    @model.set 'end_date', e.date
+    if e.date
+      @model.set 'end_date', e.date
   
   changeName: (e) ->
     @model.set 'name', $(e.target).val()

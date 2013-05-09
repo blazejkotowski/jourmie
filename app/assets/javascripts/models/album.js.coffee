@@ -1,6 +1,6 @@
 class Jourmie.Models.Album extends Backbone.RelationalModel
   
-  url: -> 
+  url: ->
     if @get('id')
       "/albums/#{@get('id')}.json"
     else
@@ -52,6 +52,9 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
       @set
         start_date_string: "#{('0'+start_date.getDate()).substr(-2)}-#{('0'+(start_date.getMonth()+1)).substr(-2)}-#{start_date.getFullYear()}"
         end_date_string: "#{('0'+end_date.getDate()).substr(-2)}-#{('0'+(end_date.getMonth()+1)).substr(-2)}-#{end_date.getFullYear()}"
+
+    if @get('start_date') is undefined then @set('start_date', start_date)
+    if @get('end_date') is undefined then @set('end_date', end_date)
   
   addPlace: (place) ->
     new_road = from = to = null
@@ -66,7 +69,7 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
       console.log "road", new_road
 
     to.save {},
-      success: -> 
+      success: ->
         if new_road isnt null
           new_road.save {},
             success: ->
