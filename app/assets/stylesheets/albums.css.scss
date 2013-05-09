@@ -372,6 +372,20 @@ div.dotted {
     border-radius: 5px;
     background: rgba(255,255,255,.4);
   }
+  .descriptions { 
+    text-shadow: 3px 3px 4px rgba(0,0,0,.4);
+    color: $jourmieDarkGray;
+    font-size: 18px;
+    div {
+      position: absolute;
+      bottom: 20px;
+      margin: 0 auto;
+    }
+    .center {
+      top: 47%;
+      left: 48%;
+    }
+  }
   .folder-area, .drop-area {
     position: relative;
     display: block;
@@ -379,7 +393,7 @@ div.dotted {
     height: 100%;
     float: left;
     border: 0;
-  }
+   }
   .folder-area {
     background: transparent url('clouds/add_images.png') no-repeat center;
     input[type=file] {

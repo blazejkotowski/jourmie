@@ -4,6 +4,17 @@
 <div class="clearer"></div>
 <div id="add-photos">
   <div class="inner">
+    <div class="descriptions">
+      <div style="left: 155px;">
+        Choose from folder
+      </div>
+      <div class="center">
+        OR
+      </div>
+      <div style="right: 180px;">
+        Drag here
+      </div>
+    </div>
     <button class="folder-area">
       <form id="photoupload" action="/photos" type="mulipart/form-data" method="post">
         <input type="hidden" name="photo[place_id]" value="<%= @id %>">
