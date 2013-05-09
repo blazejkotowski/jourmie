@@ -42,7 +42,7 @@
     <% end %>
     <div class="new-comment">
       <form id="new-comment-form">
-        <input type="text" id="comment-content">
+        <input type="text" placeholder="Type your comment here..." id="comment-content" class="dotted">
         <input type="submit" class="artificially-hidden">
       </form>
     </div>

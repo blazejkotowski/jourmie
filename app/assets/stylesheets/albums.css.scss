@@ -757,6 +757,18 @@ div.dotted {
         width: 310px;
         font-size: 12px;
       }
+      .new-comment {
+        input {
+          background: transparent !important;
+          @include box-shadow(none !important);
+          border: 1px solid #ccc !important;
+          letter-spacing: inherit;
+          color: $jourmieDarkGray !important;
+          font-size: 12px;
+          font-weight: normal;
+          @include placeholder(#666);
+        }
+      }
     }
   }  
 }
