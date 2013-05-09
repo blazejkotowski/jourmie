@@ -25,7 +25,7 @@ class Jourmie.Views.Albums.ShowPhotos extends Backbone.View
     event.preventDefault()
     id = $(event.target).data('id')
     photoModel = @collection.at(id)
-    photoView = new Jourmie.Views.Albums.PhotoPreview({ model: photoModel })
+    photoView = new Jourmie.Views.Photos.PhotoPreview({ model: photoModel })
     console.log "opening photo", photoModel
     Helpers.setLightShutterBody(photoView.render().$el)
     Helpers.showLightShutter()

@@ -6,11 +6,11 @@ class Jourmie.Models.Photo extends Backbone.RelationalModel
       type: Backbone.HasMany
       relatedModel: 'Jourmie.Models.Comment'
       collectionType: 'Jourmie.Collections.Comments'
-      reverseRelation:
-        key: 'photo'
-        keySource: 'photo_id'
-        type: Backbone.HasOne
-        includeInJSON: 'id'
+      # reverseRelation:
+      #   key: 'photo'
+      #   keySource: 'photo_id'
+      #   type: Backbone.HasOne
+      #   includeInJSON: 'id'
     }
   ]
 

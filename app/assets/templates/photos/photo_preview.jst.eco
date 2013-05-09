@@ -40,6 +40,12 @@
         <div class="clearer"></div>
       </div>
     <% end %>
+    <div class="new-comment">
+      <form id="new-comment-form">
+        <input type="text" id="comment-content">
+        <input type="submit" class="artificially-hidden">
+      </form>
+    </div>
   </div>
 </div>
 <div class="clearer"></div>
