@@ -15,6 +15,18 @@ class Jourmie.Views.Photos.PhotoPreview extends Backbone.View
 
   render: ->
     @$el.html(@template(@model.toJSON()))
+    @setSizes()
+    @
+  
+  setSizes: ->
+    window_width = $(window).width()
+    info_width = @$el.find('.info').outerWidth()
+    preview_width = window_width-100
+    @$el.css('width', preview_width + 'px')
+    @$el.find('.image').css('width', (preview_width - info_width) + 'px')
+    @$el.find('.image img').css
+      'max-width': (preview_width-info_width) + 'px'
+      'width': (preview_width-info_width) + 'px'
     @
 
   closePreview: (e) ->

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130507181126) do
+ActiveRecord::Schema.define(:version => 20130509140641) do
 
   create_table "albums", :force => true do |t|
     t.string   "name"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20130507181126) do
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
     t.integer  "comments_count", :default => 0
+    t.integer  "likes_count",    :default => 0
   end
 
   add_index "content_pieces", ["place_id"], :name => "index_content_pieces_on_place_id"
@@ -61,6 +62,14 @@ ActiveRecord::Schema.define(:version => 20130507181126) do
 
   add_index "friendships", ["friend_id"], :name => "index_friendships_on_friend_id"
   add_index "friendships", ["user_id"], :name => "index_friendships_on_user_id"
+
+  create_table "likes", :force => true do |t|
+    t.integer  "likeable_id"
+    t.string   "likeable_type"
+    t.integer  "user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "participations", :force => true do |t|
     t.integer  "album_id"
