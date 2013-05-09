@@ -31,7 +31,7 @@ class UserProfile < ActiveRecord::Base
   
   private
   def set_permalink
-    if permalink.empty?
+    if permalink.nil? || permalink.empty?
       i = 1
       link = full_name.parameterize
       if UserProfile.find_by_permalink(link).present?
