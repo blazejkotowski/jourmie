@@ -16,3 +16,4 @@ class Jourmie.Routers.Album extends Backbone.Router
     editView = new Jourmie.Views.Albums.Edit({ model: Window.album })
     $('#album-wrapper').html(editView.render().$el)
     editView.renderRelated()
+    editView.setLastDate()

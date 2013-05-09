@@ -23,7 +23,13 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
     @$el.find('.gmaps').geocomplete()
     @$el.find('.carousel').carousel('pause')
     @
-    
+
+  setLastDate: ->
+    last_date = @model.get('start_date')
+    if @model.get('places').length > 0
+      last_date = @model.get('places').at(@model.get('places').length-1).get('date_to')
+    @$el.find('#date_from').val(Helpers.dateString(last_date, true)).focus().blur()
+
   addPlace: (e) ->
     new_place = new Jourmie.Models.Place
       latitude: @current_place_location[0]

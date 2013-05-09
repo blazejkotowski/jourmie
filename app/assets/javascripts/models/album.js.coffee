@@ -55,6 +55,7 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
 
     if @get('start_date') is undefined then @set('start_date', start_date)
     if @get('end_date') is undefined then @set('end_date', end_date)
+    if @get('last_date') is undefined then @set('last_date', start_date)
   
   addPlace: (place) ->
     new_road = from = to = null

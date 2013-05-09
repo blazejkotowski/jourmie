@@ -1,10 +1,13 @@
 window.Helpers =
-  dateString: (date) ->
+  dateString: (date, number = false) ->
     months = Array('January','February','March','April','May', 'June','July','August','September','October','November','December')
     day = ('0' + date.getDate()).slice(-2)
-    month = months[date.getMonth()]
+    if number
+      month = ('0' + (date.getMonth() + 1)).slice(-2)
+    else
+      month = months[date.getMonth()]
     year = date.getFullYear()
-    "#{day}/#{month}/#{year}"
+    "#{month}/#{day}/#{year}"
 
   datetimeString: (date) ->
     hour = ('0' + date.getHours()).slice(-2)
