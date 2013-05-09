@@ -1,7 +1,7 @@
 class Jourmie.Views.Albums.PhotosManager extends Backbone.View
   
   template: JST['albums/photos_manager']
-  model: 'Jourmie.Models.Place'
+  model: 'Backbone.RelationalModel'
   
 #  events:
   
@@ -36,7 +36,7 @@ class Jourmie.Views.Albums.PhotosManager extends Backbone.View
             data.context.model.set 'thumb', content.url
             console.log content, content.url, data.context.model
             place_model.get('photos').add data.context.model
-            data.context.model.save({ remote_file_url: data.context.model.get('file') })
+            data.context.model.save({ remote_file_url: data.context.model.get('thumb') })
         progress: (e, data) ->
           if data.context
             progress = parseInt(data.loaded/data.total * 100, 10)

@@ -6,7 +6,7 @@ class Jourmie.Views.Albums.Show extends Backbone.View
   
   render: ->
     @$el.html(@template(@model.toJSON()))
-    $("body").css("background-image", 'url("/assets/backgrounds/Tło3.jpg")')
+    Helpers.setBodyBackground('url("/assets/backgrounds/Tło3.jpg")')
     @
     
   renderPlaces: ->

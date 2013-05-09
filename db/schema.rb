@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130509140641) do
+ActiveRecord::Schema.define(:version => 20130509151033) do
 
   create_table "albums", :force => true do |t|
     t.string   "name"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20130509140641) do
     t.datetime "updated_at",                    :null => false
     t.integer  "comments_count", :default => 0
     t.integer  "likes_count",    :default => 0
+    t.integer  "road_id"
   end
 
   add_index "content_pieces", ["place_id"], :name => "index_content_pieces_on_place_id"

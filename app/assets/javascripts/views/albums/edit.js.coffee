@@ -11,12 +11,14 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
     'slid .carousel': 'changeCoverPhoto'
     'click #finish-button': 'saveChanges'
     'blur #album-title': 'changeName'
+    'click .place-buttons:not(".transport") a:not(".photo")': (e) -> e.preventDefault()
   
   initialize: ->
     _.bindAll(this,'render')
   
   render: ->
     @$el.html(@template(@model.toJSON()))
+    Helpers.restoreBodyBackground()
     @$el.find('.datepicker').datepicker()
     @$el.find('.gmaps').geocomplete()
     @$el.find('.carousel').carousel('pause')
@@ -24,9 +26,9 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
     
   addPlace: (e) ->
     new_place = new Jourmie.Models.Place
-      latitude: @current_place_location[0],
+      latitude: @current_place_location[0]
       longitude: @current_place_location[1]
-      name: @current_place_name, 
+      name: @current_place_name
       date_from: new Date($("#date_from").val())
       date_to: new Date($("#date_to").val())
     
@@ -80,12 +82,13 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
   appendPlace: (place) ->
     place_view = new Jourmie.Views.Albums.PlaceItem({ model: place })
     @$el.find('#new-place').before(place_view.render().$el)
-    place_view.renderMap()    
+    place_view.renderMap()
     
-  saveChanges: (event) -> 
+  saveChanges: (event) ->
     event.preventDefault()
-    @model.save {}, 
+    @model.save {},
       success: (model,response) ->
         if response.saved
           Helpers.prettyAlert(response.message)
+          window.location.hash = "show"
     

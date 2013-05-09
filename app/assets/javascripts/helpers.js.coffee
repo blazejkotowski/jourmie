@@ -37,4 +37,12 @@ window.Helpers =
 
   setLightShutterBody: (body) ->
     $("#light-shutter").html(body)
+  
+  setBodyBackground: (src) ->
+    Window.last_background = $('body').css('background-image')
+    $('body').css('background-image', src)
     
+  restoreBodyBackground: ->
+    if Window.last_background
+      $('body').css('background-image', Window.last_background)
+      Window.last_background = undefined

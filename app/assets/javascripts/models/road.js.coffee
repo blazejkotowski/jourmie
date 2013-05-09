@@ -25,7 +25,7 @@ class Jourmie.Models.Road extends Backbone.RelationalModel
       keySource: 'place_from_id'
       type: Backbone.HasOne
       relatedModel: 'Jourmie.Models.Place'
-      reverseRelation:  
+      reverseRelation:
         key: 'road_to'
         includeInJSON: 'id'
         keySource: 'road_to_id'
@@ -37,12 +37,24 @@ class Jourmie.Models.Road extends Backbone.RelationalModel
       keySource: 'place_to_id'
       type: Backbone.HasOne
       relatedModel: 'Jourmie.Models.Place'
-      reverseRelation:  
+      reverseRelation:
         key: 'road_from'
         includeInJSON: 'id'
         keySource: 'road_from_id'
         type: Backbone.HasOne
     },
+    {
+      key: 'photos'
+      relatedModel: 'Jourmie.Models.Photo'
+      type: Backbone.HasMany
+      collectionType: 'Jourmie.Collections.Photos'
+      reverseRelation:
+        keySource: 'road_id'
+        includeInJSON: 'id'
+        key: 'road'
+        type: Backbone.HasOne
+    }
+ 
   ]
   
   toTemplate: ->
