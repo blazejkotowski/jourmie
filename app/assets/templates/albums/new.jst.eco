@@ -1,22 +1,15 @@
 <div class="container">
-  <div class="row">
+  <div class="row positive-top-big">
     <div class="span12">
       <input type="text" name="album_name" id="album_name" placeholder="Type album name here..." class="dotted high centered">
     </div>
   </div>
-  <div class="row"> 
-    <div class="span12">
-      <div class="align-center posivite-top-big">
-        <h4 class="positive-bottom-big">Date</h4>
-      </div>
+ <div class="row negative-bottom positive-top-huge">
+    <div class="span5 offset1 new-album-bold" style="padding-left: 27px">
+      Trip from:
     </div>
-  </div>
-  <div class="row">
-    <div class="span5 offset1 align-center">
-      From
-    </div>
-    <div class="span5 align-center">
-      To
+    <div class="span5 new-album-bold" style="margin-left: 8px;">
+      To:
     </div>
   </div>
   <div class="row">
@@ -31,8 +24,8 @@
   </div>
   <div class="row">
     <div class="span12">
-      <div class="align-center positive-top-big">
-        <h4 class="positive-bottom-big">Invite Buddies</h4>
+      <div class="new-album-label positive-top-huge">
+        <h4>Invite Buddies</h4>
       </div>
     </div>
   </div>
@@ -40,12 +33,12 @@
     <div class="span12">
       <div id="invite-box">
         <a href="#" class="social-icon jourmie">Jourmie</a>
-        <a href="#" class="social-icon mail">Mail</a>
-        <a href="#" class="social-icon facebook">Facebook</a>
-        <a href="#" class="social-icon gplus">Google Plus</a>
-        <a href="#" class="social-icon linkedin">Linked In</a>
-        <a href="#" class="social-icon twitter">Twitter</a>
-        <a href="#" class="social-icon iphone">iPhone</a>
+        <a href="#" class="social-icon mail disabled">Mail</a>
+        <a href="#" class="social-icon facebook disabled">Facebook</a>
+        <a href="#" class="social-icon gplus disabled">Google Plus</a>
+        <a href="#" class="social-icon linkedin disabled">Linked In</a>
+        <a href="#" class="social-icon twitter disabled">Twitter</a>
+        <a href="#" class="social-icon iphone disabled">iPhone</a>
         <div id="invite-modal" class="modal hide fade">
           <div class="modal-header">
             <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -59,7 +52,7 @@
   </div>
   <div class="row">
     <div class="span12">
-      <div class="centered positive-top-huge">
+      <div class="centered positive-bottom-big positive-top-big">
         <input type="submit" id="submit" class="text big" value="Continue">
       </div>
     </div>

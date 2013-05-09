@@ -13,6 +13,7 @@ class Jourmie.Views.Albums.New extends Backbone.View
   
   render: ->
     @$el.html(@template(@model.toTemplate()))
+    Jourmie.setTitle('Creating new album')
     @$el.find("#invite-modal").modal
       show: false
       keyboard: true
@@ -24,7 +25,7 @@ class Jourmie.Views.Albums.New extends Backbone.View
   changeEndDate: (e) ->
     @model.set 'end_date', e.date
   
-  changeName: (e) ->  
+  changeName: (e) ->
     @model.set 'name', $(e.target).val()
     
   inviteFriends: (e) ->

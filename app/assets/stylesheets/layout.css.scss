@@ -22,7 +22,7 @@
 body {
   color: #fff;
   font-family: "Young", "Arial", sans-serif;
-  background: transparent url("background_alternative.jpg") no-repeat;
+  background: transparent url("background_alternative.jpg") no-repeat bottom;
   background-size: cover;
   background-attachment: fixed;
   &.home {
@@ -95,7 +95,8 @@ button.text, input[type=submit].text {
 
 .transparent-wrapper {
   padding: 15px 0;
-  background: rgba(0,0,0,.5);
+  padding-top: $navbarHeight + 10px;
+  background: rgba(0,0,0,.4);
   width: 970px;
   margin: 0 auto;
   position: relative;
@@ -177,7 +178,7 @@ button.text, input[type=submit].text {
 }
 
 #main-container {
-  padding-top: $navbarHeight + 30px;
+  padding-top: $navbarHeight - 10px;
 }
 
 footer {
@@ -259,6 +260,14 @@ footer {
 
 .positive-bottom-big {
   margin-bottom: 20px !important;
+}
+
+.negative-bottom {
+  margin-bottom: -10px;
+}
+
+a.disabled {
+  opacity: 0.4; 
 }
 
 // Google Maps
@@ -346,3 +355,21 @@ button.jr-delete {
   font-size: 0;
   opacity: 0;
 }
+
+input.dotted, button.dotted {
+  background: transparent;
+  border: dotted $jourmieTurquoise !important;
+  border-width: 2px 0 !important;
+  box-shadow: none !important;
+  color: #fff !important;
+  @include border-radius(0);
+  @include placeholder(#fff);
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+input.high, button.high {
+  padding: 20px 0;
+}
+
+

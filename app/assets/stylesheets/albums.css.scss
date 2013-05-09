@@ -1,22 +1,6 @@
 @import "layout";
 @import "variables";
 
-input.dotted, button.dotted {
-  background: transparent;
-  border: dotted $jourmieTurquoise !important;
-  border-width: 2px 0 !important;
-  box-shadow: none !important;
-  color: #fff !important;
-  @include border-radius(0);
-  @include placeholder(#fff);
-  letter-spacing: 3px;
-  font-weight: bold;
-}
-
-input.high, button.high {
-  padding: 20px 0;
-}
-
 input.centered {
   text-align: center;
 }
@@ -62,6 +46,22 @@ div.dotted {
     width: 10px;
     margin: 0 3px;
   }
+}
+
+#album_name {
+  width: 725px;
+  display: block;
+  margin: 0 auto;
+  font-size: 1.2em;
+}
+
+.new-album-label {
+  margin-left: 105px;
+}
+
+.new-album-label, .new-album-bold {
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.5);
 }
 
 #invite-box, #places-box {

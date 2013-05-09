@@ -17,6 +17,9 @@
 }
 
 .datepicker {
+  .day.old, .day.new {
+    color: #aaa;
+  }
   thead {
     letter-spacing: 3px;
   }
