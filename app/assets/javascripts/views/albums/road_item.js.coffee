@@ -14,8 +14,10 @@ class Jourmie.Views.Albums.RoadItem extends Backbone.View
   chooseMeans: (event) ->
     console.log "means"
     @$el.find('.transport .active').removeClass('active')
-    console.log $(event.target)
+    console.log "setting ",$(event.target).attr('href'), " means"
+    @model.save { means: $(event.target).attr('href') }, { patch: true }
     $(event.target).parent().addClass('active')
+
     event.preventDefault()
     
   openPhotosManager: (e) ->

@@ -9,7 +9,7 @@
   </div>
   <ul class="place-buttons transport">
     <li>
-      <a href="#" class="train">
+      <a href="0" class="train">
         <span class="content-icon train"></span>
         <div>
           By train
@@ -17,7 +17,7 @@
       </a>
     </li>
     <li>
-      <a href="#" class="car">
+      <a href="1" class="car">
         <span class="content-icon car"></span>
         <div>
           By car
@@ -25,7 +25,7 @@
       </a>
     </li>
     <li>
-      <a href="#" class="plane">
+      <a href="2" class="plane">
         <span class="content-icon plane"></span>
         <div>
           By plane
@@ -33,7 +33,7 @@
       </a>
     </li>
     <li>
-      <a href="#" class="hitchhike">
+      <a href="3" class="hitchhike">
         <span class="content-icon hitchhike"></span>
         <div>
           Hitchhiking
@@ -41,7 +41,7 @@
       </a>
     </li>
     <li>
-      <a href="#" class="foot">
+      <a href="4" class="foot">
         <span class="content-icon shoe"></span>
         <div>
           By foot
@@ -49,7 +49,7 @@
       </a>
     </li>
     <li>
-      <a href="#" class="bike">
+      <a href="5" class="bike">
         <span class="content-icon bike"></span>
         <div>
           By bike
