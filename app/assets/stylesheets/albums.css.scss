@@ -596,10 +596,11 @@ div.dotted {
     padding-bottom: 12px;
     background: transparent url('album_dots_big.png') repeat-x bottom;
     background-size: 450px;
+    padding-bottom:0;
   }
 }
 
-.show-place {
+.show-place, .show-road {
   margin: 30px 180px 30px 60px;
   .place-map {
     width: 100%;
@@ -818,4 +819,8 @@ div.dotted {
       }
     }
   }  
+}
+
+.album-wrapper {
+  padding-top: 5px !important;
 }

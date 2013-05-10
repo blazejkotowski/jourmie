@@ -4,7 +4,7 @@
 </div>
 <h2 class="place-name"><%= @name %></h2>
 
-<div class="info-bar">
+<div class="info-bar" data-spy="affix">
   <div class="info-date">
     <%= "#{('0'+@date_from.getDate()).substr(-2)}.#{('0'+(@date_from.getMonth()+1)).substr(-2)}.#{@date_from.getFullYear()}" %>
   </div>
