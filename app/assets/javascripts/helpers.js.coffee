@@ -17,6 +17,12 @@ window.Helpers =
 
   prettyAlert: (message) ->
     alert(message)
+
+  hideNavbar: ->
+    $("#navigation-top").hide()
+
+  showNavbar: ->
+    $("#navigation-top").show()
     
   showShutter: ->
     $("#shutter").fadeIn(100)

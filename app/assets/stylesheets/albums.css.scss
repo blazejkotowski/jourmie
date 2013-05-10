@@ -585,6 +585,20 @@ div.dotted {
   }
 }
 
+.show-road {
+  margin: 30px 180px 30px 60px;
+  .road-name {
+    font-family: Pumped;
+    line-height: 50px;
+    display: block;
+    font-size: 30px;
+    color: #111;
+    padding-bottom: 12px;
+    background: transparent url('album_dots_big.png') repeat-x bottom;
+    background-size: 450px;
+  }
+}
+
 .show-place {
   margin: 30px 180px 30px 60px;
   .place-map {

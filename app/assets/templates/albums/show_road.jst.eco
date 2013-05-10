@@ -1,0 +1,4 @@
+<h2 class="road-name">Road from <%= @place_from.get('name') %> to <%= @place_to.get('name') %></h2>
+<div class="road-content">
+
+</div>

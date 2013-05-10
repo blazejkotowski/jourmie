@@ -15,5 +15,9 @@ class Jourmie.Views.Albums.Show extends Backbone.View
       @$el.find('.transparent-wrapper').append(placeView.render().$el)
       placeView.renderMaps()
       placeView.renderContent()
+      if place.get('road_to')
+        console.log 'road',place.get('road_to').toJSON()
+        roadView = new Jourmie.Views.Albums.ShowRoad({ model: place.get('road_to') })
+        @$el.find('.transparent-wrapper').append(roadView.render().$el)
     
   
