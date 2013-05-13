@@ -15,6 +15,8 @@
         .container
           .pull-left
             .brand= link_to "JOURMIE", root_path
+          - if controller_name == "static_pages"
+            = render "shared/navbar_search"
           .pull-right
             %ul.nav
               - unless user_signed_in?

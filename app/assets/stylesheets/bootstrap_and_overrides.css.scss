@@ -16,6 +16,18 @@ legend {
 }
 
 .navbar {
+  .search-query {
+    height: 25px;
+    position: relative;
+    top: 3px;
+    margin-left: 170px;
+    padding-top: 8px;
+    text-shadow: none;
+    &:focus {
+      text-shadow: none !important;
+      background: $jourmieLightGray !important;
+    }
+  }
   .dropdown-menu {
     background: #424242;
   }

@@ -1,4 +1,5 @@
 @import "variables";
+@import 'twitter/bootstrap/mixins';
 
 #home-wrapper {
   background: url('home_background.png') no-repeat center;
@@ -16,6 +17,7 @@
 }
 
 #home-teaser {
+  padding-top: 40px;
   p {
     letter-spacing: 8px;
     font-size: 40px;
@@ -46,8 +48,8 @@
 .home-thumbnail {
   text-align: left;
   display: inline-block;
-  margin: 10px 45px;
-  width: 240px;
+  margin: 10px 25px;
+  width: 270px;
   &:last-child {
     margin-right: 0;
   }
@@ -63,11 +65,13 @@
     background: transparent no-repeat center top;
     width: 269px;
     height: 254px;
+    background-size: 269px 254px;
+    @include box-shadow(2px 2px 3px rgba(0,0,0,.2));
     &.album {
-      background-image: url('album_mini.png');
+      background-image: url('album_mini.jpg');
     }
     &.content {
-      background-image: url('content_mini.png');
+      background-image: url('content_mini.jpg');
     }
     &.shop {
       background-image: url('shop_mini.png');

@@ -54,6 +54,11 @@ class AlbumsController < ApplicationController
       format.json
     end
   end
+
+  def destroy
+    @album.delete
+    redirect_to profile_albums_url(current_user.profile.permalink)
+  end
   
   def s3_upload_form
     render "s3_upload_form", :layout => false

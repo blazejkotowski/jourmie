@@ -15,12 +15,12 @@
         Drag here
       </div>
     </div>
-    <button class="folder-area">
+    <div class="folder-area">
       <form id="photoupload" action="/photos" type="mulipart/form-data" method="post">
         <input type="hidden" name="photo[place_id]" value="<%= @id %>">
         <input type="file" name="photo[file]" multiple>
       </form>
-    </button>
+    </div>
     <div class="drop-area">
     </div>
   </div>

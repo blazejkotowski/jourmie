@@ -4,7 +4,14 @@
 %div{ :class => ("transparent-wrapper" unless request.xhr? )}
   - @albums.each do |album|
     .album-item.align-center{ :style => "background-image: url('#{album.cover_image}');"}
-      .album-title= link_to album.name, album_path(album, :anchor => "/edit")
+      .album-title= link_to album.name, album_path(album, :anchor => "show")
+      .album-buttons
+        .dropdown
+          %a.btn.btn-small.btn-primary.dropdown-toggle{ :role=>:button, :data => { :toggle => :dropdown, :target => "#" } }
+            %span.settings-icon
+          %ul.dropdown-menu{ :role => :menu }
+            %li= link_to "Edit", album_path(album, :anchor => "edit")
+            %li= link_to "Delete", album_path(album), :method => :delete, :confirm => "Are you sure?"
       .album-info
         %div
           = "#{album.start_date.strftime('%d.%m.%Y')} - #{album.end_date.strftime('%d.%m.%Y')}"

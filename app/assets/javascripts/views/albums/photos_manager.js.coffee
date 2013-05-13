@@ -3,7 +3,8 @@ class Jourmie.Views.Albums.PhotosManager extends Backbone.View
   template: JST['albums/photos_manager']
   model: 'Backbone.RelationalModel'
   
-#  events:
+  events:
+   'click .folder-area': (e) -> $(e.target).find('input[type=file]').click()
   
   render: ->
     @$el.html(@template(@model.toTemplate()))
