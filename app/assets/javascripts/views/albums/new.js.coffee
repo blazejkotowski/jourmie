@@ -28,7 +28,8 @@ class Jourmie.Views.Albums.New extends Backbone.View
       @model.set 'end_date', e.date
   
   changeName: (e) ->
-    @model.set 'name', $(e.target).val()
+    console.log $("#album_name").val()
+    @model.set 'name', $("#album_name").val()
     
   inviteFriends: (e) ->
     e.preventDefault()
@@ -50,7 +51,7 @@ class Jourmie.Views.Albums.New extends Backbone.View
                                       .attr("data-id", friend.id)
         $friendItem = $("<div/>").addClass("friend")
                   .append($("<img/>").addClass('avatar').attr('src', friend.profile.avatar.small))
-                  .append($("<div/>").addClass('name').html("<div>#{friend.profile.display_name#}</div>").append($removeButton))
+                  .append($("<div/>").addClass('name').html("<div>#{friend.profile.display_name}</div>").append($removeButton))
                   .append($("<div/>").addClass("clearer"))
         new_participation = new Jourmie.Models.Participation
           album_id: Window.album.get('id')
@@ -66,14 +67,15 @@ class Jourmie.Views.Albums.New extends Backbone.View
     Window.album.save {},
       success: ->
         console.log "Album saved"
+        console.log 'album_slug',Window.album.get('slug')
         if Window.album.get('participations').length > 0
           for participation in Window.album.get('participations').models
             participation.save {},
               success: ->
                 if (--participants_to_save) <= 0
-                  window.location.href = window.location.origin + "/albums/#{Window.album.get('slug')}#edit"
+                  window.location = "/albums/#{Window.album.get('slug')}#edit"
         else
-            window.location.href = window.location.origin + "/albums/#{Window.album.get('slug')}#edit"
+          window.location = "/albums/#{Window.album.get('slug')}#edit"
 
               
               
