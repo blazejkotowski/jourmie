@@ -19,3 +19,4 @@ class Jourmie.Routers.Album extends Backbone.Router
     $('#album-wrapper').html(editView.render().$el)
     editView.renderRelated()
     editView.setLastDate()
+    # editView.$el.find('.datepicker').datepicker('hide')

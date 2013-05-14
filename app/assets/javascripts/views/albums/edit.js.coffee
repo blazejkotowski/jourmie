@@ -22,13 +22,17 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
     @$el.find('.datepicker').datepicker()
     @$el.find('.gmaps').geocomplete()
     @$el.find('.carousel').carousel('pause')
+    @$el.find('.datepicker').datepicker('hide')
     @
 
   setLastDate: ->
-    last_date = @model.get('start_date')
     if @model.get('places').length > 0
       last_date = @model.get('places').at(@model.get('places').length-1).get('date_to')
+    else
+      last_date = new Date(@model.get('start_date'))
     @$el.find('#date_from').val(Helpers.dateString(last_date, true)).focus().blur()
+    @$el.find('#date_from').datepicker('hide')
+    @$el.find('#date_to').datepicker('hide')
 
   addPlace: (e) ->
     new_place = new Jourmie.Models.Place
