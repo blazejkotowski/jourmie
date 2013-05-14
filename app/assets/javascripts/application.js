@@ -27,5 +27,5 @@
 //= require_tree ./collections
 //= require_tree ./views
 //= require_tree ./routers
-//= require user_profiles_controller
+//= require user_profiles
 //= require_tree .

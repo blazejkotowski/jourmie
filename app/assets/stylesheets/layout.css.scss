@@ -384,4 +384,25 @@ input.high, button.high {
   height: 40px;
 }
 
+ul.search-users {
+  background: $jourmieLightGray;
+  @include border-radius(5px !important);
+  width: 300px;
+  padding: 5px 0;
+}
 
+li.search-users-item {
+  a {
+    display: block;
+    padding: 2px 5px;
+    color: #fff;
+    &:hover {
+      background: #21bbac;
+      color: #fff;
+    }
+  }
+
+  img {
+    margin-right: 10px;
+  }
+}

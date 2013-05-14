@@ -62,6 +62,8 @@ module Jourmie
     config.assets.version = '1.0'
     
     config.assets.initialize_on_precompile = false
+
+    config.middleware.insert_before 0, "UsersAutocomplete"
     
     config.before_configuration do
       env_file = File.join(Rails.root, 'config', 'local_env.yml')

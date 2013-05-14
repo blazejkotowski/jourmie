@@ -20,13 +20,15 @@ legend {
     height: 25px;
     position: relative;
     top: 3px;
-    margin-left: 170px;
+    // margin-left: 170px;
     padding-top: 8px;
     text-shadow: none;
     &:focus {
       text-shadow: none !important;
       background: $jourmieLightGray !important;
     }
+    width: 500px;
+    @include border-radius(3px);
   }
   .dropdown-menu {
     background: #424242;
@@ -47,7 +49,7 @@ input[type=text], input[type=tel], input[type=password], input[type=email], sele
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   color: #fff;
-  color: $jourmieTurquoise !important;
+  // color: $jourmieTurquoise !important;
 }
 
 select option {

@@ -28,6 +28,22 @@ class UserProfile < ActiveRecord::Base
       full_name
     end
   end
+
+  def self.autocomplete(term)
+    name, surname = term.split ' '
+    if surname.nil?
+      found = where("first_name like ?", name + '%').limit(10)
+    else
+      found = where("first_name like ? and last_name like ?", name+'%', surname+'%').limit(10)
+    end
+    found.map! do |profile|
+      {
+        :display_name => profile.display_name,
+        :avatar => profile.avatar.url(:tiny), 
+        :permalink => profile.permalink
+      }
+    end
+  end
   
   private
   def set_permalink

@@ -55,3 +55,6 @@ window.Helpers =
     if Window.last_background
       $('body').css('background-image', Window.last_background)
       Window.last_background = undefined
+
+  showProfileUrl: (permalink) ->
+    "/profiles/#{permalink}"

@@ -1,2 +1,5 @@
 .navbar-search.pull-left
   = text_field_tag :jourmie_search, '', :class => "search-query"
+
+:javascript
+  new Jourmie.UsersAutocomplete().initialize()
