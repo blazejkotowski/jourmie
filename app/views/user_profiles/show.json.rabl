@@ -18,7 +18,6 @@ end
 child :user do
   attributes :albums_count, :friends_count
   child :albums do
-    extends 'albums/show'
-    node(:url) { |album| album_path(album) }
+    extends 'albums/show_basic'
   end
 end
