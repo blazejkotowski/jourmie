@@ -7,14 +7,14 @@
     <div class="text">Photos</div>
   </div>
 </div>
-<div class="photos-big-carousel carousel slide">
+<div class="photos-big-carousel carousel slide"id="photos-carousel<%= @id %>">
   <div class="carousel-inner">
     <% i = 0 %>
     <% for photo in @photos: %>
-      <div class="item <%= if i==0 then 'active' %>">
+      <div data-id="<%= photo.index %>" class="item <%= if i==0 then 'active' %>">
         <% i +=1 %>
         <div class="photo-wrapper">
-          <img src="<%= photo.file.original %>" data-id="<%= photo.index %>">
+          <img src="<%= photo.file.original %>">
         </div>
         <div class="photo-info">
           <div class="pull-left avatar"><img src="<%= photo.user.profile.avatar.small %>"></div>
@@ -40,7 +40,9 @@
         </div>
       </div>
     <% end %>
-    <a class="carousel-control left" href=".photos-big-carousel" data-slide="prev">&lsaquo;</a>
-    <a class="carousel-control right" href=".photos-big-carousel" data-slide="next">&rsaquo;</a>
+    <% if @photos.length > 1: %>
+      <a class="carousel-control left" href="#photos-carousel<%= @id %>" data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#photos-carousel<%= @id %>" data-slide="next">&rsaquo;</a>
+    <% end %>
   </div>
 </div>

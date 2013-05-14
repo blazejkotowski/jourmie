@@ -4,7 +4,7 @@ class Jourmie.Views.Albums.ShowPhotos extends Backbone.View
   template_thumbs: JST['albums/show_photos_thumbs']
   
   events:
-    'click .photo-wrapper img': 'openPhoto'
+    'click .item': 'openPhoto'
 
   render: ->
     @$el.html('')
@@ -17,13 +17,13 @@ class Jourmie.Views.Albums.ShowPhotos extends Backbone.View
       _.each content, (el, index) -> el.index = i + index
       template = if big then @template_big else @template_thumbs
       # big = !big
-      @$el.append(template({ photos: content }))
+      @$el.append(template({ photos: content, id: content[0].id }))
       i += 10
     @
     
   openPhoto: (event) ->
     event.preventDefault()
-    id = $(event.target).data('id')
+    id = $(event.target).closest('.item').data('id')
     photoModel = @collection.at(id)
     photoView = new Jourmie.Views.Photos.PhotoPreview({ model: photoModel })
     Helpers.setLightShutterBody(photoView.render().$el)
