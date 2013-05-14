@@ -13,6 +13,14 @@
     line-height: 12px;
     margin-bottom: 0;
   }
+  h3 {
+    font-size: 13px;
+    font-weight: bold;
+  }
+  fieldset {
+    position: relative;
+    top: 18px;
+  }
   position: relative;
 }
 
@@ -36,7 +44,7 @@
   width: 588px;
   height: 332px;
   position: absolute;
-  bottom: -10px;
+  bottom: -12px;
 }
 
 #home-thumbnails {

@@ -7,7 +7,7 @@
     - if f.object.provider.blank?
       = f.input :password, :placeholder => "Password", :required => true, :label => false
       = f.input :password_confirmation, :placeholder => "Repeat password", :required => true, :label => false
-    %p
+    %p{ :style => "font-size: 12px; font-weight: bold;" }
       By creating account I accept Jourmie's
       = link_to "Terms of service", "#"
       and 
