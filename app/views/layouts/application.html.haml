@@ -15,7 +15,7 @@
         .container
           .pull-left
             .brand= link_to "JOURMIE", root_path
-          - if controller_name == "albums"
+          - if signed_in?
             = render "shared/navbar_search"
           .pull-right
             %ul.nav
