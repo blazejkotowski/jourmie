@@ -32,9 +32,9 @@ class UserProfile < ActiveRecord::Base
   def self.autocomplete(term)
     name, surname = term.split ' '
     if surname.nil?
-      found = where("first_name like ? or last_name like ?", name + '%', name + '%').limit(10)
+      found = where("LOWER(first_name) like LOWER(?) or LOWER(last_name) like LOWER(?)", name + '%', name + '%').limit(10)
     else
-      found = where("(first_name like ? and last_name like ?) or (last_name like ? and first_name like ?)", name+'%', surname+'%', name + '%', surname + '%').limit(10)
+      found = where("(LOWER(first_name) like LOWER(?) and LOWER(last_name) like LOWER(?)) or (LOWER(last_name) like LOWER(?) and LOWER(first_name) like LOWER(?))", name+'%', surname+'%', name + '%', surname + '%').limit(10)
     end
     found.map! do |profile|
       {
