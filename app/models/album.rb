@@ -13,11 +13,11 @@ class Album < ActiveRecord::Base
   
   belongs_to :user, :counter_cache => true
   
-  has_many :participations
+  has_many :participations, :dependent => :destroy
   has_many :participants, :through => :participations, :source => :user
   
-  has_many :places
-  has_many :roads
+  has_many :places, :dependent => :destroy
+  has_many :roads, :dependent => :destroy
   
   validates_presence_of :start_date
   validates_presence_of :end_date

@@ -4,4 +4,9 @@ class StaticPagesController < ApplicationController
       redirect_to profile_albums_url(current_user.profile.permalink)
     end
   end
+
+  def about
+
+  end
+
 end

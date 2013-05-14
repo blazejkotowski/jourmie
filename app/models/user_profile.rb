@@ -32,9 +32,9 @@ class UserProfile < ActiveRecord::Base
   def self.autocomplete(term)
     name, surname = term.split ' '
     if surname.nil?
-      found = where("first_name like ?", name + '%').limit(10)
+      found = where("first_name like ? or last_name like ?", name + '%', name + '%').limit(10)
     else
-      found = where("first_name like ? and last_name like ?", name+'%', surname+'%').limit(10)
+      found = where("(first_name like ? and last_name like ?) or (last_name like ? and first_name like ?)", name+'%', surname+'%', name + '%', surname + '%').limit(10)
     end
     found.map! do |profile|
       {
@@ -49,13 +49,18 @@ class UserProfile < ActiveRecord::Base
   def set_permalink
     if permalink.nil? || permalink.empty?
       i = 1
-      link = full_name.parameterize
-      if UserProfile.find_by_permalink(link).present?
-        while UserProfile.find_by_permalink("#{link}-#{i}").present? do
-          i += 1
+      if full_name.present?
+        link = full_name.parameterize
+        if UserProfile.find_by_permalink(link).present?
+          while UserProfile.find_by_permalink("#{link}-#{i}").present? do
+            i += 1
+          end
+          link = "#{link}-#{i}"
         end
+        write_attribute :permalink, "#{link}"
+      else
+        write_attribute :permalink, id
       end
-      write_attribute :permalink, "#{link}-#{i}"
     end
   end
   

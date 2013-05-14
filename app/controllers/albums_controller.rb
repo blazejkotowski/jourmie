@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
   before_filter :authenticate_user!, :only => [:index, :new, :create]
-  load_and_authorize_resource :except => [:cover, :new, :create]
+  load_and_authorize_resource :except => [:cover, :new, :create, :destroy]
 
   def index
     profile = UserProfile.find_by_permalink(params[:profile_id])

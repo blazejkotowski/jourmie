@@ -25,4 +25,6 @@ Jourmie::Application.routes.draw do
   end
   
   root :to => "static_pages#home"
+
+  match "about" => "static_pages#about", :as => :about
 end
