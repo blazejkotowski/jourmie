@@ -5,4 +5,5 @@ class Jourmie.Views.Albums.Participants extends Backbone.View
   render: ->
     @$el.html(@template(participants: @collection.toJSON()))
     @
+
   

@@ -1,5 +1,5 @@
 .navbar-search.pull-left
-  = text_field_tag :jourmie_search, '', :class => "search-query"
+  = text_field_tag :jourmie_search, '', :class => "search-query", :placeholder => "Start typing your friend name..."
 
 :javascript
   new Jourmie.UsersAutocomplete().initialize()

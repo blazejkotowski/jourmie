@@ -10,6 +10,7 @@ class Jourmie.Views.Albums.New extends Backbone.View
     'change #album_name': 'changeName'
     'click .social-icon': 'inviteFriends'
     'click #submit': 'saveAlbum'
+    'click .remove-participant': 'removeParticipant'
   
   render: ->
     @$el.html(@template(@model.toTemplate()))
@@ -41,24 +42,29 @@ class Jourmie.Views.Albums.New extends Backbone.View
     source = _.map Window.friendships.toJSON(), (o) -> { data: o, value: o.friend.profile.display_name, label: o.friend.profile.display_name }
     @$el.find("#invite-modal .modal-body").html($list)
     $el = @$el
-    @$el.find('.friendships-autocomplete').autocomplete
-      minLength: 1
-      source: source
-      select: (e, ui) ->
-        friend = ui.item.data.friend
-        $removeButton = $("<button/>").addClass("btn btn-medium btn-primary remove-participant")
-                                      .text("Delete")
-                                      .attr("data-id", friend.id)
-        $friendItem = $("<div/>").addClass("friend")
-                  .append($("<img/>").addClass('avatar').attr('src', friend.profile.avatar.small))
-                  .append($("<div/>").addClass('name').html("<div>#{friend.profile.display_name}</div>").append($removeButton))
-                  .append($("<div/>").addClass("clearer"))
-        new_participation = new Jourmie.Models.Participation
-          album_id: Window.album.get('id')
-          user_id: ui.item.data.friend_id
-        console.log ui.item.data
-        Window.album.get('participations').add new_participation
-        $el.find(".chosen-friendships").append($friendItem)
+    if source.length < 1
+      @$el.find('.friendships-autocomplete').html("You have no friends yet. Please use search field in top navigation bar to find and add your Jourmie friends")
+    else
+      autocomplete = @$el.find('.friendships-autocomplete-input').autocomplete
+        minLength: 1
+        source: source
+        select: (e, ui) ->
+          friend = ui.item.data.friend
+          $removeButton = $("<button/>").addClass("btn btn-medium btn-primary remove-participant")
+                                        .text("Delete")
+          $friendItem = $("<div/>").addClass("friend")
+                    .append($("<img/>").addClass('avatar').attr('src', friend.profile.avatar.small))
+                    .append($("<div/>").addClass('name').html("<div>#{friend.profile.display_name}</div>").append($removeButton))
+                    .append($("<div/>").addClass("clearer"))
+          new_participation = new Jourmie.Models.Participation
+            album_id: Window.album.get('id')
+            user_id: ui.item.data.friend_id
+          Window.album.get('participations').add new_participation
+          $removeButton.attr("data-id", Window.album.get('participations').length)
+          $el.find(".chosen-friendships").append($friendItem)
+      autocomplete.data("ui-autocomplete")._renderItem = (ul, item) ->
+        console.log item
+        $item = $("<li/>").append("<a><img src=\"#{item.data.friend.profile.avatar.tiny}\">#{item.label}</a>").appendTo(ul)
         
     @$el.find("#invite-modal").modal('show')
     
@@ -77,5 +83,10 @@ class Jourmie.Views.Albums.New extends Backbone.View
         else
           window.location = "/albums/#{Window.album.get('slug')}#edit"
 
-              
-              
+
+   removeParticipant: (event) ->
+     event.preventDefault()
+     id = $(event.target).data('id')-1
+     participation = @model.get('participations').at(id)
+     @model.get('participations').remove(participation)
+     $(event.target).closest('.friend').remove()

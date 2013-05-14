@@ -40,7 +40,7 @@ class UserProfile < ActiveRecord::Base
       {
         :display_name => profile.display_name,
         :avatar => profile.avatar.url(:tiny), 
-        :permalink => profile.permalink
+        :permalink => profile.permalink,
       }
     end
   end

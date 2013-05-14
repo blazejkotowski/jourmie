@@ -29,5 +29,6 @@ class Jourmie.UsersAutocomplete
         $item = $("<li/>").addClass('search-users-item')
                   .append("<a href=\"#{Helpers.showProfileUrl(item.permalink)}\"><img src=\"#{item.avatar}\" />#{item.display_name}</a>")
         ul.append($item)
+        $item
       autocomplete.autocomplete("widget").addClass("search-users")
 

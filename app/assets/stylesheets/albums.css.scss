@@ -356,12 +356,18 @@ div.dotted {
   border: 1px solid #333;
   width: 500px;
   color: $jourmieDarkGray;
-  @include border-radius(5px);
-  a:hover {
+  @include border-radius(3px);
+  padding: 5px 0;
+  a {
+    text-decoration: none !important;
     cursor: pointer;
-    text-decoration: none;
-    color: $jourmieRed;
-    cursor: pointer
+    display: block;
+    padding: 3px 5px;
+    color: $jourmieDarkGray;
+    &:hover {
+      background: $jourmieTurquoiseBackground;
+      color: #fff;
+    }
   }
 }
 
@@ -489,6 +495,8 @@ div.dotted {
 
 
 #invite-modal {
+  color: $jourmieDarkGray;
+  text-align: left;
   h2 {
     color: $jourmieDarkGray !important;
   }
