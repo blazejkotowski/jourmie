@@ -26,7 +26,7 @@ class Ability
     can :manage, Comment, :user_id => user.id
     can :create, Comment do |comment|
       comment.user_id == user.id
-      can? :manage, comment.commentable
+      can? :manage, comment.commentable.photoable.album
     end
     
     # Participations abilities

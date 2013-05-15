@@ -705,6 +705,9 @@ div.dotted {
       .photo-info {
         padding: 5px;
         background: rgba(255,255,255,.6);
+        .description {
+          width: 660px;
+        }
       }
       .social-info {
         position: absolute;
