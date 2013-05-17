@@ -64,7 +64,7 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
   keepCurrentLocation: (e, result) ->
     @current_place_name = result.name
     console.log "result", result
-    @current_place_location = [result.geometry.location.kb, result.geometry.location.lb]
+    @current_place_location = [result.geometry.location.lat(), result.geometry.location.lng()]
     
   changeName: (event) ->
     @model.set('name', $(event.target).val())
