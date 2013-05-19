@@ -12,6 +12,7 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
     'click #finish-button': 'saveChanges'
     'blur #album-title': 'changeName'
     'click .place-buttons:not(".transport") a:not(".photo")': (e) -> e.preventDefault()
+    'click .social-icon': 'manageFriends'
   
   initialize: ->
     _.bindAll(this,'render')
@@ -88,11 +89,11 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
   
   appendRoad: (road) ->
     road_view = new Jourmie.Views.Albums.RoadItem({ model: road })
-    @$el.find('#new-place').before(road_view.render().$el)
+    @$el.find('#places-box').append(road_view.render().$el)
     
   appendPlace: (place) ->
     place_view = new Jourmie.Views.Albums.PlaceItem({ model: place })
-    @$el.find('#new-place').before(place_view.render().$el)
+    @$el.find('#places-box').append(place_view.render().$el)
     place_view.renderMap()
     
   saveChanges: (event) ->
@@ -102,4 +103,17 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
         if response.saved
           Helpers.prettyAlert(response.message)
           window.location.hash = "show"
-    
+          
+  manageFriends: (e) ->
+    e.preventDefault()
+    if $(e.target).hasClass('jourmie')
+      @manageFromJourmie()
+
+  manageFromJourmie: ->
+    source = _.map Window.friendships.toJSON(), (o) -> { data: o, value: o.friend.profile.display_name, label: o.friend.profile.display_name }
+    friendsManager = new Jourmie.Views.Participations.ParticipantsManager
+      collection: @model.get('participations')
+    friendsManager.autocompleteSource = source
+    @$el.find("#invite-modal .modal-body").html(friendsManager.render().$el)
+    @$el.find("#invite-modal").modal('show')
+

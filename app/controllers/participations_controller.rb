@@ -9,7 +9,7 @@ class ParticipationsController < ApplicationController
   end
   
   def destroy
-    @participation = Participation.find_by_album_id_and_user_id(params[:album_id], params[:user_id])
+    @participation = Participation.find_by_album_id_and_id(params[:album_id], params[:id])
     @participation.delete
   end
   

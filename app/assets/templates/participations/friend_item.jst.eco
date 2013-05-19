@@ -1,0 +1,9 @@
+<div class="friend">
+  <img class="avatar" src="<%= @profile.avatar.small %>">
+  <div class="name">
+    <div><%= @profile.display_name %></div>
+    <button class="btn btn-medium btn-primary remove-participant" data-id="<%= @index %>">Delete</button>
+  </div>
+  <div class="clearer">
+  </div>
+</div>

@@ -21,7 +21,29 @@
       <a class="carousel-control right" href="#album-cover-carousel" data-slide="next">&rsaquo;</a>
     </div>
 
+    <h2 class="positive-top-huge">Invite Buddies</h2>
+    <div id="invite-box" class="positive-left-big">
+      <a href="#" class="social-icon jourmie">Jourmie</a>
+      <a href="#" class="social-icon mail disabled">Mail</a>
+      <a href="#" class="social-icon facebook disabled">Facebook</a>
+      <a href="#" class="social-icon gplus disabled">Google Plus</a>
+      <a href="#" class="social-icon linkedin disabled">Linked In</a>
+      <a href="#" class="social-icon twitter disabled">Twitter</a>
+      <a href="#" class="social-icon iphone disabled">iPhone</a>
+      <div id="invite-modal" class="modal hide fade">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h2>Invite travel buddies</h2>
+        </div>
+        <div class="modal-body">
+        </div>
+      </div>
+    </div>
+
     <div id="places-box" class="positive-left-big">
+    </div>
+    <h2 class="positive-bottom-huge">New place</h2>
+    <div class="positive-left-big">
       <div id="new-place" class="dotted">
         <input class="high gmaps" type="text" id="place_address" name="place_name" placeholder="Type city or place you visited..." />
         <span class="high desc">...and pick date:</span>

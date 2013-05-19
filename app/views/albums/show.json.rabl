@@ -8,6 +8,19 @@ child(:places) do
   extends 'places/show'
 end
 
+child(:participations) do 
+  extends 'participations/show'
+  child(:user => :profile) do |user|
+    node(:display_name) { user.profile.display_name }
+    node(:avatar) do
+      {
+        :small => user.profile.avatar.url(:small),
+        :tiny => user.profile.avatar.url(:tiny)
+      }
+    end
+  end
+end
+
 child(:participants_profiles => :participants) do
   attributes :id, :permalink
   node(:path) { |profile| show_profile_path(profile.user) }

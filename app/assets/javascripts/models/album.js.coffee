@@ -58,6 +58,15 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
     if @get('last_date') is undefined then @set('last_date', start_date)
   
   addPlace: (place) ->
+    if @get('places').length < 1
+      @set 'start_date', place.get('date_from')
+    @set 'end_date', place.get('date_to')
+
+    _.bindAll(this, "_addPlace")
+    @save {}, { wait:true } 
+    @_addPlace(place)
+
+  _addPlace: (place) ->
     new_road = from = to = null
     @get('places').add place
     to = @get('places').at(@get('places').length-1)
@@ -76,7 +85,6 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
             success: ->
               if from isnt null
                 from.save
-          
       
     new_road
   

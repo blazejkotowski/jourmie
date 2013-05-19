@@ -1,0 +1,6 @@
+<div class="friendships-autocomplete">
+  <label for="friendships-autocomplete-input">Start typing your friend name</label>
+  <input type="text" class="friendships-autocomplete-input" name="friendships-autocomplete-input">
+  <div class="chosen-friendships">
+  </div>
+</div>

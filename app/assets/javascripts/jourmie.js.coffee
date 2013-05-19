@@ -11,7 +11,9 @@ window.Jourmie =
     Albums: {}
     Profiles: {}
     Photos: {}
+    Participations: {}
   Routers: {}
+
   initialize: ->
     console.log 'Hello from Backbone!'
   
@@ -19,6 +21,10 @@ window.Jourmie =
     Window.album = new Jourmie.Models.Album({ id: album_id })
     Window.album.fetch
       complete: @albumRouterInitialize
+
+    Window.friendships = new Jourmie.Collections.Friendships()
+    Window.friendships.fetch()
+
     
   albumRouterInitialize: ->
     router = new Jourmie.Routers.Album()
@@ -35,8 +41,8 @@ window.Jourmie =
     
   newAlbumInitialize: ->
     Window.album = new Jourmie.Models.Album()
-    albumView = new Jourmie.Views.Albums.New({ model: Window.album })
-    $(".transparent-wrapper").html(albumView.render().$el)
+    albumView = new Jourmie.Views.Albums.Edit({ model: Window.album })
+    $("#album-wrapper").html(albumView.render().$el)
     Window.friendships = new Jourmie.Collections.Friendships()
     Window.friendships.fetch()
     
