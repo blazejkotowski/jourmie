@@ -56,6 +56,7 @@ class AlbumsController < ApplicationController
   end
 
   def destroy
+    @album = Album.find(params[:id])
     @album.delete
     redirect_to profile_albums_url(current_user.profile.permalink)
   end
