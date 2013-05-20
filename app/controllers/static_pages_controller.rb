@@ -9,4 +9,8 @@ class StaticPagesController < ApplicationController
 
   end
 
+  def not_found
+    render 'errors/error_404', :status => :not_found
+  end
+
 end

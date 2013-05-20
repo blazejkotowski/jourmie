@@ -423,3 +423,16 @@ li.search-users-item {
     margin-left: 0;
   }
 }
+
+#error-page {
+  background: transparent url('error.jpg') no-repeat center;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  top: 50px;
+  .container {
+    margin-top: 15px;
+  }
+}
