@@ -407,3 +407,19 @@ li.search-users-item {
     margin-right: 10px;
   }
 }
+
+.bootbox {
+  color: $jourmieDarkGray;
+  text-align: left;
+  input {
+    background: inherit;
+    color: #333 !important;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+  h2 {
+    font-weight: normal;
+    letter-spacing: 3px;
+    margin-left: 0;
+  }
+}

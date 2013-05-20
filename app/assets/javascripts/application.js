@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require twitter/bootstrap
+//= require bootbox.min
 //= require bootstrap-datepicker
 //= require underscore
 //= require backbone

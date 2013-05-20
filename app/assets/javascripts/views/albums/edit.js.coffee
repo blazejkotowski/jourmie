@@ -16,6 +16,7 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
   
   initialize: ->
     _.bindAll(this,'render')
+    @model.on 'change:name', -> $('#album-title').val(@get('name'))
   
   render: ->
     @$el.html(@template(@model.toJSON()))
