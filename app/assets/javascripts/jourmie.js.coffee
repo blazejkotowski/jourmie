@@ -25,7 +25,6 @@ window.Jourmie =
     Window.friendships = new Jourmie.Collections.Friendships()
     Window.friendships.fetch()
 
-    
   albumRouterInitialize: ->
     router = new Jourmie.Routers.Album()
     Backbone.history.start()
@@ -52,6 +51,7 @@ window.Jourmie =
     $("#album-wrapper").html(albumView.render().$el)
     Window.friendships = new Jourmie.Collections.Friendships()
     Window.friendships.fetch()
+    @albumRouterInitialize()
     
   setTitle: (title = '') ->
     if title == ''

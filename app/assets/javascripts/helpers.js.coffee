@@ -16,7 +16,7 @@ window.Helpers =
     @dateString(date) + " #{hour}:#{minutes}:#{seconds}"
 
   prettyAlert: (message) ->
-    alert(message)
+    bootbox.alert(message)
 
   hideNavbar: ->
     $("#navigation-top").hide()

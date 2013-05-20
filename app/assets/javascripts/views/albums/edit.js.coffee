@@ -103,7 +103,7 @@ class Jourmie.Views.Albums.Edit extends Backbone.View
       success: (model,response) ->
         if response.saved
           Helpers.prettyAlert(response.message)
-          window.location.hash = "show"
+          window.location = response.url
           
   manageFriends: (e) ->
     e.preventDefault()
