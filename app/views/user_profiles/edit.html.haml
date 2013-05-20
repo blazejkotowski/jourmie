@@ -8,7 +8,7 @@
       .row
         .span6
           %h4 Avatar
-          = image_tag @profile.avatar_url(:big), :class => "thumbnail"
+          = image_tag @profile.avatar_url(:big), :class => "thumbnail full-avatar"
           = f.file_field :avatar
         #inputs.span6
           .inputs-group

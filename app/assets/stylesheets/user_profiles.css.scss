@@ -1,6 +1,12 @@
 @import "layout";
 @import "variables";
 
+.full-avatar {
+  max-width: 500px;
+  max-height: 500px;
+  width: 500px;
+}
+
 .profile-header {
   margin-top: -40px;
   width: 100%;
