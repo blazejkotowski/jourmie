@@ -23,10 +23,11 @@ class Jourmie.Views.Participations.ParticipantsManager extends Backbone.View
           user_id: ui.item.data.friend_id
         Window.album.get('participations').add new_participation
         console.log "album,", Window.album
-        console.log 'new participation', new_participation
         if Window.album.get('id') is undefined
           Window.album.save {},
             success: ->
+              console.log "new participation, ", new_participation
+              new_participation.set('album', Window.album)
               new_participation.save()
         else
           console.log "saving new participation"

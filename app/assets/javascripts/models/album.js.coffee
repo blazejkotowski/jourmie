@@ -63,27 +63,32 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
     @set 'end_date', place.get('date_to')
 
     _.bindAll(this, "_addPlace")
-    @save {}, { wait:true } 
+    @save {}, { wait:true }
     @_addPlace(place)
 
   _addPlace: (place) ->
     new_road = from = to = null
     @get('places').add place
     to = @get('places').at(@get('places').length-1)
+    console.log "place to, ", to
     if @get('places').length > 1
       from = @get('places').at(@get('places').length-2)
       new_road = new Jourmie.Models.Road
         place_from: from
         place_to: to
+        album: @
       @get('roads').add new_road
       console.log "road", new_road
 
-    to.save {},
+    to.set 'album', Window.album
+    console.log "new_place", to
+    to.save { album: Window.album },
       success: ->
         if new_road isnt null
           new_road.save {},
             success: ->
               if from isnt null
+                from.set 'album', @
                 from.save
       
     new_road
