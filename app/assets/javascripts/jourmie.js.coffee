@@ -41,7 +41,9 @@ window.Jourmie =
     
   newAlbumInitialize: ->
     Window.album = new Jourmie.Models.Album()
+    Jourmie.setTitle 'New Album'
     albumView = new Jourmie.Views.Albums.Edit({ model: Window.album })
+    Window.album.set('name', prompt("New album name"))
     $("#album-wrapper").html(albumView.render().$el)
     Window.friendships = new Jourmie.Collections.Friendships()
     Window.friendships.fetch()

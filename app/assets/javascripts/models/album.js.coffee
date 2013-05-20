@@ -63,7 +63,7 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
     @set 'end_date', place.get('date_to')
 
     _.bindAll(this, "_addPlace")
-    @save {}, { wait:true }
+    @save {}, { wait:true, async: false }
     @_addPlace(place)
 
   _addPlace: (place) ->
