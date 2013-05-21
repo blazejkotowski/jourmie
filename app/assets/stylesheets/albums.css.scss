@@ -86,69 +86,69 @@ div.dotted {
   background: transparent bottom no-repeat;
   background-size: auto 60px;
   &.photo {
-    background-image: url('icons/photo.png');
+    background-image: asset-data-url('icons/photo.png');
     &:active {
-      background-image: url('icons/photo_pushed.png');
+      background-image: asset-data-url('icons/photo_pushed.png');
     }
   }
   &.video {
-    background-image: url('icons/video.png');
+    background-image: asset-data-url('icons/video.png');
     &:active {
-      background-image: url('icons/video_pushed.png');
+      background-image: asset-data-url('icons/video_pushed.png');
     }
   }
   &.music {
-    background-image: url('icons/music.png');
+    background-image: asset-data-url('icons/music.png');
     &:active {
-      background-image: url('icons/music_pushed.png');
+      background-image: asset-data-url('icons/music_pushed.png');
     }
   }
   &.story {
-    background-image: url('icons/story.png');
+    background-image: asset-data-url('icons/story.png');
     &:active {
-      background-image: url('icons/story_pushed.png');
+      background-image: asset-data-url('icons/story_pushed.png');
     }
   }
   &.others {
-    background-image: url('icons/others.png');
+    background-image: asset-data-url('icons/others.png');
     &:active {
-      background-image: url('icons/others_pushed.png');
+      background-image: asset-data-url('icons/others_pushed.png');
     }
   }
   &.car {
-    background-image: url('icons/car.png');
+    background-image: asset-data-url('icons/car.png');
     &:active {
-      background-image: url('icons/car_pushed.png');
+      background-image: asset-data-url('icons/car_pushed.png');
     }
   }
   &.train {
-    background-image: url('icons/train.png');
+    background-image: asset-data-url('icons/train.png');
     &:active {
-      background-image: url('icons/train_pushed.png');
+      background-image: asset-data-url('icons/train_pushed.png');
     }
   }
   &.plane {
-    background-image: url('icons/plane.png');
+    background-image: asset-data-url('icons/plane.png');
     &:active {
-      background-image: url('icons/plane_pushed.png');
+      background-image: asset-data-url('icons/plane_pushed.png');
     }
   }
   &.shoe {
-    background-image: url('icons/shoe.png');
+    background-image: asset-data-url('icons/shoe.png');
     &:active {
-      background-image: url('icons/shoe_pushed.png');
+      background-image: asset-data-url('icons/shoe_pushed.png');
     }
   }
   &.hitchhike {
-    background-image: url('icons/hitchhike.png');
+    background-image: asset-data-url('icons/hitchhike.png');
     &:active {
-      background-image: url('icons/hitchhike_pushed.png');
+      background-image: asset-data-url('icons/hitchhike_pushed.png');
     }
   }
   &.bike {
-    background-image: url('icons/bike.png');
+    background-image: asset-data-url('icons/bike.png');
     &:active {
-      background-image: url('icons/bike_pushed.png');
+      background-image: asset-data-url('icons/bike_pushed.png');
     }
   }
 }
@@ -162,64 +162,64 @@ div.dotted {
   background: transparent bottom no-repeat;
   background-size: auto 50px;
   &.facebook {
-    background-image: url('icons/facebook.png');
+    background-image: asset-data-url('icons/facebook.png');
     &:active {
-      background-image: url('icons/facebook_pushed.png');
+      background-image: asset-data-url('icons/facebook_pushed.png');
     }
   }
   &.jourmie {
     background-size: 60px auto;
-    background-image: url('icons/jourmie.png');
+    background-image: asset-data-url('icons/jourmie.png');
     &:active {
-      background-image: url('icons/jourmie_pushed.png');
+      background-image: asset-data-url('icons/jourmie_pushed.png');
     }
   }
   &.twitter {
-    background-image: url('icons/twitter.png');
+    background-image: asset-data-url('icons/twitter.png');
     &:active {
-      background-image: url('icons/twitter_pushed.png');
+      background-image: asset-data-url('icons/twitter_pushed.png');
     }
   }
   &.gplus {
-    background-image: url('icons/gplus.png');
+    background-image: asset-data-url('icons/gplus.png');
     &:active {
-      background-image: url('icons/gplus_pushed.png');
+      background-image: asset-data-url('icons/gplus_pushed.png');
     }
   }
   &.linkedin {
-    background-image: url('icons/linkedin.png');
+    background-image: asset-data-url('icons/linkedin.png');
     &:active {
-      background-image: url('icons/linkedin_pushed.png');
+      background-image: asset-data-url('icons/linkedin_pushed.png');
     }
   }
   &.mail {
-    background-image: url('icons/mail.png');
+    background-image: asset-data-url('icons/mail.png');
     &:active {
-      background-image: url('icons/mail_pushed.png');
+      background-image: asset-data-url('icons/mail_pushed.png');
     }
   }
   &.iphone {
-    background-image: url('icons/iphone.png');
+    background-image: asset-data-url('icons/iphone.png');
     &:active {
-      background-image: url('icons/iphone_pushed.png');
+      background-image: asset-data-url('icons/iphone_pushed.png');
     }
   }
   &.twitter-small {
     width: 25px;
     height: 25px;
     background-size: 25px 25px;
-    background-image: url('icons/twitt.png');
+    background-image: asset-data-url('icons/twitt.png');
     &:active {
-      background-image: url('icons/twitt_pushed.png');
+      background-image: asset-data-url('icons/twitt_pushed.png');
     }
   }
   &.facebook-small {
     width: 25px;
     height: 25px;
     background-size: 25px 25px;
-    background-image: url('icons/fb.png');
+    background-image: asset-data-url('icons/fb.png');
     &:active {
-      background-image: url('icons/fb_pushed.png');
+      background-image: asset-data-url('icons/fb_pushed.png');
     }
   }
 }
@@ -372,7 +372,7 @@ div.dotted {
 }
 
 #add-photos {
-  background: transparent url('add_photos_background.png') center no-repeat;
+  background: transparent asset-data-url('add_photos_background.png') center no-repeat;
   padding: 20px;
   width: 920px;
   margin: 20px auto;
@@ -411,7 +411,7 @@ div.dotted {
     *{
       cursor: pointer;
     }
-    background: transparent url('clouds/add_images.png') no-repeat center;
+    background: transparent asset-data-url('clouds/add_images.png') no-repeat center;
     input[type=file] {
       position: absolute;
       left: 0;
@@ -422,7 +422,7 @@ div.dotted {
     }
   }  
   .drop-area {
-    background: transparent url('clouds/drag_and_drop.png') no-repeat center;
+    background: transparent asset-data-url('clouds/drag_and_drop.png') no-repeat center;
   }
 }
 
@@ -536,7 +536,7 @@ div.dotted {
     display: block;
     position: absolute;
     left: -10px;
-    background: transparent url('icons/icon_tag.png') center no-repeat;
+    background: transparent asset-data-url('icons/icon_tag.png') center no-repeat;
     width: 57px;
     height: 55px;
     background-size: 57px 55px;
@@ -597,10 +597,10 @@ div.dotted {
   background: transparent no-repeat center;
   background-size: 35px 35px;
   &.map {
-    background-image: url('icons/map.png');
+    background-image: asset-data-url('icons/map.png');
   }
   &.photo {
-    background-image: url('icons/photo.png');
+    background-image: asset-data-url('icons/photo.png');
   }
 }
 
@@ -613,7 +613,7 @@ div.dotted {
     font-size: 30px;
     color: #111;
     padding-bottom: 12px;
-    background: transparent url('album_dots_big.png') repeat-x bottom;
+    background: transparent asset-data-url('album_dots_big.png') repeat-x bottom;
     background-size: 450px;
     padding-bottom:0;
   }
@@ -720,13 +720,13 @@ div.dotted {
           top: 3px;
         }
         span.comment-icon {
-          background: transparent url('icons/comment.png') no-repeat center;
+          background: transparent asset-data-url('icons/comment.png') no-repeat center;
           background-size: 17px 14px;
           height: 14px;
           width: 17px;
         } 
         span.heart-icon {
-          background: transparent url('icons/heart.png') no-repeat center;
+          background: transparent asset-data-url('icons/heart.png') no-repeat center;
           background-size: 14px 14px;
           height: 14px;
           width: 14px;

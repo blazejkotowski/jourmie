@@ -15,7 +15,7 @@ html, body {
   margin-top: -40px;
   width: 100%;
   height: 480px;
-  background: transparent url('background_profile.jpg') top no-repeat;
+  background: transparent asset-data-url('background_profile.jpg') top no-repeat;
   background-size: cover;
   margin-bottom: 80px;
   position: relative;
@@ -82,13 +82,13 @@ html, body {
     background: transparent center no-repeat;
     background-size: 57px 57px;
     &.countries {
-      background-image: url('icons/countries.png');
+      background-image: asset-data-url('icons/countries.png');
     }
     &.distance {
-      background-image: url('icons/distance.png');
+      background-image: asset-data-url('icons/distance.png');
     }
     &.buddies {
-      background-image: url('icons/buddies.png');
+      background-image: asset-data-url('icons/buddies.png');
     }
   }
   
