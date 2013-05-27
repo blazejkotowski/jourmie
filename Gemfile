@@ -30,6 +30,7 @@ group :development do
   gem 'bullet'
   gem 'sqlite3'
   gem 'pry'
+  gem 'railroady'
 end
 
 
