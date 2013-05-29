@@ -9,7 +9,7 @@ class Album < ActiveRecord::Base
   
   attr_accessible :end_date, :name, :start_date, :user_id, :places_count,
                   :cover_image, :participations, :participations_count,
-                  :user
+                  :user, :jourmie_cover_image,:slug, :custom_cover_image
   
   belongs_to :user, :counter_cache => true
   
@@ -19,10 +19,13 @@ class Album < ActiveRecord::Base
   has_many :places, :dependent => :destroy
   has_many :roads, :dependent => :destroy
   
-  validates_presence_of :start_date
-  validates_presence_of :end_date
-  validates_presence_of :name
-  validates_presence_of :user_id
+  validates_presence_of :places_count, :jourmie_cover_image,:name,:user_id,:participations_count,:slug
+  validates_numericality_of :user_id, :jourmie_cover_image,:participations_count,:places_count
+  
+  validate :start_must_be_before_end_date
+  
+
+    
   
   def cover_image
     if custom_cover_image.url.present?
@@ -45,5 +48,14 @@ class Album < ActiveRecord::Base
   def participants_profiles
     (participants + [user]).map { |participant| participant.profile} 
   end
-  
+
+  def start_must_be_before_end_date
+    if(self.start_date && self.end_date)
+      valid = self.start_date < self.end_date
+      errors.add(:start_date, "must be before end time") unless valid
+    end
+  end
+
 end
+
+

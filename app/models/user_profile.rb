@@ -6,10 +6,13 @@ class UserProfile < ActiveRecord::Base
   validates_uniqueness_of :permalink, :allow_blank => true, :allow_nil => true
   
   validates_presence_of :last_name
-  validates_presence_of :first_name  
+  validates_presence_of :first_name
+  validates_presence_of :user_id  
   validates_format_of :phone, :with => /^[0-9-]+$/, :allow_blank => true, :allow_nil => true
   validates_inclusion_of :sex, :in => ["male", "female"]
   
+  validates_numericality_of :user_id
+
   mount_uploader :avatar, AvatarUploader
   belongs_to :user
   

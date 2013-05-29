@@ -58,12 +58,8 @@ gem 'carrierwave_direct'
 gem 's3_direct_upload'
 gem 'rabl'
 gem 'state_machine'
-gem "rspec-rails", :group =>[:developent, :test]
-gem "database_cleaner", :group => [:test]
-gem "email_spec", :group => :test
-gem 'cucumber-rails', :group=>:test, :require => false
-gem "factory_girl_rails", :group => [:development,:test]
-
+gem "rspec-rails"
+gem 'shoulda-matchers'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
