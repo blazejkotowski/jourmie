@@ -11,7 +11,7 @@ class UserProfile < ActiveRecord::Base
   validates_format_of :phone, :with => /^[0-9-]+$/, :allow_blank => true, :allow_nil => true
   validates_inclusion_of :sex, :in => ["male", "female"]
   
-  validates_numericality_of :user_id
+  validates_numericality_of :user_id, :only_integer => true, :greater_than_or_equal_to => 0
 
   mount_uploader :avatar, AvatarUploader
   belongs_to :user

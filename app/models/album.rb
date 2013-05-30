@@ -20,12 +20,13 @@ class Album < ActiveRecord::Base
   has_many :roads, :dependent => :destroy
   
   validates_presence_of :places_count, :jourmie_cover_image,:name,:user_id,:participations_count,:slug
-  validates_numericality_of :user_id, :jourmie_cover_image,:participations_count,:places_count
+  validates_numericality_of :user_id, :only_integer => true, :greater_than_or_equal_to => 0
+  validates_numericality_of :jourmie_cover_image
+  validates_numericality_of :participations_count, :only_integer => true, :greater_than_or_equal_to => 0
+  validates_numericality_of :places_count, :only_integer => true, :greater_than_or_equal_to => 1
   
   validate :start_must_be_before_end_date
-  
-
-    
+   
   
   def cover_image
     if custom_cover_image.url.present?

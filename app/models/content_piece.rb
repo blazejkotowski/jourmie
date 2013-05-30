@@ -10,7 +10,9 @@ class ContentPiece < ActiveRecord::Base
   has_many :likes, :as => :likeable
 
   validates_presence_of :user_id,:type,:file
-  validates_numericality_of :likes_count,:comments_count,:user_id
+  validates_numericality_of :user_id, :only_integer => true, :greater_than_or_equal_to => 0
+  validates_numericality_of :comments_count, :only_integer => true, :greater_than_or_equal_to => 0
+  validates_numericality_of :likes_count, :only_integer => true, :greater_than_or_equal_to => 0
 
   validate :validate_type
   validate :any_present?

@@ -17,8 +17,28 @@ describe UserProfile do
   		it { should validate_presence_of(:first_name) }
   		it { should validate_presence_of(:user_id) }
   		it { should_not allow_value("foo").for(:phone) }
+  		it { should validate_presence_of(:user_id)}
 	end
 
+	describe "Rules" do
+		before(:each) do
+			@user = {:email=> 'test@test.com', :password => "12345678", :password_confirmation => "12345678"}
+		end
+
+		it "should be created on User creation" do
+			User.create!(@user).should change(UserProfile,:count)	
+		end
+
+		it "should be removed on User delete" do
+			user = User.create!(@user)
+			User.find(user.id).delete.should change(UserProfile, :count)
+		end
+
+		it "should have a unique permalink with name" do
+			
+		end
+
+	end
 
 
 end

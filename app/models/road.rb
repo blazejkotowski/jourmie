@@ -16,5 +16,7 @@ class Road < ActiveRecord::Base
   has_one :place_from, :class_name => "Place", :foreign_key => "road_to_id"
   has_one :place_to, :class_name => "Place", :foreign_key => "road_from_id"
   has_many :photos
+  has_many :videos
+  has_many :musics
 
 end
