@@ -17,7 +17,6 @@ describe UserProfile do
   		it { should validate_presence_of(:first_name) }
   		it { should validate_presence_of(:user_id) }
   		it { should_not allow_value("foo").for(:phone) }
-  		it { should validate_presence_of(:user_id)}
 	end
 
 	describe "Rules" do
@@ -35,10 +34,8 @@ describe UserProfile do
 		end
 
 		it "should have a unique permalink with name" do
-			
+			UserProfile.create(:user)
 		end
 
 	end
-
-
 end
