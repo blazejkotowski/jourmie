@@ -24,17 +24,26 @@ describe UserProfile do
 			@user = {:email=> 'test@test.com', :password => "12345678", :password_confirmation => "12345678"}
 		end
 
+		it "should only belong to one user" do
+			User.create(!@user)
+			UserProfile.create!(:first_name => "test", :last_name => "1", :user_id => "1",:sex => "male")
+			UserProfile.create!(:first_name => "test", :last_name => "2", :user_id => "1",:sex => "male").should_not be_valid
+		end
+
 		it "should be created on User creation" do
-			User.create!(@user).should change(UserProfile,:count)	
+			expect { User.create!(@user)}.to change(UserProfile,:count)	
 		end
 
 		it "should be removed on User delete" do
-			user = User.create!(@user)
-			User.find(user.id).delete.should change(UserProfile, :count)
+			User.create!(@user)
+			expect { User.first.delete }.to change(UserProfile, :count)
 		end
 
-		it "should have a unique permalink with name" do
-			UserProfile.create(:user)
+		it "should have a unique permalink" do
+			UserProfile.create!(:first_name => "test", :last_name => "1", :user_id => "1",:sex => "male")
+			UserProfile.create!(:first_name => "test", :last_name => "1", :user_id => "2",:sex => "male").should be_valid
 		end
+
+
 	end
 end
