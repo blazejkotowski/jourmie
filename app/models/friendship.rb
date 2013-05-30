@@ -11,6 +11,10 @@ class Friendship < ActiveRecord::Base
   scope :accepted, -> { with_state(:accepted) }
   scope :displayable, -> { without_state(:rejected) }
   
+  validates_presence_of :friend_id
+  validates_presence_of :user_id
+  validates_presence_of :state
+
   state_machine do
     event :accept do
       transition [:requested, :pending] => :accepted
