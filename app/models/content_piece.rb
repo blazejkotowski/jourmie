@@ -5,7 +5,6 @@ class ContentPiece < ActiveRecord::Base
   belongs_to :place
   belongs_to :road
   belongs_to :user
-
   has_many :comments, :as => :commentable
   has_many :likes, :as => :likeable
 

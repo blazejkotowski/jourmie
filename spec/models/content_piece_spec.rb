@@ -20,7 +20,6 @@ describe ContentPiece do
 	end
 
 	describe "Rules" do
-
 		before(:each) do
 			@road = Road.create!()
 			@attr = {:user_id => '1',:file => 'test', :type => 'music' }		
