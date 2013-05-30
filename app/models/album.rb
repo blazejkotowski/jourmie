@@ -23,7 +23,7 @@ class Album < ActiveRecord::Base
   validates_numericality_of :user_id, :only_integer => true, :greater_than_or_equal_to => 0
   validates_numericality_of :jourmie_cover_image
   validates_numericality_of :participations_count, :only_integer => true, :greater_than_or_equal_to => 0
-  validates_numericality_of :places_count, :only_integer => true, :greater_than_or_equal_to => 1
+  validates_numericality_of :places_count, :only_integer => true, :greater_than_or_equal_to => 0
   
   validate :start_must_be_before_end_date
    
@@ -50,6 +50,7 @@ class Album < ActiveRecord::Base
     (participants + [user]).map { |participant| participant.profile} 
   end
 
+  #To be implemented on a file to be used with by different models
   def start_must_be_before_end_date
     if(self.start_date && self.end_date)
       valid = self.start_date < self.end_date
