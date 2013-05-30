@@ -36,6 +36,5 @@ describe UserProfile do
 		it "should have a unique permalink with name" do
 			UserProfile.create(:user)
 		end
-
 	end
 end
