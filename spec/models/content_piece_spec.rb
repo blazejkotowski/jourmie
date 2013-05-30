@@ -20,6 +20,7 @@ describe ContentPiece do
 	end
 
 	describe "Rules" do
+
 		before(:each) do
 			@road = Road.create!()
 			@attr = {:user_id => '1',:file => 'test', :type => 'music' }		
@@ -38,14 +39,12 @@ describe ContentPiece do
 		end
 
 		it "should have 0 or more comments for a ContentPiece" do
-			ContentPiece.create!(@attr.merge(:place_id => '1',:comments_count => '-1')).should_not be_valid
+			ContentPiece.new(@attr.merge(:place_id => '1',:comments_count => "-1)")).should_not be_valid
 		end
 
 		it "should have 0 or more likes for a ContentPiece" do
-			ContentPiece.create!(@attr.merge(:place_id => '1',:likes_count => '-1')).should_not be_valid
-		end
-
-		
+			ContentPiece.new(@attr.merge(:place_id => '1',:likes_count => "-1")).should_not be_valid
+		end		
 	end
 
 end
