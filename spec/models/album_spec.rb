@@ -84,10 +84,7 @@ describe Album do
 			album = Album.create(@attr)
 			album.slug.should == "my-album"
 		end	
-		
-		
-
-		
+	
 	end
 	
 end
