@@ -43,7 +43,5 @@ describe UserProfile do
 			UserProfile.create!(:first_name => "test", :last_name => "1", :user_id => "1",:sex => "male")
 			UserProfile.create!(:first_name => "test", :last_name => "1", :user_id => "2",:sex => "male").should be_valid
 		end
-
-
 	end
 end
