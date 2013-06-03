@@ -47,8 +47,8 @@ describe Friendship do
 		end
 
 		it "should allways remove both friendships when one of them is removed" do
-			Friendship.create!(@attr.merge(:state => "accepted"))
-			Friendship.first.accept
+			Friendship.create!(@attr.merge(:state => "requested"))
+
 			expect { Friendship.first.delete }.to change(Friendship,:count).by(2)
 		end
 
