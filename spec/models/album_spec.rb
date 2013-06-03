@@ -65,7 +65,7 @@ describe Album do
 		end	
 
 		it "should create an instance of album given valid attributes" do
-			@user.albums.create!(@attr.merge(:places_count => '1')).should be_valid				
+			@user.albums.create!(@attr).should be_valid				
 		end
 		
 		it "should return the correct name of the album" do
