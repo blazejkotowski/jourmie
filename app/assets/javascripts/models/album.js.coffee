@@ -41,7 +41,7 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
     while(i <= 20)
       @get('available_covers')[i] = "/assets/covers/cover#{i++}.jpg"
     @setNewDates()
-    
+    console.log @
     console.log "New backbone album"
     
   setNewDates: ->
@@ -61,7 +61,6 @@ class Jourmie.Models.Album extends Backbone.RelationalModel
     if @get('places').length < 1
       @set 'start_date', place.get('date_from')
     @set 'end_date', place.get('date_to')
-
     _.bindAll(this, "_addPlace")
     @save {}, { wait:true, async: false }
     @_addPlace(place)

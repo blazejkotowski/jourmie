@@ -33,6 +33,13 @@ group :development do
   gem 'railroady'
 end
 
+group :development, :test do
+  gem "rspec-rails"
+  gem 'shoulda-matchers'
+  gem "jasminerice"
+  gem 'guard-rails-assets'
+end
+
 
 
 #gem 'twitter-bootstrap-rails'
@@ -58,8 +65,7 @@ gem 'carrierwave_direct'
 gem 's3_direct_upload'
 gem 'rabl'
 gem 'state_machine'
-gem "rspec-rails"
-gem 'shoulda-matchers'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

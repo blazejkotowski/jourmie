@@ -28,6 +28,6 @@ Jourmie::Application.routes.draw do
 
   match "about" => "static_pages#about", :as => :about
 
-  match '/:anything', :to => "static_pages#not_found", :constraints => { :anything => /.*/ }
+  # match '/:anything', :to => "static_pages#not_found", :constraints => { :anything => /.*/ }
 
 end
