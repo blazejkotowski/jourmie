@@ -1,6 +1,7 @@
 require "bundler/capistrano"
 
-server "198.211.121.82", :web, :app, :db, primary: true
+# server "198.211.121.82", :web, :app, :db, primary: true
+server "178.216.201.28", :web, :app, :db, primary: true
 
 set :application, "jourmie"
 set :user, "deployer"
@@ -13,31 +14,31 @@ set :repository, "git@github.com:blaziko/#{application}.git"
 set :branch, "master"
 
 default_run_options[:pty] = true
+default_run_options[:shell] = '/bin/bash --login'
+set :nginx_server_name, false
+
 ssh_options[:forward_agent] = true
+
+set :stage, "production"
+set :nginx_server_name, false
+
+set(:runner) { "RAILS_ENV=#{fetch(:stage)} bundle exec" }
+
+load 'config/recipes/base.rb'
+# load 'config/recipes/whenever.rb'
+load 'config/recipes/unicorn.rb'
+load 'config/recipes/nginx.rb'
+load 'config/recipes/postgresql.rb'
+
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
 namespace :deploy do
-  %w[start stop restart].each do |command|
-    desc "#{command} unicorn server"
-    task command, roles: :app, except: {no_release: true} do
-      run "/etc/init.d/unicorn_#{application} #{command}"
-    end
-  end
-
-  task :setup_config, roles: :app do
-    sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
-    sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
+  desc "Create necessary directories to perform setup"
+  task :create_directories do
     run "mkdir -p #{shared_path}/config"
-    put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
-    puts "Now edit the config files in #{shared_path}."
-  end
-  after "deploy:setup", "deploy:setup_config"
-
-  task :symlink_config, roles: :app do
-    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-  end
-  after "deploy:finalize_update", "deploy:symlink_config"
+  end  
+  before "deploy:setup", "deploy:create_directories"
 
   desc "Make sure local git is in sync with remote."
   task :check_revision, roles: :web do
